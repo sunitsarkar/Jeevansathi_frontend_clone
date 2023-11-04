@@ -4,7 +4,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.css';
 import { BrowserRouter } from 'react-router-dom';
-import MainComponent from './components/SearchSathi/mainComponent';
+import MainComponent from './components/mainComponent';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
