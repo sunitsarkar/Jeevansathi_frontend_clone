@@ -1,24 +1,25 @@
 import React, {Component} from "react";
 import {Switch, Route, Redirect } from "react-router-dom";
-import Home from "./home";
-import  "./styles.css";
-import Specialization from "./specialization";
+import {Link} from "react-router-dom";
+import  "./style.css";
+import Index from "./index";
+
 class MainComponent extends Component{
     state={
-
     }
-
+    
     render(){
         return(
+            
 
             <div>
                 <Switch>
 
 
-                    <Route path="/Specialization" component={Specialization}/>
-                    <Route path="/home" component={Home}/>
+                    <Route path="/home" component={Index}/>
                     <Redirect from="/" to="/home"/>
                 </Switch>
+
                 
             </div>
         );
