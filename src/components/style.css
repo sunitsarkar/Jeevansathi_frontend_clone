@@ -1,4 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@700&display=swap');
+
 @import url('https://fonts.googleapis.com/css2?family=Aguafina+Script&display=swap');
+
 
 html, body, ul, form, button, input, p {
     margin: 0;
@@ -14,8 +18,10 @@ a:hover{
     outline: 0;
     color: #ffff;
 }
+.homePage{
+    width: 100%;
 
-
+}
 .header-container{
     position: fixed;
     top:0;
@@ -48,13 +54,17 @@ a:hover{
     width:508px;
     background: rgba(52, 73, 94, 0.95);
     font-size: 14px;
-    font-family: 'Cabin',sans-serif;
+    font-family: 'Cabin', sans-serif;
     font-weight: 500;
     height: 63px;
     color: #fff;
     float: left;
 }
+.menupl{
+    padding-left: 27px;
+}
 .menu-list{
+    padding-top: 22px;
     float: left;
 }
 .menu-list li{
@@ -115,11 +125,15 @@ a:hover{
     background:#d9475c;
 }
 .bgImage{
+    width: 100%;
     background: url("https://static.jeevansathi.com/images/jspc/commonimg/cover_img_free_chat.png");
     background-size: cover;
+    /* background-size: contain; */
     background-repeat: no-repeat;
     height: 622px;
     display: block;
+    
+
 }
 .contentHome{
     width: 663px;
@@ -168,6 +182,9 @@ a:hover{
 .browse-link-list div:hover{
     background: #d9475c url(https://static.jeevansathi.com/images/jspc/commonimg/topnav-arwright.png) no-repeat 170px 16px;
 }
+.search-ml{
+    margin-left: 56px;
+}
 .browseContent{
     width: 71%;
     float: right;
@@ -207,9 +224,13 @@ a:hover{
     display: block;
 }
 
+.firstBlock{
+    margin-top: -622px;
+}
 
 .looking-Container{
     padding: 54px 0px 25px;
+    font-family: 'Cabin',sans-serif;
     color: #fff;
     width: 990px;
     margin: 0 auto;
@@ -223,6 +244,7 @@ a:hover{
 }
 .nowChatForFree{
     font-style: normal;
+    font-family: 'Noto Serif', serif;
     font-weight: 500;
     font-size: 48px;
     line-height: 52px;
@@ -233,11 +255,13 @@ a:hover{
 .isLooking{
     font-size: 20px;
     text-shadow: 0px 4px 4px rgb(0 0 0 / 75%);
-    margin-top: 6px
+    margin-top: 4px
 }
 .registerFields{
+    margin-top: 16px;
     width: 370px;
     background: rgba(0,0,0,0.55);
+    border-radius: 6px;
 }
 .registerFields label{
     font-size: 12px;
@@ -304,9 +328,13 @@ a:hover{
     margin: 0 auto;
     box-shadow: 0 2px 6px 0 rgba(142, 142, 142, 0.2);
     margin-bottom: 48px;
+    border-radius: 4px;
 }
 .main-benifit{
+    border-radius: 6px;
     background-color: #fff;
+    font-family: 'Cabin', sans-serif;
+    font-weight: 400px;
     padding: 28px 74px 48px 74px;
     margin: 20px 0;
 }
@@ -449,9 +477,7 @@ a:hover{
     width: 3rem;
     height: 2px;
 }
-.featuresSection-List h3::after:hover{
-    background-color: #d9475c;
-}
+
 .featuresSection-List p{
     font-size: .875rem;
     line-height: 1.21;
@@ -460,6 +486,27 @@ a:hover{
 }
 .featuresSection-List a:hover{
     opacity: 1;
+}
+.jvlist1{
+    opacity: 1!important;
+}
+.jvlist1 h3::after{
+    background-color: #d9475c;
+}
+.jvlist2{
+    opacity: 1!important;
+}
+.jvlist2 h3::after{
+    background-color: #d9475c;
+}
+.jvlist3{
+    opacity: 1!important;
+}
+.jvlist3 h3::after{
+    background-color: #d9475c;
+}
+.featuresSection-List a:hover h3::after{
+     background-color: #d9475c;
 }
 
 .featuresSection-Images{
@@ -973,6 +1020,7 @@ li:hover .subhobver{
 .footer-container{
     background-color: #34495e;
     padding-bottom: 30px;
+    width: 100%;
 }
 .footer-List{
     width: 990px;
@@ -1153,4 +1201,28 @@ li:hover .subhobver{
     margin-left: 34px;
     width: 508px;
     height: 80px;
+}
+
+
+
+@media only screen and (max-width: 1100px) {
+    .bgImage{
+        min-width: 1124px;
+    }
+    .looking-Container{
+        /* max-width: 900px; */
+        margin-left: 65px;
+    }
+    .homeContainer{
+        margin-left:65px;
+    }
+    .footer-container{
+        min-width: 1124px
+    }
+    .AppFollow{
+        min-width: 1124px
+    }
+    .copyRight{
+        min-width: 1124px
+    }
 }

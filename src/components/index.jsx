@@ -4,14 +4,15 @@ import {Link} from "react-router-dom";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import BrowseContent from "./browseContent";
+import Header from "../header/header";
 import MatrimonialFilter from "./matrimonialFilter";
 import Membership from "./membership";
+import Footer from "../footer/footer";
 
 
 
 class index extends Component{
-    state={ showList:1,showMatrimonial:0,scroll:false,
+    state={ showMatrimonial:0,
         motherTongue:[{name:"Bihari",link:"#"},{name:"Bengali",link:"#"},{name:"Hindi Delhi",link:"#"},{name:"Hindi",link:"#"},{name:"Gujarati",link:"#"},{name:"Kannada",link:"#"},{name:"Malayalam",link:"#"},{name:"Marathi",link:"#"},{name:"Oriya",link:"#"},{name:"Punjabi",link:"#"},{name:"Rajasthani",link:"#"},{name:"Tamil",link:"#"},{name:"Telugu",link:"#"},{name:"Hindi",link:"#"},{name:"Hindi MP",link:"#"},{name:"Konkani",link:"#"},{name:"Himachali",link:"#"},{name:"Haryanvi",link:"#"},{name:"Assamese",link:"#"},{name:"Kashmiri",link:"#"},{name:"Sikkim Nepali",link:"#"},{name:"Tulu",link:"#"}],
         castes:[{name:"Aggarwal",link:"#"}, {name:"Kanyakubj Brahmin",link:"#"}, {name:"Gaur Brahmin",link:"#"}, {name:"Brahmin",link:"#"}, {name:"Jat",link:"#"}, {name:"Kayastha",link:"#"}, {name:"Khatri",link:"#"},{name:"Kshatriya",link:"#"}, {name:"Maratha",link:"#"}, {name:"Rajput",link:"#"}, {name:"Sindhi",link:"#"}, {name:"Sunni",link:"#"}, {name:"Arora",link:"#"},{name:"Shwetamber",link:"#"}, {name:"Yadava",link:"#"}, {name:"Bania",link:"#"},{name:"Scheduled Caste",link:"#"}, {name:"Digamber",link:"#"}, {name:"Sikh Jat",link:"#"},{name:"Gupta",link:"#"}, {name:"Teli",link:"#"}, {name:"Vaishnav",link:"#"}, {name:"Kurmi kshatriya",link:"#"}],
         religion:[{name:"Hindu",link:"#"},{name:"Muslim",link:"#"},{name:"Christian",link:"#"},{name:"Sikh",link:"#"},{name:"Buddhist",link:"#"},{name:"Jain",link:"#"},{name:"Bahai",link:"#"}],
@@ -30,27 +31,8 @@ class index extends Component{
 
     }
 
-    componentDidMount() {
-        window.addEventListener('scroll', this.listenToScroll)
-      }
-      componentWillUnmount() {
-        window.removeEventListener('scroll', this.listenToScroll)
-      }
-      listenToScroll=()=>{
-        let s1 = {...this.state};
-        let scrolled = document.documentElement.scrollTop
-        if(scrolled>400)
-            s1.scroll = true;
-        else
-        s1.scroll = false;
-        this.setState(s1);
-        
-      }
-    handleView=(no)=>{
-        let s1 = {...this.state};
-        s1.showList=no;
-        this.setState(s1);
-    }
+    
+    
 
     handleMatrimonial=(index)=>{
         let s1 = {...this.state};
@@ -58,7 +40,7 @@ class index extends Component{
         this.setState(s1);
     }
     render(){
-        const {showList,showMatrimonial,scroll,motherTongue,castes,religion,cities,occupation,states,NRI,colleges,matrimonial,successStoryList} = this.state;
+        const {showMatrimonial,scrolled,motherTongue,castes,religion,cities,occupation,states,NRI,colleges,matrimonial,successStoryList} = this.state;
         const settings = {
             dots: false,
             infinite: true,
@@ -68,74 +50,26 @@ class index extends Component{
             autoplaySpeed: 1000,
           };
 
+        console.log(scrolled);
+
         return(
             <div className="">
                 <div className="homePage">
                     <header className="header-container">
-                        <div className="header--modifier text-white">
-                            <div>
-                                <Link className="jeevansathi-logo" to="#">
-                                    <img height="100%" width="100%"  src="https://static.jeevansathi.com/images/jspc/commonimg/desktopLogo.svg"/>
-                                </Link>
-                            </div>
-                            <div className="menu-navbar">
-                                <div className="pl-4">
-                                    <ul className="pt-4 menu-list list-inline">
-                                        <li>
-                                            <div className="browse-menu pb-3" >BROWSE PROFILES BY<i className="fa-solid fa-chevron-down fa-sm pl-2"></i></div>
-                                            <div className="contentHome">
-                                                <div className="browse-link-list">
-                                                    <div className="mother_Tongue" onMouseEnter={()=>this.handleView(1)}>Mother Tongue</div>
-                                                    <div className="caste" onMouseEnter={()=>this.handleView(2)}>Caste</div>
-                                                    <div className="religion" onMouseEnter={()=>this.handleView(3)}>Religion</div>
-                                                    <div className="city" onMouseEnter={()=>this.handleView(4)}>City</div>
-                                                    <div className="occupation" onMouseEnter={()=>this.handleView(5)}>Occupation</div>
-                                                    <div className="state" onMouseEnter={()=>this.handleView(6)}>State</div>
-                                                    <div className="NRI" onMouseEnter={()=>this.handleView(7)}>NRI</div>
-                                                    <div className="college" onMouseEnter={()=>this.handleView(8)}>College</div>
-                                                </div>
-                                                <div className="browseContent">
-                                                    <BrowseContent showList={showList}/>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li className="ml-5" >
-                                            <div className="search-menu">SEARCH<i className="fa-solid fa-chevron-down fa-sm pl-2"></i></div>
-                                            <div className="search-list">
-                                                <div>Search</div>
-                                                <div>Search by Profile ID</div>
-                                            </div>
-                                        </li>
-                                        <li className="ml-5">
-                                            <Link to="#">HELP</Link>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div className="menu-navbar--second">
-                                <div className={"signupMenu " + (scroll?"srolled":"")}>
-                                    <div className="loginPart">
-                                        <Link to="#">LOGIN</Link>
-                                    </div>
-                                    <div className="registerPart" >
-                                        <Link to="#">REGISTER FREE</Link>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
+                        <Header/>
                     </header>
-                    <div className="bgImage">
+                    <div className="bgImage"></div>
+                        <div className="firstBlock">
                         <div className="looking-Container">
                             <div className="looking-text">
                                 <div className="nowChatForFree">Now, chat for free!</div>
                                 <div className="isLooking">Finding your perfect match just became easier</div>
                             </div>
                             <div className="registerFields">
-                                <div className="p-3">
+                                <div className="px-3 pb-3">
                                     <div >
                                         <label>Create Profile For</label>
-                                        <select >
+                                        <select  className="mr-2">
                                             <option>Select</option>
                                         </select>
                                     </div>
@@ -168,7 +102,7 @@ class index extends Component{
                             </div>
                         </div>
 
-                        <div >
+                        <div>
                             <div className="homeContainer">
                                 <div className="main-benifit">
                                     <div className="my-3">
@@ -179,19 +113,19 @@ class index extends Component{
                                     <div className="row">
                                         <div className="col-4">
                                             <div className="infoImg"></div>
-                                            <div className="fw-bold pt-3">100% Manually Screened Profiles</div>
+                                            <div className="pt-3">100% Manually Screened Profiles</div>
                                             <div className="underline"></div>
                                             <div className="textmore">Search by location, community, profession & more from lakhs of active profiles</div>
                                         </div>
                                         <div className="col-4">
                                             <div className="infoImg2"></div>
-                                            <div className="fw-bold pt-3">Verification by Personal Visit</div>
+                                            <div className="pt-3">Verification by Personal Visit</div>
                                             <div className="underline"></div>
                                             <div className="textmore">Special listing of profiles verified by our agents through personal visits</div>
                                         </div>
                                         <div className="col-4">
                                             <div className="infoImg3"></div>
-                                            <div className="fw-bold pt-3">Control over Privacy</div>
+                                            <div className="pt-3">Control over Privacy</div>
                                             <div className="underline"></div>
                                             <div className="textmore">Restrict unwanted access to contact details & photos/videos</div>
                                         </div>
@@ -206,15 +140,15 @@ class index extends Component{
                                         </header>
 
                                         <div className="featuresSection-List">
-                                            <Link to="#">
+                                            <Link to="#" className={scrolled<=1000?"jvlist1":""}>
                                                 <h3>Jeevansathi Match Hour</h3>
                                                 <p>Register to join an online event to connect with members of your community in a short time</p>
                                             </Link>
-                                            <Link to="#">
+                                            <Link to="#" className={scrolled>1000 && scrolled<1500?"jvlist2":""}>
                                                 <h3>Voice & Video Calling</h3>
                                                 <p>Enjoy secure conversations using our voice & video calling services without revealing your number</p>
                                             </Link>
-                                            <Link to="#">
+                                            <Link to="#" className={scrolled>1500?"jvlist3":""}>
                                                 <h3>Introducing Video Profiles</h3>
                                                 <p>Stand out amongst others and engage faster! Introduce yourself by adding a video to your profile</p>
                                             </Link>
@@ -406,93 +340,14 @@ class index extends Component{
 
                             </div>      
 
-                            <footer>
-                                <div className="footer-container">
-                                    <div className="footer-List">
-                                        <div className="pt-3 d-flex">
-                                            <div className="footerWid">
-                                                <ul className="list-inline ">
-                                                    <li className="footerWid-Title">Explore</li>
-                                                    <li><Link to="#">Home</Link></li>
-                                                    <li><Link to="#">Advanced search</Link></li>
-                                                    <li><Link to="#">Success stories</Link></li>
-                                                    <li><Link to="#">Sitemap</Link></li>
-                                                    <li><Link to="#">Create Horoscope</Link></li>
-                                                </ul>
-                                            </div>
-                                            <div className="footerWid">
-                                                <ul className="list-inline ">
-                                                    <li className="footerWid-Title">Services</li>
-                                                    <li><Link to="#">Membership Options</Link></li>
-                                                    <li><Link to="#">Jeevansathi Careers</Link></li>
-                                                </ul>
-                                            </div>
-                                            <div className="footerWid">
-                                                <ul className="list-inline ">
-                                                    <li className="footerWid-Title">Help</li>
-                                                    <li><Link to="#">Contact us</Link></li>
-                                                    <li><Link to="#">Jeevansathi centers (32)</Link></li>
-                                                </ul>
-                                            </div>
-                                            <div className="footerWid">
-                                                <ul className="list-inline ">
-                                                    <li className="footerWid-Title">Legal</li>
-                                                    <li><Link to="#">About Us</Link></li>
-                                                    <li><Link to="#">Fraud Alert</Link></li>
-                                                    <li><Link to="#">Terms of use</Link></li>
-                                                    <li><Link to="#">3rd party terms of use</Link></li>
-                                                    <li><Link to="#">Privacy policy</Link></li>
-                                                    <li><Link to="#">Cookie policy</Link></li>
-                                                    <li><Link to="#">Privacy Features</Link></li>
-                                                    <li><Link to="#">Summons/Notices</Link></li>
-                                                    <li><Link to="#">Grievances</Link></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="AppFollow">
-                                    <div className="AppFollow-List">
-                                        <div className="footerWid">
-                                            <div className="pb-2"> App available on </div>
-                                            <Link to="#" className="footerIcon iconPostion"></Link>
-                                            <Link to="#" className="footerIcon iconPostion2"></Link>
-                                        </div>
-                                        <div className="footerWid">
-                                            <div className="pb-2"> Follow us on </div>
-                                            <Link to="#" className="footerIcon iconPostion3"></Link>
-                                            <Link to="#" className="footerIcon iconPostion4"></Link>
-                                            <Link to="#" className="footerIcon iconPostion5"></Link>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <div className="bg-white">
-                                    <div className="footer-List">
-                                        <div className="partnerList">
-                                            <div className="partnerSite">Partner Sites</div>
-                                            <div className="footerContainer">
-                                                <Slider {...settings}>
-                                                        <div className="headfoots acre"></div>
-                                                        <div className="headfoots nc"></div>
-                                                        <div className="headfoots ng"></div>
-                                                        <div className="headfoots shiksha"></div>
-                                                        <div className="headfoots mydala"></div>
-                                                        <div className="headfoots pb"></div>
-                                                        <div className="headfoots zomato"></div>
-                                                        <div className="headfoots meritn"></div>
-                                                        <div className="headfoots ambitionbox"></div>
-                                                </Slider>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="copyRight"> All rights reserved © 2016 Jeevansathi Internet Services. </div>
-                            </footer>  
+                            
                         </div>
+                        <footer>
+                            <Footer/> 
+                        </footer>  
+                        <div className="copyRight"> All rights reserved © 2016 Jeevansathi Internet Services. </div>
                     </div>
-                </div>                
+                </div>            
             </div>
         )
     }
