@@ -7,7 +7,6 @@ class Membership extends Component{
         
     }
     render(){
-        // const {name,index} = this.props;
         return(
             <React.Fragment >
                 <div className="free-Membership">
@@ -80,7 +79,6 @@ class Membership extends Component{
                 </div>
 
             </React.Fragment>
-              
         );
     }
 

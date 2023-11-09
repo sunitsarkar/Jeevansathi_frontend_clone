@@ -28,12 +28,19 @@ class index extends Component{
                 {name:"Naveen & Soniya ",img:"https://imagecdn.jeevansathi.com/22667/14/453354629-1615190452.jpg"},{name:"Vishal & Isha",img:"https://imagecdn.jeevansathi.com/21217/8/424348367-1607328093.jpg"},{name:"Pranit & Anjani ",img:"https://imagecdn.jeevansathi.com/22568/7/451367351-1614585699.jpg"}
             ],
 
-
     }
-
+    componentDidMount() {
+        window.addEventListener('scroll', this.listenToScroll);
+      }
+    componentWillUnmount() {
+        window.removeEventListener('scroll', this.listenToScroll);
+      }
+    listenToScroll=()=>{
+        let s1 = {...this.state};
+        s1.scrolled = document.documentElement.scrollTop;
+        this.setState(s1);
+    }
     
-    
-
     handleMatrimonial=(index)=>{
         let s1 = {...this.state};
         s1.showMatrimonial=index;

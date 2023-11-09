@@ -13,10 +13,6 @@ class Header extends Component{
     listenToScroll=()=>{
         let s1 = {...this.state};
         s1.scrolled = document.documentElement.scrollTop
-        // if(scrolled>400)
-        //     s1.scroll = true;
-        // else
-        // s1.scroll = false;
         this.setState(s1);
         
       }

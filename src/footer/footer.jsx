@@ -5,8 +5,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 class footer extends Component{
-    state={
-    }
+    state={}
     
     render(){
         const settings = {
@@ -78,7 +77,6 @@ class footer extends Component{
                             <Link to="#" className="footerIcon iconPostion5"></Link>
                         </div>
                     </div>
-
                 </div>
                 <div className="bg-white">
                     <div className="footer-List">
