@@ -8,6 +8,7 @@ import Header from "../header/header";
 import MatrimonialFilter from "./matrimonialFilter";
 import Membership from "./membership";
 import Footer from "../footer/footer";
+import HeaderMobile from "../header/headerMobile";
 
 
 
@@ -64,16 +65,17 @@ class index extends Component{
                 <div className="homePage">
                     <header className="header-container">
                         <Header/>
+                        
                     </header>
                     <div className="bgImage"></div>
                         <div className="firstBlock">
-                        <div className="looking-Container">
-                            <div className="looking-text">
-                                <div className="nowChatForFree">Now, chat for free!</div>
-                                <div className="isLooking">Finding your perfect match just became easier</div>
-                            </div>
-                            <div className="registerFields">
-                                <div className="px-3 pb-3">
+                            <div className="looking-Container">
+                                <div className="looking-text">
+                                    <div className="nowChatForFree">Now, chat for free!</div>
+                                    <div className="isLooking">Finding your perfect match just became easier</div>
+                                </div>
+                                <div className="registerFields">
+                                    <div className="px-3 pb-3">
                                     <div >
                                         <label>Create Profile For</label>
                                         <select  className="mr-2">
@@ -354,11 +356,269 @@ class index extends Component{
                         </footer>  
                         <div className="copyRight"> All rights reserved © 2016 Jeevansathi Internet Services. </div>
                     </div>
-                </div>            
+                </div>
+
+
+
+
+                <div className="homePage-Mobile">
+                    <header className="header-container">
+                        <Link className="jeevansathi-logo--Mobile"to="#">
+                            <img height="100%" width="100%"  src="https://static.jeevansathi.com/images/jspc/commonimg/desktopLogo.svg"/>
+                        </Link>
+                        <div className="loginBtn">Login</div>
+                    </header>
+                    <div className="bgImage"></div>
+                        <div className="looking-text">
+                                <div className="nowChatForFree">Now, chat for free!</div>
+                                <div className="isLooking">Finding your perfect match just became easier</div>
+                                <button>Register Free</button>
+                        </div>
+
+                        <div className="homeContainer">
+                            <div className="main-benifit">
+                                <div className="my-3">
+                                    <div className="moreThan">MORE THAN 20 YEARS OF</div>
+                                    <div className="bringingPeople">Bringing People <span>Together</span> </div>
+                                </div>
+                                
+                                    <div className="d-flex">
+                                        <div className="infoImg"></div>
+                                        <div className="underline"></div>
+                                        <div className="pt-3">100% Manually Screened Profiles</div>
+                                        <div className="textmore">Search by location, community, profession & more from lakhs of active profiles</div>
+                                    </div>
+                                    <div className="d-flex">
+                                        <div className="infoImg2"></div>
+                                        <div className="pt-3">Verification by Personal Visit</div>
+                                        <div className="underline"></div>
+                                        <div className="textmore">Special listing of profiles verified by our agents through personal visits</div>
+                                    </div>
+                                    <div className="d-flex">
+                                        <div className="infoImg3"></div>
+                                        <div className="pt-3">Control over Privacy</div>
+                                        <div className="underline"></div>
+                                        <div className="textmore">Restrict unwanted access to contact details & photos/videos</div>
+                                    </div>
+                            </div>
+                                <div className="featuresSection">
+                                    <div className="featuresSection_body">
+                                        <header className="featuresSection__Header">
+                                            <h5 className="FeaturesSection__SubTitle">Meet From Home</h5>
+                                            <h2 className="featuresSection__Title">Impress them Over the <span>Distance</span></h2>
+                                        </header>
+
+                                        <div className="featuresSection-List">
+                                            <Link to="#" className={scrolled<=1000?"jvlist1":""}>
+                                                <h3>Jeevansathi Match Hour</h3>
+                                                <p>Register to join an online event to connect with members of your community in a short time</p>
+                                            </Link>
+                                            <Link to="#" className={scrolled>1000 && scrolled<1500?"jvlist2":""}>
+                                                <h3>Voice & Video Calling</h3>
+                                                <p>Enjoy secure conversations using our voice & video calling services without revealing your number</p>
+                                            </Link>
+                                            <Link to="#" className={scrolled>1500?"jvlist3":""}>
+                                                <h3>Introducing Video Profiles</h3>
+                                                <p>Stand out amongst others and engage faster! Introduce yourself by adding a video to your profile</p>
+                                            </Link>
+                                            
+                                        </div>
+
+                                    </div>
+                                    <div className="featuresSection-Images">
+                                        <div className="featuresSection--Images--Wrapper">
+                                            <img className="featuresSection--Images--Wrapper--img" src="https://www.jeevansathi.com/images/jspc/featuresPromotion/match-hour.svg"/>
+                                        </div>
+                                        <div className="featuresSection--Images--Wrapper">
+                                            <img className="featuresSection--Images--Wrapper--img--Wrapper" src="https://www.jeevansathi.com/images/jspc/featuresPromotion/voice-call.svg"/>
+                                        </div>
+                                        <div className="featuresSection--Images--Wrapper">
+                                            <img className="featuresSection--Images--Wrapper--img" src="https://www.jeevansathi.com/images/jspc/featuresPromotion/video-profile.svg"/>
+                                        </div>
+                                            
+                                    </div>
+
+                                   
+                                </div>
+                                <div className="main-benifit">
+                                    <h2>
+                                        <div className="moreThan">THREE SIMPLE STEPS TO</div>
+                                        <div className="featuresSection__Title">Find the <span> One for You</span></div>
+                                    </h2>
+                                    <div className="row">
+                                        <div className="col-4 pt-4">
+                                            <div className="findWorkImg img-postion"></div>
+                                            <div className="findWorkTxt m-0"><span>1. </span>Define Your Partner Preferences</div>
+                                        </div>
+                                        <div className="col-4 pt-4">
+                                            <div className="findWorkImg img-postion2"></div>
+                                            <div className="findWorkTxt"><span>2. </span>Browse Profiles</div>
+                                        </div>
+                                        <div className="col-4 pt-4">
+                                            <div className="findWorkImg img-postion3"></div>
+                                            <div className="findWorkTxt"><span>3. </span>Send Interests & Connect</div>
+                                        </div>
+                                        <div className="text-center pt-4">
+                                            <button className="findBottom">Get Started</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="membershipPlans">
+                                    <h3><div className="membership-Title"><span>Membership</span> Plans</div></h3>
+                                    <div className="membership-Txt">Upgrade your plan as per your customized requirements. With a paid membership, you can seamlessly connect with your prospects and get more responses. Here are some key benefits:</div>
+                                    <div className="membership">
+                                        <Membership/>
+                                    </div>
+                                </div>
+                                <div className="bgBlue"></div>
+
+                                <div className="exclusivePad">
+                                    <div className="exclusiveImage">
+                                        <h2 className="text-center py-4">
+                                            <div className="moreThan pb-1">PERSONALISED MATCH-MAKING SERVICE</div>
+                                            <div className="featuresSection__Title">Introducing <span>Exclusive</span></div>
+                                            <bottom className="exclusiveBtn">EXCLUSIVE</bottom>
+                                        </h2>            
+                                    </div>
+                                    <div className="disp-flex">
+                                        <div>
+                                            <div className="d-flex text-center pb-2">
+                                                <div className="materialIcons pickPeople"></div>
+                                                <div className="exclusiveMeet">Meet Your Relationship Manager</div>
+                                            </div>
+                                            <div className="txtMore">Connect with our highly experienced advisor who manages your profile.</div>
+                                        </div>
+                                        <div className="divideSize"></div>
+                                        <div>
+                                            <div className="d-flex text-center pb-2">
+                                                <div className="materialIcons pickTune"></div>
+                                                <div className="exclusiveMeet">Communicate your preferences</div>
+                                            </div>
+                                            <div className="txtMore">Consultation to understand your expectations in a prospective partner.</div>
+                                        </div>
+                                        <div className="divideSize"></div>
+                                        <div>
+                                            <div className="d-flex text-center pb-2">
+                                                <div className="materialIcons pickprofile"></div>
+                                                <div className="exclusiveMeet">Choose from handpicked profiles</div>
+                                            </div>
+                                            <div className="txtMore">We shortlist profiles matching your criteria for offline interactions.</div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div className="successStory">
+                                   <div className="storyMatched">
+                                        <h3 className="my-3">
+                                            <div className="moreThan">LAKHS OF HAPPY COUPLES</div>
+                                            <div className="featuresSection__Title">Matched by <span> Jeevansathi</span></div>
+                                        </h3>
+                                   </div> 
+                                   <div className="storySlick">
+                                   <Slider {...settings}>
+                                        {successStoryList.map((item,index) => (
+                                            <div className="slick-current" key={index}>
+                                                <div className="slick-cloned">
+                                                    <div className="storyList" style={{backgroundImage:`radial-gradient(50% 114%, rgba(255, 255, 255, 0) 35%, rgba(0, 0, 0, 0.2) 100%), linear-gradient(rgba(255, 255, 255, 0.5) 16%, rgba(0, 0, 0, 0.7) 76%), url("${item.img}")`}}>
+                                                        <div className="pos_abs">
+                                                            <div className="story-Name">{item.name}</div>
+                                                            <div className="lineClass"></div>
+                                                            <div className="marriageDate">MARRIAGE DATE 01, JANUARY 2021</div>
+                                                        </div>  
+                                                        <div className="storyDetails">
+                                                            <div className="fw-bold">{item.name}</div>
+                                                            <div className="storyDesc">i am satisfied with jeevansathi.com for bringing my better half in my life</div>
+                                                            <Link to="#">
+                                                                <div className="viewMore">
+                                                                    <div>View More</div>
+                                                                    <div className="materialIcons iconView"></div>
+                                                                    
+                                                                </div>
+                                                            </Link>
+                                                        </div>
+                                                    </div>  
+                                                </div>  
+                                            </div>
+                                        ))}
+                                    </Slider>
+                                   </div>
+                                </div>
+
+                                <div className="connectApp">
+                                    <div className="connectApp-Txt">
+                                        <h3 className="my-3">
+                                            <div className="moreThan">STAY CONNECTED WITH</div>
+                                            <div className="featuresSection__Title">Jeevansathi Apps</div>
+                                        </h3>
+                                        <div className="pb-3">Access quick & simple search, instant updates and a great user experience on your phone. Download our apps rated best in the online matrimony segment.</div>
+                                        <div className="d-flex pb-3 pt-1">
+                                            <div className="pr-3">
+                                                <Link to="#"><div className="appsImg app"></div></Link>
+                                            </div>
+                                            <div>
+                                                <Link to="#"><div className="appsImg2 app2"></div></Link>
+                                            </div>
+                                        </div>  
+                                        <div><Link to="#">Click here</Link>  <span className="opacity-75">to view more about Apps</span></div>                 
+                                    </div>
+                                    <div className="connectApp-Img">
+                                        <img src="https://www.jeevansathi.com/images/jspc/commonimg/Group_64_new.png" />                      
+                                    </div>                           
+                                </div> 
+
+                                <div className="matrimonialContainer">
+                                    <h3 className="py-3">
+                                        <div className="moreThan">BROWSE</div>
+                                        <div className="featuresSection__Title"> Matrimonial <span>Profiles by</span></div>
+                                    </h3>  
+                                    <div className="text-center">
+                                        <ul className="matrimonial-Browse">
+                                            {matrimonial.map((m1,index)=>(
+                                                <li className={showMatrimonial==index?"bgLight":""} key={index} onClick={()=>this.handleMatrimonial(index)}>{m1}</li>
+                                            ))}
+                                        </ul>
+                                    </div>  
+                                    <div className="pb-5 ">
+                                        <div className="text-center px-2">
+                                            <ul className="matrimonial-List">
+                                                {
+                                                    showMatrimonial==0?<React.Fragment>{motherTongue.map((m1,index)=>(<MatrimonialFilter name={m1.name} index={index}/>))}</React.Fragment>:
+                                                    showMatrimonial==1?<React.Fragment>{castes.map((m1,index)=>(<MatrimonialFilter name={m1.name} index={index}/>))}</React.Fragment>:
+                                                    showMatrimonial==2?<React.Fragment>{religion.map((m1,index)=>(<MatrimonialFilter name={m1.name} index={index}/>))}</React.Fragment>:
+                                                    showMatrimonial==3?<React.Fragment>{cities.map((m1,index)=>(<MatrimonialFilter name={m1.name} index={index}/>))}</React.Fragment>:
+                                                    showMatrimonial==4?<React.Fragment>{occupation  .map((m1,index)=>(<MatrimonialFilter name={m1.name} index={index}/>))}</React.Fragment>:
+                                                    showMatrimonial==5?<React.Fragment>{states.map((m1,index)=>(<MatrimonialFilter name={m1.name} index={index}/>))}</React.Fragment>:
+                                                    showMatrimonial==6?<React.Fragment>{NRI.map((m1,index)=>(<MatrimonialFilter name={m1.name} index={index}/>))}</React.Fragment>:
+                                                    showMatrimonial==7?<React.Fragment>{colleges.map((m1,index)=>(<MatrimonialFilter name={m1.name} index={index}/>))}</React.Fragment>:""
+                                                }
+                                            </ul> 
+                                        </div>       
+                                    </div>                      
+                                </div>    
+
+                                <div className="seoText">
+                                    <div><img src="https://www.jeevansathi.com/images/jspc/commonimg/JSFooterLogo.png"/></div>    
+                                    <div className="seoText-Desc">
+                                        <p>Jeevansathi.com is one of the leading and most trusted matrimony websites in India. Making happy marriages happen since 1998, Jeevansathi understands the importance of choosing the right partner for marriage, especially in the Indian cultural setup. It believes in providing the most secure 
+                                        and convenient matchmaking experience to all its members by ensuring 100% screening,exclusive privacy options, photo protection features and verification of phone numbers and more information. While the online matrimonial site connects millions of people directly, Jeevansathi also maintains a dedicated
+                                        Customer Care team and offers offline Match Point Centers across the country, for deeper and personal interaction with prospective brides, grooms and /or families.</p>
+                                    </div>  
+                                    <div className="seoText-Note">Please note: Jeevansathi is only meant for users with a bonafide intent to enter into a matrimonial alliance and is not meant for users interested in dating only. Jeevansathi platform should not be used to post any obscene material, such actions may lead to permanent deletion of the profile used to upload such content.</div>              
+                                </div>                          
+   
+
+                            
+                        <footer>
+                            <Footer/> 
+                        </footer>  
+                        <div className="copyRight"> All rights reserved © 2016 Jeevansathi Internet Services. </div>
+                    </div>
+                </div>
+            
             </div>
         )
     }
-
 }
 export default index;
 

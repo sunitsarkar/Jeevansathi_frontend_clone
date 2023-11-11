@@ -41,6 +41,7 @@ a:hover{
 
 }
 
+
 .jeevansathi-logo{
     width: 163px;
     height: 63px;
@@ -50,6 +51,7 @@ a:hover{
     vertical-align: middle;
     display: table-cell;
 }
+
 .menu-navbar{
     width:508px;
     background: rgba(52, 73, 94, 0.95);
@@ -131,7 +133,6 @@ a:hover{
     /* background-size: contain; */
     background-repeat: no-repeat;
     height: 622px;
-    display: block;
     
 
 }
@@ -1203,11 +1204,17 @@ li:hover .subhobver{
     height: 80px;
 }
 
+/* mobileView  */
+ 
+.homePage-Mobile{
+    display: none!important;
+}
+
 
 
 @media only screen and (max-width: 1100px) {
     .bgImage{
-        min-width: 1124px;
+        width: 1124px;
     }
     .looking-Container{
         /* max-width: 900px; */
@@ -1225,4 +1232,93 @@ li:hover .subhobver{
     .copyRight{
         min-width: 1124px
     }
+}
+
+@media only screen and (max-width: 400px) {
+    .homePage{
+        display: none;
+    }
+    .homePage-Mobile{
+        display: block!important;
+    }
+    
+    .bgImage{
+        max-width: 1124px!important;
+        height: 750px;
+        background: url("https://static.jeevansathi.com/images/jspc/commonimg/cover_img_free_chat.png");
+        background-repeat: no-repeat;
+        background-size: 160% 120%;
+    }
+    .header-container{
+        width: 100%;
+        display: flex;
+        color: #fff;
+        height: 100px;
+        padding: 18px 20px;
+        justify-content: space-between;
+        background: rgba(0,0,0,0.55);
+    }
+    .loginBtn{
+        font-size: 28px;
+        margin-top: 6px;
+    }
+    .jeevansathi-logo--Mobile{
+        width: 150px;
+        height: 60px;
+        vertical-align: middle;
+        display: table-cell;
+    }
+    .loginPart-Mb{
+        margin-top: 8px;
+    }
+    .looking-text{
+        width: 1124px;
+        margin: 0 auto;
+        font-family: 'Cabin',sans-serif;
+        text-align: center;
+        margin-top: -300px;
+        color: #fff;
+    }
+    .nowChatForFree{
+        font-size: 70px;
+    }
+    .isLooking{
+        font-size: 40px;
+    }
+    .looking-text button{
+        width: 300px;
+        background-color: #D9475C;
+        color: #fff;
+        margin: 0 auto;
+        border: none;
+        font-size: 40px;
+        padding: 10px 20px;
+        border-radius: 4px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    .homeContainer{
+        width: 1124px;
+        box-shadow: none;
+        margin-left: 0;
+    }
+    .main-benifit{
+        border-radius: 0;
+        padding: 8px 12px 48px 12px;
+    }
+    .underline{
+        height: 40px;
+        width: 1px;
+        margin: 8px 4px 5px 5px;
+        background-color: #a7a3a4;
+    
+    }
+   
+    
+
+   
+
+    
+   
+  
 }
