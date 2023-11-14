@@ -9,6 +9,9 @@ import MatrimonialFilter from "./matrimonialFilter";
 import Membership from "./membership";
 import Footer from "../footer/footer";
 import HeaderMobile from "../header/headerMobile";
+import findWorkImg1 from "../image/findWorkImg1.png";
+import findWorkImg2 from "../image/findWorkImg2.png";
+import findWorkImg3 from "../image/findWorkImg3.png";
 
 
 
@@ -381,72 +384,97 @@ class index extends Component{
                                     <div className="moreThan">MORE THAN 20 YEARS OF</div>
                                     <div className="bringingPeople">Bringing People <span>Together</span> </div>
                                 </div>
-                                
-                                    <div className="d-flex">
-                                        <div className="infoImg"></div>
+                                <div>
+                                    <div className="d-flex pb-3">
+                                        <div className="infoImg ImgPosition" ></div>
                                         <div className="underline"></div>
-                                        <div className="pt-3">100% Manually Screened Profiles</div>
-                                        <div className="textmore">Search by location, community, profession & more from lakhs of active profiles</div>
+                                        <div className="infoText">
+                                            <div className="pt-3">100% Manually Screened Profiles</div>
+                                            <div className="textmore">Search by location, community, profession & more from lakhs of active profiles</div>
+                                        </div>
                                     </div>
                                     <div className="d-flex">
-                                        <div className="infoImg2"></div>
-                                        <div className="pt-3">Verification by Personal Visit</div>
+                                        <div className="infoImg ImgPosition2"></div>
                                         <div className="underline"></div>
-                                        <div className="textmore">Special listing of profiles verified by our agents through personal visits</div>
+                                        <div className="infoText">
+                                            <div className="pt-3">Verification by Personal Visit</div>                                        
+                                            <div className="textmore">Special listing of profiles verified by our agents through personal visits</div>
+                                        </div>
                                     </div>
                                     <div className="d-flex">
-                                        <div className="infoImg3"></div>
-                                        <div className="pt-3">Control over Privacy</div>
+                                        <div className="infoImg ImgPosition3"></div>
                                         <div className="underline"></div>
-                                        <div className="textmore">Restrict unwanted access to contact details & photos/videos</div>
+                                        <div className="infoText">
+                                            <div className="pt-3">Control over Privacy</div>
+                                            <div className="textmore">Restrict unwanted access to contact details & photos/videos</div>
+                                        </div>
                                     </div>
+                                </div>
                             </div>
                                 <div className="featuresSection">
                                     <div className="featuresSection_body">
                                         <header className="featuresSection__Header">
-                                            <h5 className="FeaturesSection__SubTitle">Meet From Home</h5>
+                                            <h5 className="moreThan">Meet From Home</h5>
                                             <h2 className="featuresSection__Title">Impress them Over the <span>Distance</span></h2>
                                         </header>
-
-                                        <div className="featuresSection-List">
-                                            <Link to="#" className={scrolled<=1000?"jvlist1":""}>
+                                        <div className="featuresSection-dflex">
+                                            <div className="featuresSection-Card">
+                                                <img className="featuresSection--Images" src="https://www.jeevansathi.com/images/jspc/featuresPromotion/match-hour.svg"/>
+                                                <div className="underline3"></div>
                                                 <h3>Jeevansathi Match Hour</h3>
                                                 <p>Register to join an online event to connect with members of your community in a short time</p>
-                                            </Link>
-                                            <Link to="#" className={scrolled>1000 && scrolled<1500?"jvlist2":""}>
-                                                <h3>Voice & Video Calling</h3>
+                                                
+                                            </div>
+                                            <div className="featuresSection-Card">
+                                                <img className="featuresSection--Images" src="https://www.jeevansathi.com/images/jspc/featuresPromotion/voice-call.svg"/>
+                                                <div className="underline3"></div>
+                                                <h3>Jeevansathi Match Hour</h3>
                                                 <p>Enjoy secure conversations using our voice & video calling services without revealing your number</p>
-                                            </Link>
-                                            <Link to="#" className={scrolled>1500?"jvlist3":""}>
+                                                
+                                            </div>
+                                            <div className="featuresSection-Card">
+                                                <img className="featuresSection--Images" src="https://www.jeevansathi.com/images/jspc/featuresPromotion/video-profile.svg"/>
+                                                <div className="underline3"></div>
                                                 <h3>Introducing Video Profiles</h3>
                                                 <p>Stand out amongst others and engage faster! Introduce yourself by adding a video to your profile</p>
-                                            </Link>
-                                            
+                                                
+                                            </div>
                                         </div>
 
                                     </div>
-                                    <div className="featuresSection-Images">
-                                        <div className="featuresSection--Images--Wrapper">
-                                            <img className="featuresSection--Images--Wrapper--img" src="https://www.jeevansathi.com/images/jspc/featuresPromotion/match-hour.svg"/>
-                                        </div>
-                                        <div className="featuresSection--Images--Wrapper">
-                                            <img className="featuresSection--Images--Wrapper--img--Wrapper" src="https://www.jeevansathi.com/images/jspc/featuresPromotion/voice-call.svg"/>
-                                        </div>
-                                        <div className="featuresSection--Images--Wrapper">
-                                            <img className="featuresSection--Images--Wrapper--img" src="https://www.jeevansathi.com/images/jspc/featuresPromotion/video-profile.svg"/>
-                                        </div>
-                                            
-                                    </div>
-
-                                   
+                                    
                                 </div>
                                 <div className="main-benifit">
                                     <h2>
                                         <div className="moreThan">THREE SIMPLE STEPS TO</div>
                                         <div className="featuresSection__Title">Find the <span> One for You</span></div>
                                     </h2>
-                                    <div className="row">
-                                        <div className="col-4 pt-4">
+                                    <div className="">
+                                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                                        <ol class="carousel-indicators">
+                                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                                        </ol>
+                                        <div class="carousel-inner">
+                                            <div class="carousel-item active">
+                                                <img className="img-postion" src={findWorkImg1}/>
+                                    
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img className="img-postion" src={findWorkImg2}/>
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img className="img-postion" src={findWorkImg3}/>
+                                                <div class="carousel-caption d-none d-md-block">
+                                                    <p>Define Your Partner Preferences</p>
+                                                    {/* <div className="findWorkTxt m-0"><span>1. </span><p>Define Your Partner Preferences</p></div> */}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        </div>
+
+                                        {/* <div className="col-4 pt-4">
                                             <div className="findWorkImg img-postion"></div>
                                             <div className="findWorkTxt m-0"><span>1. </span>Define Your Partner Preferences</div>
                                         </div>
@@ -459,14 +487,17 @@ class index extends Component{
                                             <div className="findWorkTxt"><span>3. </span>Send Interests & Connect</div>
                                         </div>
                                         <div className="text-center pt-4">
-                                            <button className="findBottom">Get Started</button>
-                                        </div>
+                                            <button className="findBottom">Get Started Registering Free</button>
+                                        </div> */}
                                     </div>
                                 </div>
 
                                 <div className="membershipPlans">
-                                    <h3><div className="membership-Title"><span>Membership</span> Plans</div></h3>
-                                    <div className="membership-Txt">Upgrade your plan as per your customized requirements. With a paid membership, you can seamlessly connect with your prospects and get more responses. Here are some key benefits:</div>
+                                    <h2>
+                                        <div className="moreThan">UPGRADE YOUR ACCOUNT</div>
+                                        <div className="featuresSection__Title"><span>Membership</span> Plans</div>
+                                    </h2>
+                            
                                     <div className="membership">
                                         <Membership/>
                                     </div>
@@ -613,7 +644,7 @@ class index extends Component{
                             <Footer/> 
                         </footer>  
                         <div className="copyRight"> All rights reserved © 2016 Jeevansathi Internet Services. </div>
-                    </div>
+                        </div>
                 </div>
             
             </div>
