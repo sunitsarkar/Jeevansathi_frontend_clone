@@ -3,6 +3,7 @@ import {Switch, Route, Redirect } from "react-router-dom";
 import {Link} from "react-router-dom";
 import  "./style.css";
 import Index from "./index";
+import User_registration from "./User_registration";
 
 class MainComponent extends Component{
     state={
@@ -14,6 +15,7 @@ class MainComponent extends Component{
 
             <div>
                 <Switch>
+                    <Route path="/user_registration" component={User_registration}/>
 
 
                     <Route path="/home" component={Index}/>

@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import {Link} from "react-router-dom";
 import BrowseContent from "./browseContent";
 
+
 class Header extends Component{
     state={showList:1,scrolled:null,}
     componentDidMount() {
@@ -72,7 +73,7 @@ class Header extends Component{
                             <Link to="#">LOGIN</Link>
                         </div>
                         <div className="registerPart" >
-                            <Link to="#">REGISTER FREE</Link>
+                            <Link to="/user_registration">REGISTER FREE</Link>
                         </div>
 
                     </div>
