@@ -356,23 +356,17 @@ a:hover{
 .infoImg{
     height: 53px;
     width: 60px;
+    background-image: url("https://static.jeevansathi.com/images/jspc/myjsImg/Top_new_Benefits.png");
+    background-repeat: no-repeat;
+}
+.ImgPosition{
     background-position: -23px -10px;
-    background-image: url("https://static.jeevansathi.com/images/jspc/myjsImg/Top_new_Benefits.png");
-    background-repeat: no-repeat;
 }
-.infoImg2{
-    height: 53px;
-    width: 60px;
+.ImgPosition2{
     background-position: -206px -10px;
-    background-image: url("https://static.jeevansathi.com/images/jspc/myjsImg/Top_new_Benefits.png");
-    background-repeat: no-repeat;
 }
-.infoImg3{
-    height: 53px;
-    width: 60px;
-    background-position: -121px -10px;
-    background-image: url("https://static.jeevansathi.com/images/jspc/myjsImg/Top_new_Benefits.png");
-    background-repeat: no-repeat;
+.ImgPosition3{
+    background-position: -121px -10px;;
 }
 .underline{
     height: 2px;
@@ -416,7 +410,6 @@ a:hover{
     margin: 0 -4rem;
     padding-left: 4rem;
     background: #f8f9f9;
-    background: linear-gradient(to top, #f8f9f900, #f8f9f9 2rem);
 }
 .FeaturesSection__SubTitle{
     text-transform: uppercase;
@@ -741,7 +734,6 @@ a:hover{
 .successStory{
     padding: 30px 50px 45px 74px;
     background-color: #f8f9f9;
-
 }
 .storyMatched{
     width: 866px;
@@ -1250,7 +1242,8 @@ li:hover .subhobver{
         background-size: 160% 120%;
     }
     .header-container{
-        width: 100%;
+        position: absolute;
+        width: 1124px;
         display: flex;
         color: #fff;
         height: 100px;
@@ -1304,16 +1297,132 @@ li:hover .subhobver{
     }
     .main-benifit{
         border-radius: 0;
-        padding: 8px 12px 48px 12px;
+        padding: 8px 14px 48px 14px;
+    }
+    .moreThan{
+        font-weight: 500;
+        font-size: 2rem;
+    }
+    .bringingPeople{
+        font-size: 3rem;
     }
     .underline{
-        height: 40px;
+        height: 70px;
         width: 1px;
-        margin: 8px 4px 5px 5px;
-        background-color: #a7a3a4;
+        margin: 24px 8px 5px 5px;
+        background-color: #464344;
     
     }
-   
+    .infoImg{
+        height: 55px;
+        width: 65px;  
+        margin-top: 24px;
+        margin-left: 10px;
+    }
+    .infoText{
+        display: block;
+        font-size: 2.4rem;
+    }
+    .textmore{
+        line-height: 30px;
+        font-size: 1.8rem;
+    }
+    .featuresSection{
+        padding: 0 2rem;
+        margin-bottom: 45px;
+        background-color: #fff;
+    }
+    .featuresSection__Header{
+        background-color: #fff;
+    }
+    .featuresSection_body{
+        position: relative;
+        width: 100%;
+        display: block;
+        height: auto;
+    }
+
+    .featuresSection__Title{
+        font-size: 3rem;
+    }
+    .featuresSection-dflex{
+        overflow: auto;
+        white-space: nowrap;
+        /* display: inline-flex; */
+    }
+    .featuresSection-Card{
+        display: inline-block;
+        width: 520px;
+        text-align: center;
+        padding: 30px;
+        white-space:wrap;
+        color: #000;
+        margin-right: 24px;
+        border-radius: 10px;
+        box-shadow: 0 2px 6px -1px rgba(38,48,140,0.20);
+        background-color: #f7f7f7;
+    }
+    .featuresSection--Images{
+        max-width: 100%;
+        margin-top: 80px;
+
+    }
+    .underline3{
+        margin-top: 30px;
+        margin-bottom: 15px;
+        width: 4rem;
+        height: 4px;
+        background-color: #d9475c;
+    }
+    .featuresSection-Card h3{
+        text-align: start;
+        font-weight: 500;
+        font-size: 2rem;
+    }
+    .featuresSection-Card p{
+        text-align: start;
+        line-height: 30px;
+        font-weight: 400;
+        font-size: 1.5rem;
+    }
+   .main-benifit{
+        padding: 30px;
+        background-color: rgb(243, 243, 243);
+   }
+   .img-postion1{
+        width: 1200px;
+        height: 500px;
+        /* object-fit: none; */
+        /* object-position: 50px 30px; */
+        /* background-size:150%; */
+        /* object-position: 100px; */
+        /* background-position: -14px -10px; */
+   }
+   .findBottom{
+        font-weight: 500;
+        width: 100%;
+   }
+   .membershipPlans{
+        background-color: #ffff;
+   }
+   .membership{
+        overflow: auto;
+        white-space: nowrap;
+   }
+   .membershipPlans{
+        text-align: start;
+        padding: 20px 24px 16px 24px;
+   }
+   .free-Membership{
+        height: 620px;
+        width: 600px;
+        box-shadow: 0 2px 6px -1px rgba(38,48,140,0.20);
+    }
+    .membership-Title{
+        font-size: 50px; 
+    }
+
+
     
 
    
