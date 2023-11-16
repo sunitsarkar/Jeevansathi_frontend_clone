@@ -1,10 +1,12 @@
 import React, { useState } from "react";
-import cover from '../asset/cover-image.jpg'
-import logo from '../asset/logo1.png'
-import payment from '../asset/payment.png'
+import cover from './.././../asset/cover-image.jpg'
+import logo from './.././../asset/logo1.png'
+import payment from './.././../asset/payment.png'
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { AnimatePresence,color, motion } from "framer-motion";
+import './reg.css'
 
 export default function User_registration() {
 
@@ -16,10 +18,48 @@ export default function User_registration() {
         slidesToScroll: 1
     };
 
+    const [email, setEmail] = useState('')
+    const [mobile, setMobile] = useState('')
+    const [password, setPassword] = useState('')
+    const [accout, setAccout] = useState('')
+    const [errors, setErrors] = useState({});
 
     const [show, setShow] = useState(false)
+    const [e, setE] = useState(false)
+    const [m, setM] = useState(false)
+    const [p, setP] = useState(false)
+    const [c, setC] = useState(false)
 
-    return <div className="main-div">
+    if (email.trim() === '') {
+        errors.email = '';
+    } else if (!/\S+@\S+\.\S+/.test(email)) {
+        errors.email = 'Invalid email address';
+    }
+    else {
+        errors.email = ''
+    }
+
+    if (mobile.trim() === '') {
+        errors.phone = '';
+    } else if (!/^[789]\d{9}$/.test(mobile)) {
+        errors.phone = 'Invalid phone number';
+    }
+    else {
+        errors.phone = ''
+    }
+    
+
+
+
+    //
+    console.log(errors.email)
+    console.log(errors.email)
+    console.log(mobile)
+
+
+    //
+
+    return <div className="main-div-registration" style={{ marginRight: 0, paddingRight: 0 }}>
         <div className="cover" >
             <img src={cover} className="cover-image" />
 
@@ -28,58 +68,104 @@ export default function User_registration() {
                     <img src={logo} style={{ background: 'white', marginTop: '20px' }} />
                 </div>
                 <div className="contact-detail" >
-                    <p className="fs-5 text-light">LIVE CHAT</p>
-                    <p className="fs-5 text-light">+91 1234567890(Toll Free)</p>
+                    <p className="text-light">LIVE CHAT</p>
+                    <p className="text-light">+91 1234567890(Toll Free)</p>
                 </div>
             </div>
 
-            <div className="logo-text" style={{ marginTop: '160px' }}>
-                <p className="fs-4 text-light">Account details</p>
-                <hr style={{ color: 'white', width: '50em', marginTop: '10px' }} />
-                <b><hr style={{ color: 'white', width: '15em', marginTop: '-20px', }} /></b>
+            <div className="logo-text">
+                <p >Account details</p>
             </div>
         </div>
         <br />
-        <h3 style={{ paddingLeft: '17em' }}>Welcome! Lets start your partner search with this sign up.</h3>
+        <h3 style={{ textAlign: 'center' }}>Welcome! Lets start your partner search with this sign up.</h3>
         <br />
         <div className="main ">
-            <div className="child" id="name">
-                <p className="required">Your Email</p><br />
-                <p className="required">Mobile No.</p>
-            </div>
-            <div className="child">
+            <div className="child" id="first-child">
                 <p><small style={{ float: "right", color: 'red' }}>mandatory<small style={{ color: 'red' }}>*</small></small></p>
                 <br />
-                <div className="float" style={{ width: '100%' }}>
-                    <input type="email" required className="credential " width={'100%'} />
+                <div>
+                    <div style={{ width: '100%' }} onClick={() => { setE(true) }}>
+                    {errors.email && <span style={{color:'red'}}>{errors.email}</span>}
+                        {
+                            e ? <motion.p
+                                initial={{ x: 0 }}
+                                animate={{ x: -60 }}
+                                transition={{ type: "spring", duration: 1.1 }}
+                                id='title'
+                            >
+                                <p className="required" style={{ color: "black", display: 'inline' }}>Email</p>
+                            </motion.p> : null
+                        }
+                        <input type="email" className="Credential" placeholder={!e ? 'Email*' : null} required onChange={(e) => { setEmail(e.target.value) }}/>
+                        <br />
+                    </div>
+                    <br />
+                    <div style={{ width: '100%' }}  onClick={(e) => { setShow(true); setM(true) }}>
+                    {errors.phone && <span style={{color:'red'}}>{errors.phone}</span>}
+                        {
+                            m ? <motion.p
+                                initial={{ x: 0 }}
+                                animate={{ x: -60 }}
+                                transition={{ type: "spring", duration: 1.3 }}
+                                id='title'
+                            >
+                                <p className="required" style={{ color: "black", display: 'inline' }}>Phone</p>
+                            </motion.p> : null
+                        }
+
+                        <input type="text" className="Credential" placeholder={!m ? 'Mobile*' : null} onChange={(e)=>{setMobile(e.target.value)}} />
+                    </div>
+                    {show ? <div id="message">
+                        <p>Jeevansathi members who like your profile will  contact you on this phone number.</p>
+                        <p ><b>verification</b> of this number is compulsory after your registration</p>
+                    </div>
+                        : null}
                 </div>
-                <div className="float">
-                    {/* <label className="required">Mobile</label> */}
-                    <input type="text" required onClick={() => { setShow(true) }} className="credential my-3" />
-                </div>
-                {show ? <div id="message">
-                    <p>Jeevansathi members who like your profile will  contact you on this phone number.</p>
-                    <p ><b>verification</b> of this number is compulsory after your registration</p>
-                </div>
-                    : null}
-                    <br/>
-                <p><small style={{ float: "left", margin: "-10px 15px" }}>Contact privacy settings</small></p><br /><br />
+                <br /><br />
+                <br />
+                <p><small style={{ float: "left", margin: "-10px 15px" }}>Contact privacy settings</small></p><br />
                 <div>
                     <button type="button" className="btn btn-outline-secondary rounded-pill " style={{ margin: "0px 5px" }}>Show to all</button>
                     <button type="button" className="btn btn-outline-secondary rounded-pill" style={{ margin: "0px 5px" }}>Hide from all</button>
                     <button type="button" className="btn btn-outline-secondary rounded-pill" style={{ margin: "0px 5px" }}>Show to members i express interest in</button>
                 </div>
-                <input placeholder="create new password" required className="my-3" />
-                <p><small style={{ float: "left", margin: "-10px 3px" }}>note: Use 8 or more characters with letters(A-Z) & numbers(0-9)</small></p>
                 <br />
-                <input placeholder="Create profile for" />
+                <div onClick={() => setP(true)}>
+                    {
+                        p ? <motion.p
+                            initial={{ x: 0 }}
+                            animate={{ x: -120 }}
+                            transition={{ type: "spring", duration: 1.3 }}
+                            id='title'
+                        >
+                            <p className="required" style={{ color: "black", display: 'inline' }}>Create Password</p>
+                        </motion.p> : null
+                    }
+                    <input placeholder={!p ? "create new password*" : null} required className="Credential" onClick={(e)=>{setPassword(e.target.value)}} />
+                </div>
+                <p><small style={{ float: "left" }}>note: Use 8 or more characters with letters(A-Z) & numbers(0-9)</small></p>
+                <br />
+                <div onClick={() => setC(true)}>
+                    {
+                        c ? <motion.p
+                            initial={{ x: 0 }}
+                            animate={{ x: -135 }}
+                            transition={{ type: "spring", duration: 1.3 }}
+                            id='title'
+                        >
+                            <p className="required" style={{ color: "black", display: 'inline' }}>Create Account For</p>
+                        </motion.p> : null
+                    }
+                    <input placeholder={!c ? "Create Account For*" : null} className="Credential" onClick={(e)=>{setAccout(e.target.value)}} />
+                </div>
                 <br />
                 <button type="button" className="btn btn-danger rounded" id="btn">Register Me</button>
-                <p style={{ width: '55%' }}>By clicking on <span className="fs-5 text-dark">'Register Me',</span> you confirm that you accept the <a className="fs-5 text-danger" href="#">'Terms of use'</a> and <a className="fs-5 text-danger" href="#">'Privacy Policy'</a> </p>
+                <p className="register-text" style={{ width: '55%' }}>By clicking on <span className="fs-6 text-dark register-text">'Register Me',</span> you confirm that you accept the <a className="fs-6 text-danger" href="#">'Terms of use'</a> and <a className="fs-6 text-danger" href="#">'Privacy Policy'</a> </p>
 
             </div>
-            <div className="child">
-                <h3><u>WHY REGISTER</u></h3>
+            <div className="child" >
+                <h5><u>WHY REGISTER</u></h5>
                 <div>
                     <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-people" viewBox="0 0 16 16">
                         <path d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1h8Zm-7.978-1A.261.261 0 0 1 7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002a.274.274 0 0 1-.014.002H7.022ZM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM6.936 9.28a5.88 5.88 0 0 0-1.23-.247A7.35 7.35 0 0 0 5 9c-4 0-5 3-5 4 0 .667.333 1 1 1h4.216A2.238 2.238 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816ZM4.92 10A5.493 5.493 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275ZM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0Zm3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z" />
@@ -135,7 +221,8 @@ export default function User_registration() {
                 </div>
 
             </div>
-            <div className="partner-container" style={{ width: '100%', height: '150px' }}>
+
+            <div className="partner-container" style={{ height: '150px' }}>
                 <div className="bg-white">
                     <div className="footer-List">
                         <div className="partnerList">
@@ -156,9 +243,8 @@ export default function User_registration() {
                         </div>
                     </div>
                 </div>
-
-
             </div>
+
             <div style={{ width: '100%', height: '50px', backgroundColor: '#e1e4e7' }}>
                 <p style={{ textAlign: 'center', paddingTop: '10px' }}>All rights reserved © 2016 Jeevansathi Internet Services.</p>
             </div>

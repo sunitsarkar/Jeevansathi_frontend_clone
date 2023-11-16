@@ -3,7 +3,7 @@ import {Switch, Route, Redirect } from "react-router-dom";
 import {Link} from "react-router-dom";
 import  "./style.css";
 import Index from "./index";
-import User_registration from "./User_registration";
+import User_registration from "./../components/registration/user_registration";
 
 class MainComponent extends Component{
     state={
