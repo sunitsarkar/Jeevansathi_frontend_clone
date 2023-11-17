@@ -7,6 +7,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { AnimatePresence,color, motion } from "framer-motion";
 import './reg.css'
+import axios from "axios";
 
 export default function User_registration() {
 
@@ -49,7 +50,13 @@ export default function User_registration() {
     }
     
 
-
+    const handelSubmit=()=>{
+        axios.post('',{
+            email:email,
+            mobile:mobile,
+            password:password
+        })
+    }
 
     //
     console.log(errors.email)
@@ -160,7 +167,7 @@ export default function User_registration() {
                     <input placeholder={!c ? "Create Account For*" : null} className="Credential" onClick={(e)=>{setAccout(e.target.value)}} />
                 </div>
                 <br />
-                <button type="button" className="btn btn-danger rounded" id="btn">Register Me</button>
+                <button type="button" className="btn btn-danger rounded" id="btn" onClick={handelSubmit}>Register Me</button>
                 <p className="register-text" style={{ width: '55%' }}>By clicking on <span className="fs-6 text-dark register-text">'Register Me',</span> you confirm that you accept the <a className="fs-6 text-danger" href="#">'Terms of use'</a> and <a className="fs-6 text-danger" href="#">'Privacy Policy'</a> </p>
 
             </div>
