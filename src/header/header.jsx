@@ -1,10 +1,14 @@
 import React, {Component} from "react";
 import {Link} from "react-router-dom";
 import BrowseContent from "./browseContent";
-
+import Popup from '../components/login/loginPopup';
+import LoginForm from '../components/login/user_login';
 
 class Header extends Component{
-    state={showList:1,scrolled:null,}
+    state={
+        showList:1,scrolled:null,isOpen:false
+    }
+
     componentDidMount() {
         window.addEventListener('scroll', this.listenToScroll)
       }
@@ -22,11 +26,15 @@ class Header extends Component{
         s1.showList=no;
         this.setState(s1);
     }
+    togglePopup=()=>{
+        let s1={...this.state};
+        !s1.isOpen?s1.isOpen=true:s1.isOpen=false;
+        this.setState(s1);
+    }
     render(){
-        const{ showList,scrolled} = this.state;
+        const{ showList,scrolled,isOpen} = this.state;
         
         return(
-        
             <div className="header--modifier text-white">
                 <div>
                     <Link className="jeevansathi-logo" to="#">
@@ -62,21 +70,27 @@ class Header extends Component{
                                 </div>
                             </li>
                             <li className="search-ml">
-                                            <Link to="#">HELP</Link>
+                                <Link to="#">HELP</Link>
                             </li>
                         </ul>
                     </div>
                 </div>
                 <div className="menu-navbar--second">
                     <div className={"signupMenu " + (scrolled>400?"srolled":"")}>
-                        <Link to="#">
-                            <div className="loginPart">LOGIN</div>
-                        </Link>
+                    
+                        <div className="loginPart" onClick={this.togglePopup}>LOGIN</div>                       
                         <Link to="/user_registration">
-                            <div className="registerPart" > REGISTER FREE </div>
+                            <div className="registerPart">REGISTER FREE</div>
                         </Link>
-
                     </div>
+                </div>
+                <div>
+                    {isOpen && <Popup
+                    content={<>
+                      <LoginForm/>
+                      </>}
+                      handleClose={this.togglePopup}
+                    />}
                 </div>
             </div>
               
