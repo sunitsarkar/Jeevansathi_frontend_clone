@@ -608,6 +608,10 @@ a:hover{
     display: flex;
     padding-bottom: 16px;
     text-align: start;
+    padding-top: 4px;
+}
+.pddingTop{
+    margin-top: 12px;
 }
 
 .materialIcons{
@@ -693,7 +697,6 @@ a:hover{
     background-position: bottom left;
     border-radius: 12px;
     background-image: url("https://www.jeevansathi.com/images/jspc/commonimg/JS_Exclusive_Image_final_min.png");
-    
 }
 .exclusiveBtn{
     padding: 4px 16px;
@@ -754,7 +757,7 @@ a:hover{
     box-shadow: 0 12px 18px 0 rgba(38,48,140,0.20);
     background-color: #ffff!important;
     color: #000000;
-    z-index: 9;
+    z-index: 5;
     background-image: url("https://static.jeevansathi.com/images/jspc/commonimg/Material_Icons_Sprites_final.svg")!important;
     background-repeat: no-repeat!important;
     background-position: -24px -80px!important;
@@ -1198,10 +1201,140 @@ li:hover .subhobver{
     height: 80px;
 }
 
+/* login  */
+
+.popup-box {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.95);
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 10!important;
+  }
+  
+  .box {
+    position: relative;
+    width: 38.4%;
+    margin: 0 auto;
+    height: auto;
+    max-height: 150vh;
+    margin-top: calc(100vh - 80vh - 70px);
+    background: #e7e7e6;
+    overflow: none;
+  }
+  
+  .close-icon{
+    background-image: url(https://static.jeevansathi.com/images/jspc/commonimg/sprite-two.png?cacheBurst=true);
+    background-repeat: no-repeat;
+    background-position: -73px -178px;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    position: fixed;
+    right: calc(6% - 62px);
+    top: calc(100vh - 84vh - 86px);
+    line-height: 20px;
+    text-align: center;
+    /* font-size: 30px; */
+  }
+  .loginFrm{
+    padding: 28px 48px 35px 45px;
+    color: #2c2c2c;
+    font-size: 15px;
+  }
+  .loginTxt{
+    font-size: 17px;
+    color: #2c2c2c;
+    /* font-family: "Roboto","sans-serif"; */
+    font-weight: 300;
+  }
+  .loginInput{
+    border: 1px solid #c0c0c0;
+    padding: 22px 20px;
+    width: 100%;
+  }
+  .loginInput input{
+    font-size: 15px;
+    background: none;
+    color: #888;
+    border: none;
+    width: 70%;
+    padding: 5px;
+    height: 20px;
+    outline: none;
+    /* float: left; */
+  }
+  .loginBtns{
+    font-size: 18px;
+    background-color: #34495e;
+    border: none;
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    line-height: 63px;
+    margin-top: 12px;
+  }
+  .loginBtns:hover{
+    background-color: #435870;
+  }
+  .loginFrm2{
+    border-top: 1px solid #c0c0c0;
+    padding: 28px 48px 35px 45px;
+  }
+  .loginFrm2 p{
+    text-align: center;
+    font-size: 17px;
+    color: #2c2c2c;
+  }
+  .registerBtn{
+    font-size: 18px;
+    color: #fff;
+    line-height: 63px;
+    background-color: #d9475c;
+    border: none;
+    width: 100%;
+  }
+  .registerBtn:hover{
+    background-color: #e15065;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* mobileView  */
  
 .homePage-Mobile{
     display: none!important;
+}
+
+.tickIcon{
+    display: none;
+}
+.tickIcon2{
+    display: none;
+}
+.tickIcons{
+    display: none;
+}
+.loginView{
+    /* display: none; */
+}
+.loginViewMob{
+    display: none;
 }
 
 
@@ -1228,467 +1361,3 @@ li:hover .subhobver{
     }
 }
 
-@media only screen and (max-width: 500px) {
-    .homePage{
-        display: none;
-    }
-    .homePage-Mobile{
-        display: block!important;
-    }
-    
-    .bgImage{
-        max-width: 1124px!important;
-        height: 1040px;
-        background: url("https://static.jeevansathi.com/js_static/_next/static/images/cover_free_chat-04882e93512aed855750c3484b6b70f6.png");
-        background-repeat: no-repeat;
-        background-size: cover;
-        /* background-size: 160% 120%; */
-    }
-    .header-container{
-        position: absolute;
-        width: 1124px;
-        top: 0;
-        display: flex;
-        color: #fff;
-        height: 160px;
-        padding: 44px 55px;
-        justify-content: space-between;
-        background: rgba(0,0,0,0.55);
-        z-index: 99;
-    }
-    .loginBtn{
-        font-size: 33px;
-        margin-top: 6px;
-    }
-    .jeevansathi-logo--Mobile{
-        width: 220px;
-        height: 75px;
-        /* margin-top: 4px; */
-        /* vertical-align: middle; */
-        /* display: table-cell; */
-    }
-    .looking-text{
-        position: absolute;
-        width: 1124px;
-        margin: 0 auto;
-        font-family: 'Cabin',sans-serif;
-        text-align: center;
-        margin-top: 650px;
-        color: #fff;
-    }
-    .nowChatForFree{
-        font-size: 70px;
-    }
-    .isLooking{
-        margin-top: 20px;
-        font-size: 40px;
-    }
-    .looking-text button{
-        width: 300px;
-        background-color: #D9475C;
-        color: #fff;
-        margin: 0 auto;
-        border: none;
-        font-size: 40px;
-        padding: 30px 20px;
-        border-radius: 4px;
-        margin-top: 60px;
-        margin-bottom: 40px;
-    }
-    .homeContainer{
-        width: 1124px;
-        box-shadow: none;
-        margin-left: 0;
-    }
-    .main-benifit{
-        border-radius: 0;
-        background-color: #fff;
-        padding:50px 50px 50px 60px;
-    }
-    .moreThan{
-        text-transform:uppercase;
-        font-weight: 500;
-        font-size: 2.3rem;
-        text-align: start;
-    }
-    .bringingPeople{
-        font-size: 3.5rem;
-    }
-    .imgInfo {
-        width: 200px;
-        margin-top: 18px;
-    }
-    .underline{
-        height: 136px;
-        width: 1px;
-        margin: 24px 30px 5px 15px;
-        background-color: #464344;
-    
-    }
-    .infoText{
-        display: block;
-        font-size: 2.6rem;
-    }
-    .textmore{
-        line-height: 45px;
-        font-size: 2.1rem;
-    }
-    .featuresSection{
-        padding: 0 60px;
-        margin-bottom: 80px;
-        background-color: #fff;
-    }
-    .featuresSection__Header{
-        background-color: #fff;
-    }
-    .featuresSection_body{
-        position: relative;
-        width: 100%;
-        display: block;
-        height: auto;
-    }
-
-    .featuresSection__Title{
-        text-align: start;
-        font-size: 3.5rem;  
-    }
-    .featuresSection-dflex{
-        overflow: auto;
-        white-space: nowrap;
-        margin-top: 10px;
-        /* display: inline-flex; */
-    }
-    .featuresSection-Card{
-        display: inline-block;
-        width: 760px;
-        text-align: center;
-        padding: 40px 50px 60px 50px;
-        white-space:wrap;
-        color: #000;
-        margin-right: 40px;
-        border-radius: 20px;
-        box-shadow: rgba(38, 48, 140, 0.2) 0px 2px 6px -1px;
-        background-color: #f7f7f7;
-    }
-    .featuresSectionImages{
-        width: 640px;
-        height: 750px;
-        /* margin-top: 80px; */
-
-    }
-    .underline3{
-        margin-top: 30px;
-        margin-bottom: 15px;
-        width: 4rem;
-        height: 4px;
-        background-color: #d9475c;
-    }
-    .featuresSection-Card h3{
-        text-align: start;
-        font-weight: 500;
-        font-size: 2.3rem;
-    }
-    .featuresSection-Card p{
-        text-align: start;
-        margin-top: 8px;
-        line-height: 46px;
-        font-weight: 400;
-        font-size: 2rem;
-    }
-    .main-benifit2{
-        border-radius: 0;
-        background-color: rgb(248, 249, 249);
-        padding:50px 60px;
-    }
- 
-   .featuresSectionContain{
-        /* margin-top: 20px; */
-        padding:50px 208px;
-        /* background-color: rgb(243, 243, 243); */
-    }
-   .featuresSections--lists{
-        overflow: auto;
-        overflow-x: visible;
-        white-space: nowrap;
-   }
-   .featuresSectionImg{
-        display: inline-block;
-        z-index: 5;
-        padding: 40px 0;
-        margin-right: 15px;
-   }
-   .carouselImg{
-    width: 100%;
-    /* margin: 0 40%; */
-    height: 300px!important;
-    
-    }
-   .featuresSectionImg p{
-        margin-top: 30px;
-        font-weight: 500;
-        font-size: 2.4rem;
-   }
-   .featuresSectionImg span{
-        color: #D9475C;
-   }
-   .featuresBtn button{
-        position: relative;
-        border: none;
-        /* width: 600px; */
-        margin-top: 20px;
-        text-align: center;
-        color: #fff;
-        font-size: 40px;
-        font-weight: 500;
-        padding: 30px 200px;
-        border-radius: 8px;
-        cursor :pointer;
-        background-color: #D9475C;
-   }
-
-   
-   .carousel-item{
-        width: 100%!important;
-        height: 500px!important;
-        margin-right: 40px;
-   }
-
-   .findBottom{
-        font-weight: 500;
-        width: 100%;
-   }
-   .membershipPlans{
-        margin-bottom: 0px;
-        background-color: #ffff;
-        text-align: start;
-        padding: 70px 55px 16px 60px;
-   }
-   .membership{
-        display: block;
-        justify-content: start;
-        overflow: auto;
-        white-space: nowrap;
-        padding-left: 10px;
-   }
-
-   .free-Membership{
-        display: inline-block;
-        height: 950px;
-        width: 800px;
-        padding:60px 50px;
-        margin-right: 40px;
-        box-shadow: rgba(38, 48, 140, 0.2) 0px 2px 6px -1px;
-    }
-    .microLine{
-        width: 95px;
-    }
-    .microLine2{
-        width: 55px;
-    }
-    .tickIcon{
-        color: rgb(217, 71, 92);
-        height: 70px;
-        width: 75px;
-    }
-    .tickIcon2{
-        height: 70px;
-        width: 75px;
-    }
-    .membership-Title{
-        font-size: 50px; 
-        margin-bottom: 15px;
-    }
-    
-    .membership-text{
-        font-size: 38px;
-        font-weight: 500;
-        font-family: "Cabin",sans-serif;
-        padding-top: 4px;
-    }
-    .freeRegister{
-        font-weight: 400;
-        font-size: 36px;
-        font-weight: 500;
-        margin-top: 15px;
-        padding: 50px;
-    }
-    .paid-Membership{
-        padding: 50px;
-        display: inline-block;
-        width: 800px;
-    }
-    .paid-Membership--Title{
-        font-size: 50px; 
-        margin-bottom: 15px;
-    }
-    .tickIcons{
-        height: 70px;
-        width: 75px;
-        color: #fff;
-    }
-    .paidRegister{
-        width: 100%;
-        font-size: 36px;
-        font-weight: 500;
-        margin-top: 15px;
-        padding: 50px;
-    }
-    .bgBlue{
-        margin-top: -540px;
-        height: 600px;
-    }
-    .exclusivePad{
-        padding: 32px 55px 45px 55px;
-    }
-    .exclusiveImg{
-        width: 100%;
-        border-radius: 20px;
-        padding-top: 12px;
-        background-color: #f7f7f7;
-        background-repeat: no-repeat;
-    }
-    .exclusiveList ul{
-        margin-top: 40px;
-        list-style: none;
-        color: #D9475C;
-
-    }
-    .exclusiveList ul li{
-        font-size: 44px;
-        font-weight: 500;
-        padding: 20px 0;
-        color: #D9475C;
-    }
-    .exclusiveList span{
-        color: #000;
-        padding: 0 30px;
-    }
- 
-  
-    .successStory{
-        padding: 32px 5px 45px 62px;
-        background-color: #ffff;
-    }
-    .storySlick{
-        overflow: auto;
-        white-space: nowrap;
-        margin-top: 40px;
-        margin-left: 10px;
-    }
-    .storySlick .slick-current{
-        width: 990px!important;
-        height: 620px;
-        display: inline-block;      
-    }
-    .pos_abs{
-        position: relative;
-        top: 190px;
-    }
-    .story-Name{
-        font-size: 90px;
-    }
-    .lineClass{
-        margin-top: 15px;
-    }
-    .marriageDate{
-        font-size: 28px;
-        letter-spacing: 1.8px;
-    }
-    .connectApp-Title{
-        padding: 40px 10px 15px 60px;
-    }
-    .connectApp{
-        display: block;
-        width: 100%;
-        height: 1100px;
-        padding-top: 80px;
-    }
-   
-    .connectApp img{
-        text-align: center;
-        /* margin: 0 40px; */
-        width: 1120px;
-        height: 1020px;
-    }
-    .connectAppText{
-        font-size: 44px;
-        color: rgb(138, 157, 176);
-        margin: 40px 50px;
-    }
-    .connectAppIcon{
-        width: 300px;
-        margin: 0 0 20px 50px;
-    }
-    .matrimonialContainer{
-        padding: 40px 60px 45px 60px;
-    }
-    .matrimonial-Browse{
-        display: block;
-    }
- 
-    .matrimonial-Browse li{
-        float:none;
-        display: block;
-        font-size: 40px;
-        color: #4c6176;
-        font-weight: 500;
-        padding-top: 40px;
-        
-    } 
-    .seoContain{
-        color: #fff;
-        padding: 80px 60px 40px 60px;
-        background-color: #34495e;
-
-    }
-    .seoLogo{
-        width: 100px;
-        height: 100px;
-    }
-    .seoTexts{
-        font-family: "Cabin",sans-serif;
-        font-size: 40px;
-        margin-left:45px;
-    }
-    .seoTexts span{
-        font-size: 25px;
-        color: #959499;
-        display: block;
-    }
-    
-    .seoText-Desc{
-        margin-top: 15px;
-        font-family: "Cabin",sans-serif;
-        line-height: 55px;
-        font-size: 38px;
-        color: #fff;
-    }
-    .AppFollow{
-        min-width: 1000px;
-        background-color: #34495e;
-    }
-    .AppFollow-List{
-        justify-content: start;
-    }
-    .footerWid{
-        margin-right: 100px;
-    }
-    .footerWid div{
-        font-size: 35px;
-    }
-    .footerIcon2{
-        background-position: -90px -1px;
-        width: 20px;
-        height: 20px;        
-        margin: 10px 10px 0px 0px;
-        background: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2aWV3Qm94PSIwIDAgNDE2IDY0IgogICAgIHdpZHRoPSIyMDBweCIgaGVpZ2h0PSIxOHB4IgogICAgIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxnIGZpbGw9IiNjMWM3Y2QiPgo8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSg0IDQpIj4KPHBhdGggZD0ibTIuNTIyNCAyMC41ODZjLTQuNzM0MyA4LjIxNTUtMS43MjQ2IDIwLjY4MyAzLjUxMDcgMjguMjQyIDIuNjEzMyAzLjc3OTQgNS4yNTkgNy4xNzE5IDguODgyOSA3LjE3MTkgMC4wNjgzMDIgMCAwLjEzNjc5LTAuMDAxMjg1MiAwLjIwNjkyLTAuMDA0MDM5MyAxLjcwMjYtMC4wNjc5MzQgMi45MzI5LTAuNTkyMTMgNC4xMjI1LTEuMDk4NyAxLjMzNTYtMC41NjkxOCAyLjcxNjgtMS4xNTc2IDQuODgzNC0xLjE1NzYgMi4wNjEyIDAgMy4zNzY1IDAuNTY5MzYgNC42NDg2IDEuMTE5OCAxLjI1MzcgMC41NDIzNyAyLjU0NSAxLjEwMzUgNC40NTMgMS4wNjc3IDQuMDgxOS0wLjA3NjAxMyA2LjU4ODItMy43MzY4IDguNzk5My02Ljk2NjIgMi4zMDc0LTMuMzcxOSAzLjQ2NDgtNi42NDU4IDMuODU1NC03Ljg5NjlsMC4wMTU3OS0wLjA0OTc1N2MwLjA3NDM2MS0wLjIyMjM1LTAuMDMwNjYyLTAuNDY1MDgtMC4yNDM4My0wLjU2Mjk0LTAuMDA1ODc1NC0wLjAwMjc1NDEtMC4wMjc1NDEtMC4wMTE3NTEtMC4wMzM2LTAuMDE0MzIxLTAuNzE4ODItMC4yOTM5NS03LjAyNDItMy4wOTEyLTcuMDkwNS0xMC43MTUtMC4wNjE1MDgtNi4xOTQyIDQuNzMwMy05LjQ3NDMgNS42OTEzLTEwLjA2OWwwLjA0NDgtMC4wMjc5MDhjMC4xMDQxLTAuMDY3MDE2IDAuMTc2NjMtMC4xNzMzMiAwLjIwMTIzLTAuMjk0ODcgMC4wMjQ2MDMtMC4xMjEzNi0wLjAwMTEwMTYtMC4yNDc2OS0wLjA3MDg3Mi0wLjM0OTc3LTMuMzA3NS00Ljg0MDItOC4zNzY5LTUuNTY5Ny0xMC40MTgtNS42NTc1LTAuMjk2MTYtMC4wMjk1NjEtMC42MDE4Ni0wLjA0NDQzMy0wLjkwODg1LTAuMDQ0NDMzLTIuMzk3MiAwLTQuNjkzNSAwLjkwNTM2LTYuNTM4NCAxLjYzMjgtMS4yNzM1IDAuNTAyMTYtMi4zNzM1IDAuOTM1ODQtMy4xMzIxIDAuOTM1ODQtMC44NTI0OSAwLTEuOTU4Ny0wLjQzOS0zLjIzOTctMC45NDcyMy0xLjcxMy0wLjY3OTktMy42NTQ3LTEuNDUwMy01LjcxMDItMS40NTAzLTAuMDQ5MDIzIDAtMC4wOTczMTIgNS41MDllLTQgLTAuMTQ0ODcgMC4wMDE0Njg5LTQuNzc5MyAwLjA3MDMyMS05LjI5NTMgMi44MDQ2LTExLjc4NSA3LjEzNDh6Ii8+CjxwYXRoIGQ9Im0zMy45ODYgMy42NzIxZS00Yy0yLjg5NDIgMC4xMTc4OC02LjM2NiAxLjg5OTQtOC40NDExIDQuMzMtMS43NjM1IDIuMDQzLTMuNDg2MyA1LjQ0OTMtMy4wMzI0IDguODgyNyAwLjAyODQ1OSAwLjIxNDgyIDAuMjAzMjUgMC4zODA2MiAwLjQxOTM2IDAuMzk3MzIgMC4xOTUzNiAwLjAxNTIzOSAwLjM5NDc1IDAuMDIyOTUxIDAuNTkzNDIgMC4wMjMxMzQgMi44Mjk5IDAgNS44ODI4LTEuNTY1NiA3Ljk2NzYtNC4wODY1IDIuMTk0My0yLjY2MTkgMy4zMDM4LTYuMDc4MSAyLjk2ODItOS4xMzgxLTAuMDI2NDM5LTAuMjM5NzktMC4yMzc0LTAuNDE3ODktMC40NzQ5OS0wLjQwODUyeiIvPgo8L2c+CjxwYXRoIHRyYW5zZm9ybT0idHJhbnNsYXRlKDkwIDQpIiBkPSJtMS4wODY5IDIuMDYyM2MtMC42NjMwOSAwLjg3NjI4LTEuMDMyMiAxLjk1NDItMS4wMzIyIDMuMTA3OHY0NS42NTljMCAxLjA3MTUgMC4zMTk1OCAyLjA3ODEgMC44OTY3OSAyLjkxODlsMjQuODQ0LTI1LjkxMy0yNC43MDgtMjUuNzcyem0yNi45ODMgMjMuMzk5IDguMDU5Ni04LjQwNjUtMjguMzMtMTYuMzU2Yy0xLjIyOTYtMC43MTAwOC0yLjY0MDQtMC44Nzg0Mi0zLjk1NjctMC41MDg0MmwyNC4yMjcgMjUuMjcxem0wIDQuNzQ1NC0yNC40NzIgMjUuNTI2YzAuNTI3NjUgMC4xNzczMSAxLjA3MzcgMC4yNjY2IDEuNjIwMSAwLjI2NjYgMC44ODY1NCAwIDEuNzczNS0wLjIzMzI4IDIuNTgxNC0wLjY5OTgzbDI4LjUzNC0xNi40NzQtOC4yNjM0LTguNjE4OHptMTkuMjcxLTYuNjc4Ny04LjI4MjYtNC43ODIyLTguNzEzMyA5LjA4OCA4LjkxNjYgOS4zMDExIDguMDc5Mi00LjY2NDdjMS42MTY3LTAuOTMzMTEgMi41ODE4LTIuNjA0OSAyLjU4MTgtNC40NzExIDAtMS44NjY2LTAuOTY1MTUtMy41MzgtMi41ODE4LTQuNDcxMXoiLz4KPHBhdGggdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTc1IDQpIiBkPSJtNTYgOS4zMzRjMC00LjkwNDQtNC40Mjc3LTkuMzM0LTkuMzMzMy05LjMzNGgtMzcuMzMzYy00LjkwNTYgMC05LjMzMzMgNC40Mjk2LTkuMzMzMyA5LjMzNHYzNy4zMzJjMCA0LjkwNDQgNC40Mjc3IDkuMzM0IDkuMzM0IDkuMzM0aDE4LjY2NnYtMjEuMTU2aC02Ljg0NDR2LTkuMzMzM2g2Ljg0NDR2LTMuNjM2M2MwLTYuMjcxNCA0LjcwOS0xMS45MTkgMTAuNS0xMS45MTloNy41NDQ0djkuMzMzM2gtNy41NDQ0Yy0wLjgyNTY5IDAtMS43ODg5IDEuMDAyNC0xLjc4ODkgMi41MDM4djMuNzE4NGg5LjMzMzN2OS4zMzMzaC05LjMzMzN2MjEuMTU2aDkuOTU1NmM0LjkwNTYgMCA5LjMzMzMtNC40Mjk2IDkuMzMzMy05LjMzNHYtMzcuMzMyeiIvPgo8cGF0aCB0cmFuc2Zvcm09InRyYW5zbGF0ZSgzNTEgMTMpIiBkPSJtNDkuNTUzIDE3LjIzNGMzLjEzODctMC4yNTg5NSA1LjI2NzgtMS42ODU4IDYuMDg3MS0zLjYyMTktMS4xMzIyIDAuNjk1NTItNC42NDY4IDEuNDUzOC02LjU4NzkgMC43MzE2NC0wLjA5NTEwOS0wLjQ1NjA2LTAuMjAxMzktMC44ODkyNC0wLjMwNTczLTEuMjgwMy0xLjQ3OS01LjQzMDgtNi41NDI5LTkuODA2MS0xMS44NDktOS4yNzc1IDAuNDI5MjktMC4xNzMzMyAwLjg2NDY5LTAuMzM0NyAxLjI5ODgtMC40Nzk1NyAwLjU4NDA0LTAuMjA5MTkgNC4wMTA3LTAuNzY2NzIgMy40NzExLTEuOTc2Mi0wLjQ1NDc2LTEuMDYzOS00LjY0MTQgMC44MDQwMS01LjQyOTcgMS4wNDgxIDEuMDQwNi0wLjM5MTM1IDIuNzYxNS0xLjA2NDUgMi45NDU5LTIuMjYwMy0xLjU5NDIgMC4yMTg2Ny0zLjE1OTMgMC45NzI0LTQuMzY4NSAyLjA2ODQgMC40MzY1Ny0wLjQ2OTk2IDAuNzY3NzYtMS4wNDI3IDAuODM4MDUtMS42NTkxLTQuMjUyMSAyLjcxNjUtNi43MzYgOC4xOTMtOC43NDYxIDEzLjUwNS0xLjU3ODQtMS41Mjk3LTIuOTc3NC0yLjczNDMtNC4yMzI0LTMuNDAzMS0zLjUyMDctMS44ODgtNy43MzAzLTMuODU3OS0xNC4zMzgtNi4zMTEtMC4yMDI4MiAyLjE4NjMgMS4wODEzIDUuMDkzNCA0Ljc4MTQgNy4wMjY2LTAuODAxNjctMC4xMDczMi0yLjI2NzcgMC4xMzIxNC0zLjQ0MDIgMC40MTI5MiAwLjQ3NzQ5IDIuNTA0NyAyLjAzNjkgNC41NjgyIDYuMjU4NiA1LjU2NjEtMS45MjkzIDAuMTI3MzMtMi45MjY0IDAuNTY2MzctMy44MzAxIDEuNTEyNiAwLjg3ODcyIDEuNzQyIDMuMDIzIDMuNzkyMSA2Ljg4MDIgMy4zNzEzLTQuMjg4NSAxLjg0ODQtMS43NDg2IDUuMjcxNCAxLjc0MDkgNC43NjA5LTUuOTUyOSA2LjE0ODctMTUuMzM4IDUuNjk2OC0yMC43MjggMC41NTQwMiAxNC4wNzEgMTkuMTc0IDQ0LjY1OSAxMS4zNCA0OS4yMTgtNy4xMjg4IDMuNDE1MiAwLjAyOTEwNCA1LjQyMjktMS4xODMgNi42Njc4LTIuNTE5NC0xLjk2NzcgMC4zMzM5Mi00LjgxOTYtMC4wMTExNzQtNi4zMzE5LTAuNjQwOTV6Ii8+CjxwYXRoIHRyYW5zZm9ybT0idHJhbnNsYXRlKDI2NiA0KSIgZD0ibTQwLjg2OSAwYzguMzQzMiAwIDE1LjEzMSA2Ljc4NzggMTUuMTMxIDE1LjEzMXYyNS43MzhjMCA4LjM0MzItNi43ODc4IDE1LjEzMS0xNS4xMzEgMTUuMTMxaC0yNS43MzhjLTguMzQzMiAwLTE1LjEzMS02Ljc4NzgtMTUuMTMxLTE1LjEzMXYtMjUuNzM4YzAtOC4zNDMyIDYuNzg3OC0xNS4xMzEgMTUuMTMxLTE1LjEzMWgyNS43Mzh6bTEwLjYwNyA0MC44Njl2LTI1LjczOGMwLTUuODQ4Ny00Ljc1ODItMTAuNjA3LTEwLjYwNy0xMC42MDdoLTI1LjczOGMtNS44NDg3IDAtMTAuNjA3IDQuNzU4Mi0xMC42MDcgMTAuNjA3djI1LjczOGMwIDUuODQ4NyA0Ljc1ODIgMTAuNjA3IDEwLjYwNyAxMC42MDdoMjUuNzM4YzUuODQ4NyAwIDEwLjYwNy00Ljc1ODIgMTAuNjA3LTEwLjYwN3ptLTEwLjk0My0xNC44MjJjMC40OTIwOCAzLjMxNzktMC4zMzc1MyA2LjYyODgtMi4zMzU4IDkuMzIyNy0xLjk5ODIgMi42OTQtNC45MjU4IDQuNDQ4Ni04LjI0MzggNC45NDA3LTAuNjI0MzEgMC4wOTI2NDEtMS4yNDg2IDAuMTM4MzYtMS44Njg1IDAuMTM4MzYtMi42NzM5IDAtNS4yNjcyLTAuODUxODEtNy40NTQyLTIuNDc0LTIuNjk0LTEuOTk4My00LjQ0ODYtNC45MjU5LTQuOTQwNy04LjI0MzgtMC40OTIwOC0zLjMxNzggMC4zMzc1My02LjYyODggMi4zMzU3LTkuMzIyOCAxLjk5ODItMi42OTQgNC45MjU4LTQuNDQ4NiA4LjI0MzgtNC45NDA3IDEuMjIyMy0wLjE4MTIzIDIuNDYxNi0wLjE4MTIzIDMuNjg0IDAgMi42ODQ3IDAuMzk4MDIgNS4xMTgxIDEuNjIzIDcuMDM3MyAzLjU0MjEgMS45MTkyIDEuOTE5MiAzLjE0NDEgNC4zNTI2IDMuNTQyMiA3LjAzNzR6bS0xMS4yNDMgOS43ODgxYzQuMzgxNi0wLjY0OTY5IDcuNDE3NS00Ljc0MjkgNi43Njc4LTkuMTI0My0wLjUyMjgxLTMuNTI1NC0zLjI0MjYtNi4yNDUxLTYuNzY3OS02Ljc2NzgtMC4zOTA5MS0wLjA1ODA3OC0wLjc4NDY2LTAuMDg3MDYyLTEuMTc4My0wLjA4NzA2Mi0wLjM5MzY0IDAtMC43ODcyOCAwLjAyODk4NC0xLjE3ODIgMC4wODY5NTMtMi4xMjI1IDAuMzE0NzgtMy45OTU0IDEuNDM3Mi01LjI3MzcgMy4xNjA2LTEuMjc4MyAxLjcyMzQtMS44MDg4IDMuODQxNS0xLjQ5NDEgNS45NjM5IDAuMzE0NjcgMi4xMjI0IDEuNDM3MSAzLjk5NTQgMy4xNjA1IDUuMjczNnMzLjg0MTUgMS44MDkzIDUuOTYzOSAxLjQ5NDF6bTE0LjQ2Ni0yMy41OWMwLjQyMTIgMC40MjEyIDAuNjYyNTkgMS4wMDQzIDAuNjYyNTkgMS41OTk2IDAgMC41OTUyMi0wLjI0MTM5IDEuMTc4My0wLjY2MjU5IDEuNTk5Ni0wLjQyMTMxIDAuNDIxMzEtMS4wMDQ0IDAuNjYyNTktMS41OTk2IDAuNjYyNTktMC41OTUyMiAwLTEuMTc4My0wLjI0MTM5LTEuNTk5Ni0wLjY2MjU5LTAuNDIxMi0wLjQyMTMxLTAuNjYyNTktMS4wMDM0LTAuNjYyNTktMS41OTk2czAuMjQxMzktMS4xNzgzIDAuNjYyNTktMS41OTk2YzAuNDIxMzEtMC40MjEzMSAxLjAwNDQtMC42NjI1OSAxLjU5OTYtMC42NjI1OSAwLjU5NTIyIDAgMS4xNzgzIDAuMjQxMzkgMS41OTk2IDAuNjYyNTl6Ii8+CjwvZz4KPC9zdmc+Cg==");
-    }
-
-    
-
-   
-
-    
-   
-  
-}
