@@ -1,20 +1,18 @@
 import { useState } from 'react'
 import logo from './.././../asset/logo1.png'
-import './landing.css'
 import Match from '../profile_layout/Match'
 import Notification from '../profile_layout/Notification'
-import {Link} from'react-router-dom'
+import { Link } from 'react-router-dom'
+import './style.css'
 
- 
-export default function LandingPage() {
-
-
-
-    const [show, setShow] = useState(false)
+export default function Details() {
 
 
 
-    return <div >
+    const [show, setShow] = useState(false);
+
+
+    return <div id='profile-details'>
 
         <div id="landing-navbar">
             <div>
@@ -22,11 +20,11 @@ export default function LandingPage() {
             </div>
             <div id='nav-logo'>
                 <Link to="/profile_details">
-                    <svg xmlns="http://www.w3.org/2000/svg"  width="24" height="24" fill="currentColor" class="bi bi-person text-dark" viewBox="0 0 16 16">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-person text-dark" viewBox="0 0 16 16">
                         <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z" />
                     </svg>
                 </Link>
-                <div onClick={() => { setShow(!show) }}>
+                <div onClick={(e) => {e.preventDefault();setShow(true) }}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bell"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9" /><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0" /></svg>
                 </div>
                 <button style={{ border: 'none', backgroundColor: 'white' }} data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
@@ -65,12 +63,10 @@ export default function LandingPage() {
                                 <h6>Phonebook</h6>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right"><path d="m9 18 6-6-6-6" /></svg>
                             </div>
-                            <Link to="/settings">
-                            <div className="text-dark" style={{ display: "flex", justifyContent: "space-between", padding: "10px 15px" }}>
+                            <div style={{ display: "flex", justifyContent: "space-between", padding: "10px 15px" }}>
                                 <h6>Account & Setting</h6>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right"><path d="m9 18 6-6-6-6" /></svg>
                             </div>
-                            </Link>
                             <div style={{ display: "flex", justifyContent: "space-between", padding: "10px 15px" }}>
                                 <h6>Help & Support</h6>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right"><path d="m9 18 6-6-6-6" /></svg>
@@ -97,10 +93,11 @@ export default function LandingPage() {
                 </div>
                 <br />
                 <div>
-                    <div style={{ display: "flex", justifyContent: "space-between", padding: "10px 15px" }}>
+                    <Link to="/landing" >
+                    <div style={{ display: "flex", justifyContent: "space-between", padding: "10px 15px" }} className='text-dark'>
                         <h6>Matches</h6>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right"><path d="m9 18 6-6-6-6" /></svg>
-                    </div>
+                    </div></Link>
                     <div style={{ display: "flex", justifyContent: "space-between", padding: "10px 15px" }}>
                         <h6>Activity</h6>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right"><path d="m9 18 6-6-6-6" /></svg>
@@ -116,9 +113,12 @@ export default function LandingPage() {
                 </div>
             </div>
 
-            {
-                show ? <Notification /> : <Match />
-            }
+            {show ? <Notification /> : <div className='profile-box'>
+                <div >
+                    <h1>user profile details</h1>
+                </div>
+            </div>}
+
             <div className="landing-child" id='two'>
                 <br />
                 <h5 style={{ textAlign: 'center' }}>You are <span style={{ color: 'red' }}>missing</span> out on premium benefits!</h5>

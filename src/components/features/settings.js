@@ -1,12 +1,11 @@
 import { useState } from 'react'
 import logo from './.././../asset/logo1.png'
-import './landing.css'
 import Match from '../profile_layout/Match'
 import Notification from '../profile_layout/Notification'
-import {Link} from'react-router-dom'
+import { Link } from 'react-router-dom'
+import './style.css'
 
- 
-export default function LandingPage() {
+export default function Settings() {
 
 
 
@@ -14,7 +13,7 @@ export default function LandingPage() {
 
 
 
-    return <div >
+    return <div id='setting-main'>
 
         <div id="landing-navbar">
             <div>
@@ -22,7 +21,7 @@ export default function LandingPage() {
             </div>
             <div id='nav-logo'>
                 <Link to="/profile_details">
-                    <svg xmlns="http://www.w3.org/2000/svg"  width="24" height="24" fill="currentColor" class="bi bi-person text-dark" viewBox="0 0 16 16">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-person text-dark" viewBox="0 0 16 16">
                         <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z" />
                     </svg>
                 </Link>
@@ -65,12 +64,10 @@ export default function LandingPage() {
                                 <h6>Phonebook</h6>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right"><path d="m9 18 6-6-6-6" /></svg>
                             </div>
-                            <Link to="/settings">
-                            <div className="text-dark" style={{ display: "flex", justifyContent: "space-between", padding: "10px 15px" }}>
+                            <div style={{ display: "flex", justifyContent: "space-between", padding: "10px 15px" }}>
                                 <h6>Account & Setting</h6>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right"><path d="m9 18 6-6-6-6" /></svg>
                             </div>
-                            </Link>
                             <div style={{ display: "flex", justifyContent: "space-between", padding: "10px 15px" }}>
                                 <h6>Help & Support</h6>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right"><path d="m9 18 6-6-6-6" /></svg>
@@ -117,7 +114,23 @@ export default function LandingPage() {
             </div>
 
             {
-                show ? <Notification /> : <Match />
+                show ? <Notification /> : <div className="setting-box">
+                    <div className='settings-head'>
+                        <div style={{ display: 'inline'}}>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-caret-left" viewBox="0 0 16 16">
+                                <path d="M10 12.796V3.204L4.519 8zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753z" />
+                            </svg>
+                        </div>
+                        <div style={{ display: 'inline', marginLeft: '35%', textAlign: 'center' }}>
+                            <h4 >Account & settings</h4>
+                            <p >Update these details to get suitable matches</p>
+                        </div>
+                    </div>
+                    <div className='settings-body'>
+                    <p><small style={{ float: "left", margin: "-10px 15px" }}>Contact privacy settings</small></p><br />
+
+                    </div>
+                </div>
             }
             <div className="landing-child" id='two'>
                 <br />
