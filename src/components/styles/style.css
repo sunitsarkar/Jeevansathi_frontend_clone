@@ -13,6 +13,11 @@ a {
     outline: 0;
     color: #ffff;
 }
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
 a:hover{
     text-decoration: none;
     outline: 0;
@@ -1020,6 +1025,11 @@ li:hover .subhobver{
     padding-bottom: 30px;
     width: 100%;
 }
+.footer-container2{
+    background-color: #34495e;
+    height: 50px;
+    width: 100%;
+}
 .footer-List{
     width: 990px;
     margin: 0 auto;
@@ -1078,7 +1088,49 @@ li:hover .subhobver{
     background-position: -112px 0px;
     padding: 0px 10px;
 }
+.foterLive{
+    width: 500px;
+    color: #fff;
+    opacity: 0.8;
+    padding-top: 12px;
+    
+}
+.visa{
+    background-position: -149px -49px;
+    width: 45px;
+    height: 29px;
+}
+.mcard{
+    background-position: -194px -49px;
+    width: 45px;
+    height: 29px;
+}
+.footerCard li{
+    margin-top: 10px;
+    margin-left: 8px;
+    cursor: pointer;
+}
+.facebok{
+    background-position: -196px -192px;
+    width: 36px;
+    height: 36px!important;
+}
+.twiter{
+    background-position: -196px -229px;
+    width: 36px;
+    height: 36px!important;
+}
+.linkin{
+    background-position: -161px -266px;
+    width: 36px;
+    height: 36px;
+}
+.goglep{
+    background-position: -197px -266px;
+    width: 36px;
+    height: 36px;
 
+}
 .copyRight{
     background-color: #e1e4e7;
     font-size: 12px;
@@ -1299,7 +1351,471 @@ li:hover .subhobver{
     background-color: #e15065;
   }
 
+  /* user-profile page  */
 
+    .proDetailBg{
+        background-color: #f3f2f2;
+    }
+    .pro-coverImg{
+        background: url("https://static.jeevansathi.com/images/jspc/membership_img/cover-image.jpg");
+        background-size: cover;
+        padding-top: 35px;
+    }
+    .profile-container{
+        width: 990px;
+        margin: 0 auto;
+        padding: 0;
+    }
+    .proheader{
+        position: relative;
+        background: rgba(52, 73, 94, 0.75);
+        color: #fff;
+        display: table;
+        width: 100%;
+    }
+    .pro-jeevanLogo{
+        background: rgba(255, 255, 255, 0.95);
+        width: 16.6%;
+        padding: 14px 0 13px;
+        float: left;
+    
+    }
+    .liveChat-Help{
+        font-size: 14px;
+        float: right;
+        margin-right: 20px;
+        margin-top: 22px;
+    }
+    .liveChat-Help span{
+        margin-left: 30px;
+    }
+    .proSection{
+        display: block;
+        padding: 38px 80px 22px 80px;
+    }
+    .proSText{
+        font-size: 15px;
+        width: 100%;
+        display: flex;
+        color: #fff;
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, .5);
+    }
+    .proSText div{
+        width: 33.3%;
+        padding-bottom: 10px;
+        color: #fff;
+        opacity: 0.5;
+    }
+    .reg-active{
+        border-bottom: 2px solid #fff;
+        font-size: 17px;
+        opacity: 1!important;
+        color: #fff;
+    }
+    
+    .register-wid{
+        width: 830px;
+        margin: 0 auto;
+    }
+    .regi-info{
+        font-size: 22px;
+        font-weight: 200;
+        color: #4c4151;
+        padding-top: 30px;
+        text-align: center;
+    }
+    .arletVlid{
+        width: 500px;
+        float: right;
+        color: #d9475c;
+        padding-top: 4px;
+    }
+    .reg-wid80{
+        width: 80%;
+    }
+    .mandator{
+        font-size: 14px;
+        text-align: right;
+    }
+    .regi-detail{
+        width: 100%;
+        font-size: 15px;
+        padding-top: 7px;
+    }
+    
+    .regi-secle{
+        position: relative;
+        height: 47px;
+        width: 500px;
+        background-color: #fff;
+        float: right;
+        border: 1px solid #d9d9d9;
+        border-radius: 2px;
+
+    }
+    .reg-label{
+        position: absolute;
+        left: 10px;
+        top: 8px;
+        color:#353e4f;
+    }
+    .reg-label2{ 
+        left: -140px;
+        transition: 0.2s;
+    }
+    .reg-label3{ 
+        left: -120px;
+        transition: 0.2s;
+    }
+    .reg-label4{ 
+        left: -137px;
+        transition: 0.2s;
+    }
+    .reg-label5{ 
+        left: -90px;
+        transition: 0.2s;
+    }
+    .reg-label6{ 
+        left: -125px;
+        transition: 0.2s;
+    }
+    .reg-label7{ 
+        left: -80px;
+        transition: 0.2s;
+    }
+    .reg-country{ 
+        left: -85px;
+        transition: 0.2s;
+    }
+    .reg-City{ 
+        left: -115px;
+        transition: 0.2s;
+    }
+    .reg-HDegree{ 
+        left: -140px;
+        transition: 0.2s;
+    }
+    
+    .star{
+        color: #F00;
+        font-size: 18px;
+    }
+    .regi-secle input{ 
+        outline: none;
+        color: #353e4f;
+        padding: 14px 10px;
+        background-color: white;
+        width: 70%;
+        border: 0;
+        float: left;
+    }
+    .ext-opt{
+        position: absolute;
+        right: 0;
+        top: 0;
+        margin-top: 12px;
+        margin-right: 6px;
+        cursor: pointer;
+        padding-bottom: 12px;
+    }
+    .ext-opt span{
+        font-size: 12px;
+        color: #666;
+    }
+    .ext-opt i{
+        font-size: 14px;
+        color: #666;
+        margin-left: 8px;
+    }
+    .iconSetting{
+        width: 25px!important;
+        height: 21px!important;
+        background-image: url("https://static.jeevansathi.com/images/jspc/commonimg/iconSpriteNameSetting.png");
+        background-repeat: no-repeat;
+        background-position: -32px -30px;
+    }
+    .ext-opt ul{
+        width: 338px;
+        list-style-type: none;
+        margin-top: 12px;
+        right: -4px;
+        position: absolute;
+        display: none;
+    }
+    .ext-opt:hover  ul{
+        display: block;
+    }
+    .ext-opt ul li{
+        font-size: 13px;
+        font-weight: 400;
+        color: #5a5a5a;
+        height: 50px;
+        background-color: white;
+        border: 1px solid #d9475c;
+        padding: 8px;
+        z-index: 9;
+        position: relative;
+    }
+    .selectedOpt{
+        background-color: #d9475c!important;
+        color: white!important;
+    }
+    .extraTxt{
+        padding: 8px 20px;
+        height: 46px;
+        float:right;
+        width: 500px;
+        font-size: 13px;
+        color: #5a5a5a;
+        background-color: #fff;
+        line-height: 16px;
+    }
+    .DOBSelected{
+        display: flex;
+        text-align: center;
+        /* display: none; */
+
+    }
+    .DOBSelected li{
+        position: relative;
+        width: 166px;
+        border-right: 1px solid #dddada;
+        height: 47px;
+        cursor: pointer;
+    }
+    .DOBSelected li div{
+        margin-top: 10px;
+        padding: 0 10px 0 28px;
+    }
+    .dropArrow{
+        background: url("https://static.jeevansathi.com/images/jspc/commonimg/iconsvert.png");
+        background-size: cover;
+        background-position: -1px -131px;
+        width: 18px;
+        height: 12px;
+        float: right;
+        margin-top: 6px;
+    }
+    .imgArrow{
+        position: absolute;
+        background: url("https://static.jeevansathi.com/images/jspc/registration/reg-spirite.png");
+        background-repeat: no-repeat;
+        background-position: -6px -214px;
+        width: 16px;
+        display: inline-block;
+        height: 11px;
+        top: 35px;
+        left: 75px;
+        z-index: 9;
+    }
+    .daysBox{
+        position: absolute;
+        width: 405px;
+        border: 1px solid #d9475c;
+        background-color: #fff;
+        border-radius: 2px;
+        top: 44px;
+        font-size: 15px;
+        z-index: 5;
+    }
+    .daysBox2{
+        display: none;
+    }
+    .daysBox ul li{
+        width: 40px;
+        float: left;
+        text-align: center;
+        padding: 14px 0;
+        cursor: pointer;
+        border-bottom: 1px solid #d9d9d9;
+    }
+    .daysBox ul li:hover{
+        background: #d9475c;
+        color: #fff;
+    }
+    .monthsBox{
+        position: absolute;
+        width: 330px;
+        border: 1px solid #d9475c;
+        background-color: #fff;
+        border-radius: 2px;
+        top: 44px;
+        font-size: 15px;
+        left: 168px;
+        z-index: 5;
+    }
+    .monthsBox2{
+        display: none;
+    }
+    .monthsBox ul li{
+        width: 82px;
+        float: left;
+        text-align: center;
+        padding: 10px 0;
+    }
+    .monthsBox ul li:hover{
+        background: #d9475c;
+        color: #fff; 
+    }
+    .yersBox{
+        position: absolute;
+        width: 332px;
+        border: 1px solid #d9475c;
+        background-color: #fff;
+        border-radius: 2px;
+        top: 44px;
+        font-size: 15px;
+        left: 168px;
+        max-height: 200px;
+        overflow-y: scroll;
+        z-index: 5;
+    }
+    .yersBox2{
+        display: none;
+    }
+    .yersBox ul li{
+        width: 78px;
+        float: left;
+        text-align: center;
+        padding: 10px 0;
+    }
+    .yersBox ul li:hover{
+        background: #d9475c;
+        color: #fff; 
+    }
+    .gridDropdown{
+        position: absolute;
+        width: 500px;
+        border: 1px solid #d9475c;
+        font-size: 15px;
+        background-color: #fff;
+        top: 45px;
+        overflow-y: scroll;
+        max-height: 200px;
+        z-index: 10;
+    }
+    .gridDropdown li{
+        padding: 5px 20px;
+        color: #353e4f;
+        cursor: pointer;
+       
+    }
+    .gridDropdown li:hover{
+        background: #d9475c;
+        color: #fff;
+    }
+    .religionBox{
+        position: absolute;
+        width: 500px;
+        border: 1px solid #d9475c;
+        max-height: 200px;
+        font-size: 15px;
+        background-color: #fff;
+        top: 45px;
+        z-index: 5;
+
+    }
+    .religionBox ul li{
+        width: 118px;
+        float: left;
+        text-align: center;
+        padding: 4px 0;
+        cursor: pointer;
+        margin-top: 2px;
+
+    }
+    .religionBox ul li:hover{
+        background: #d9475c;
+        color: #fff;
+
+    }
+    .religionIcon{
+        top: -10px!important;
+        left: 15px!important;
+    }
+    .mStatusBox{
+        position: absolute;
+        border: 1px solid #d9475c;
+        max-height: 200px;
+        font-size: 15px;
+        width: 500px;
+        background-color: #fff;
+        top: 45px;
+        z-index: 5;
+    }
+    .mStatusBox ul li{
+        width: 157px;
+        float: left;
+        text-align: center;
+        padding: 4px 0;
+        cursor: pointer;
+        margin-top: 2px;
+    }
+    .mStatusBox ul li:hover{
+        background: #d9475c;
+        color: #fff;
+    }
+    .proBtns{
+        width: 200px;
+        float: left;
+        font-weight: 400;
+        color: #fff;
+        padding: 14px 0;
+        border: none;
+        background: #d9475c;
+        font-size: 20px;
+        margin: 30px 0 200px 160px;
+    }
+    .reg-wid15{
+        padding-top: 30px;
+        width: 15%;
+        float: right;
+        text-align: center;
+        color: #3b475e;
+        font-size: 13px;
+        margin-left: 42px;
+
+
+    }
+    .wyregi{
+        color: #666;
+        font-size: 17px;
+        font-weight: 700;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #666;
+        margin-bottom: 30px;
+        text-transform: uppercase;
+        float: right;
+
+    }
+    .reg-privacy{
+        background: url("https://static.jeevansathi.com/images/jspc/registration/reg-spirite.png");
+        background-repeat: no-repeat;
+        display: inline-block;
+        height: 44px;
+    }
+    .privyIcon{
+        background-position: 1px 1px;
+        width: 39px;
+    }
+    .privyIcon2{
+        background-position: 1px -48px;
+        width: 47px;
+        margin-top: 30px;
+    }
+    .privyIcon3{
+        background-position: 1px -94px;
+        width: 47px;
+        margin-top: 30px;
+
+    }
+    .privyIcon4{
+        background-position: 1px -140px;
+        width: 47px;
+        margin-top: 30px;
+
+    }
 
 
 

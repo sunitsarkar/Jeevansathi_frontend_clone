@@ -78,7 +78,7 @@ class Header extends Component{
                 <div className="menu-navbar--second">
                     <div className={"signupMenu " + (scrolled>400?"srolled":"")}>
                         <div className="loginPart">
-                            <Link to="/landing">LOGIN</Link>
+                            <Link to="/login">LOGIN</Link>
                         </div>
                         <div className="registerPart" >
                             <Link to="/user_registration">REGISTER FREE</Link>

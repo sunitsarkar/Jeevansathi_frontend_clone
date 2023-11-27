@@ -6,9 +6,15 @@ import SlideMenu from "./slideMenu";
 
 function LoginForm(){
     const [passwordShow,setPasswordShow]=useState(false);
+    const [slideView,setSlideView]=useState(false);
 
-    function handlePasswordView(){
+
+    const handlePasswordView=()=>{
         passwordShow?setPasswordShow(false):setPasswordShow(true);
+    }
+
+    const handleSlideView=(value)=>{
+        setSlideView(value);
     }
 
     return(
@@ -38,15 +44,18 @@ function LoginForm(){
                     </div>
                 </div>
             </div>
+            
 
             <div className="loginViewMob">
+                <div>
+                    <div className={slideView?"hamburger":"hamburgerDis"}>
+                        <SlideMenu />
+                    </div>
+                    <div className={slideView?"slide-Container":"slide-Container2"} onClick={()=>handleSlideView(false)}></div>
 
-                {/* <SlideMenu /> */}
-
-
-
+                </div>
                 <div className="login-header">
-                    <div className="loginFrbar"><img width="100%" height="100%" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMTIiIHZpZXdCb3g9IjAgMCAyMCAxMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTExIDEwSDFDMC43MzQ3ODQgMTAgMC40ODA0MyAxMC4xMDU0IDAuMjkyODkzIDEwLjI5MjlDMC4xMDUzNTcgMTAuNDgwNCAwIDEwLjczNDggMCAxMUMwIDExLjI2NTIgMC4xMDUzNTcgMTEuNTE5NiAwLjI5Mjg5MyAxMS43MDcxQzAuNDgwNDMgMTEuODk0NiAwLjczNDc4NCAxMiAxIDEySDExQzExLjI2NTIgMTIgMTEuNTE5NiAxMS44OTQ2IDExLjcwNzEgMTEuNzA3MUMxMS44OTQ2IDExLjUxOTYgMTIgMTEuMjY1MiAxMiAxMUMxMiAxMC43MzQ4IDExLjg5NDYgMTAuNDgwNCAxMS43MDcxIDEwLjI5MjlDMTEuNTE5NiAxMC4xMDU0IDExLjI2NTIgMTAgMTEgMTBaTTEgMkgxOUMxOS4yNjUyIDIgMTkuNTE5NiAxLjg5NDY0IDE5LjcwNzEgMS43MDcxMUMxOS44OTQ2IDEuNTE5NTcgMjAgMS4yNjUyMiAyMCAxQzIwIDAuNzM0Nzg0IDE5Ljg5NDYgMC40ODA0MyAxOS43MDcxIDAuMjkyODkzQzE5LjUxOTYgMC4xMDUzNTcgMTkuMjY1MiAwIDE5IDBIMUMwLjczNDc4NCAwIDAuNDgwNDMgMC4xMDUzNTcgMC4yOTI4OTMgMC4yOTI4OTNDMC4xMDUzNTcgMC40ODA0MyAwIDAuNzM0Nzg0IDAgMUMwIDEuMjY1MjIgMC4xMDUzNTcgMS41MTk1NyAwLjI5Mjg5MyAxLjcwNzExQzAuNDgwNDMgMS44OTQ2NCAwLjczNDc4NCAyIDEgMlpNMTkgNUgxQzAuNzM0Nzg0IDUgMC40ODA0MyA1LjEwNTM2IDAuMjkyODkzIDUuMjkyODlDMC4xMDUzNTcgNS40ODA0MyAwIDUuNzM0NzggMCA2QzAgNi4yNjUyMiAwLjEwNTM1NyA2LjUxOTU3IDAuMjkyODkzIDYuNzA3MTFDMC40ODA0MyA2Ljg5NDY0IDAuNzM0Nzg0IDcgMSA3SDE5QzE5LjI2NTIgNyAxOS41MTk2IDYuODk0NjQgMTkuNzA3MSA2LjcwNzExQzE5Ljg5NDYgNi41MTk1NyAyMCA2LjI2NTIyIDIwIDZDMjAgNS43MzQ3OCAxOS44OTQ2IDUuNDgwNDMgMTkuNzA3MSA1LjI5Mjg5QzE5LjUxOTYgNS4xMDUzNiAxOS4yNjUyIDUgMTkgNVoiIGZpbGw9IiM3Njg0OTMiLz4KPC9zdmc+Cg=="/></div>
+                    <div className="loginFrbar" onClick={()=>handleSlideView(true)}><img width="100%" height="100%" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMTIiIHZpZXdCb3g9IjAgMCAyMCAxMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTExIDEwSDFDMC43MzQ3ODQgMTAgMC40ODA0MyAxMC4xMDU0IDAuMjkyODkzIDEwLjI5MjlDMC4xMDUzNTcgMTAuNDgwNCAwIDEwLjczNDggMCAxMUMwIDExLjI2NTIgMC4xMDUzNTcgMTEuNTE5NiAwLjI5Mjg5MyAxMS43MDcxQzAuNDgwNDMgMTEuODk0NiAwLjczNDc4NCAxMiAxIDEySDExQzExLjI2NTIgMTIgMTEuNTE5NiAxMS44OTQ2IDExLjcwNzEgMTEuNzA3MUMxMS44OTQ2IDExLjUxOTYgMTIgMTEuMjY1MiAxMiAxMUMxMiAxMC43MzQ4IDExLjg5NDYgMTAuNDgwNCAxMS43MDcxIDEwLjI5MjlDMTEuNTE5NiAxMC4xMDU0IDExLjI2NTIgMTAgMTEgMTBaTTEgMkgxOUMxOS4yNjUyIDIgMTkuNTE5NiAxLjg5NDY0IDE5LjcwNzEgMS43MDcxMUMxOS44OTQ2IDEuNTE5NTcgMjAgMS4yNjUyMiAyMCAxQzIwIDAuNzM0Nzg0IDE5Ljg5NDYgMC40ODA0MyAxOS43MDcxIDAuMjkyODkzQzE5LjUxOTYgMC4xMDUzNTcgMTkuMjY1MiAwIDE5IDBIMUMwLjczNDc4NCAwIDAuNDgwNDMgMC4xMDUzNTcgMC4yOTI4OTMgMC4yOTI4OTNDMC4xMDUzNTcgMC40ODA0MyAwIDAuNzM0Nzg0IDAgMUMwIDEuMjY1MjIgMC4xMDUzNTcgMS41MTk1NyAwLjI5Mjg5MyAxLjcwNzExQzAuNDgwNDMgMS44OTQ2NCAwLjczNDc4NCAyIDEgMlpNMTkgNUgxQzAuNzM0Nzg0IDUgMC40ODA0MyA1LjEwNTM2IDAuMjkyODkzIDUuMjkyODlDMC4xMDUzNTcgNS40ODA0MyAwIDUuNzM0NzggMCA2QzAgNi4yNjUyMiAwLjEwNTM1NyA2LjUxOTU3IDAuMjkyODkzIDYuNzA3MTFDMC40ODA0MyA2Ljg5NDY0IDAuNzM0Nzg0IDcgMSA3SDE5QzE5LjI2NTIgNyAxOS41MTk2IDYuODk0NjQgMTkuNzA3MSA2LjcwNzExQzE5Ljg5NDYgNi41MTk1NyAyMCA2LjI2NTIyIDIwIDZDMjAgNS43MzQ3OCAxOS44OTQ2IDUuNDgwNDMgMTkuNzA3MSA1LjI5Mjg5QzE5LjUxOTYgNS4xMDUzNiAxOS4yNjUyIDUgMTkgNVoiIGZpbGw9IiM3Njg0OTMiLz4KPC9zdmc+Cg=="/></div>
                     <div className="login-LogoImg">
                         <Link to="/"><img width="100%" src="https://static.jeevansathi.com/js_static/_next/static/images/jeevansathi-icon-450441e73ce54060c3241fe9d389d502.svg" /></Link>
                     </div>
@@ -85,6 +94,7 @@ function LoginForm(){
                     </div>
                 </div>
             </div>
+            
         </div>
     );
 
