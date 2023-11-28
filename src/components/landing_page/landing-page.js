@@ -4,6 +4,7 @@ import './landing.css'
 import Match from '../profile_layout/Match'
 import Notification from '../profile_layout/Notification'
 import {Link} from'react-router-dom'
+import OffCanvas from '../offcanvas/off-canvas'
 
  
 export default function LandingPage() {
@@ -51,38 +52,7 @@ export default function LandingPage() {
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></button>
                         </div>
                     </div>
-                    <div class="offcanvas-body" >
-                        <div>
-                            <div style={{ display: "flex", justifyContent: "space-between", padding: "10px 15px" }}>
-                                <h6>Partner Preferencs</h6>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right"><path d="m9 18 6-6-6-6" /></svg>
-                            </div>
-                            <div style={{ display: "flex", justifyContent: "space-between", padding: "10px 15px" }}>
-                                <h6>Blocked/Ignored Profiles</h6>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right"><path d="m9 18 6-6-6-6" /></svg>
-                            </div>
-                            <div style={{ display: "flex", justifyContent: "space-between", padding: "10px 15px" }}>
-                                <h6>Phonebook</h6>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right"><path d="m9 18 6-6-6-6" /></svg>
-                            </div>
-                            <Link to="/settings">
-                            <div className="text-dark" style={{ display: "flex", justifyContent: "space-between", padding: "10px 15px" }}>
-                                <h6>Account & Setting</h6>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right"><path d="m9 18 6-6-6-6" /></svg>
-                            </div>
-                            </Link>
-                            <div style={{ display: "flex", justifyContent: "space-between", padding: "10px 15px" }}>
-                                <h6>Help & Support</h6>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right"><path d="m9 18 6-6-6-6" /></svg>
-                            </div>
-                            <div style={{ display: "flex", justifyContent: "space-between", padding: "10px 15px" }}>
-                                <h6>Success Stories</h6>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right"><path d="m9 18 6-6-6-6" /></svg>
-                            </div>
-                        </div>
-                        <br /><br /><br />
-                        <p onClick={() => { }}>Logout</p>
-                    </div>
+                    <OffCanvas/>
                 </div>
             </div>
         </div>
@@ -96,8 +66,8 @@ export default function LandingPage() {
                     </div>
                 </div>
                 <br />
-                <div>
-                    <div style={{ display: "flex", justifyContent: "space-between", padding: "10px 15px" }}>
+                <div className='left-side'>
+                    <div style={{ display: "flex", justifyContent: "space-between", padding: "10px 15px" }} className='text-dark'>
                         <h6>Matches</h6>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right"><path d="m9 18 6-6-6-6" /></svg>
                     </div>
@@ -125,22 +95,22 @@ export default function LandingPage() {
                 <br />
                 <div style={{ display: 'flex', textAlign: "center", marginLeft: "10%" }}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-view"><path d="M5 12s2.545-5 7-5c4.454 0 7 5 7 5s-2.546 5-7 5c-4.455 0-7-5-7-5z" /><path d="M12 13a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" /><path d="M21 17v2a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-2" /><path d="M21 7V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v2" /></svg>
-                    <h6 style={{ width: '70%' }}>get upto 3x more porfile view</h6>
+                    <h6 style={{ width: '70%' }}>Get upto 3x more porfile view</h6>
                 </div>
                 <br />
                 <div style={{ display: 'flex', textAlign: "center", marginLeft: "10%" }}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone-forwarded"><polyline points="18 2 22 6 18 10" /><line x1="14" x2="22" y1="6" y2="6" /><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" /></svg>
-                    <h6 style={{ width: '70%' }}>get upto 3x more porfile view</h6>
+                    <h6 style={{ width: '70%' }}>Unlimited voice and video call</h6>
                 </div>
                 <br />
                 <div style={{ display: 'flex', textAlign: "center", marginLeft: "10%" }}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-contact"><path d="M17 18a2 2 0 0 0-2-2H9a2 2 0 0 0-2 2" /><rect width="18" height="18" x="3" y="4" rx="2" /><circle cx="12" cy="10" r="2" /><line x1="8" x2="8" y1="2" y2="4" /><line x1="16" x2="16" y1="2" y2="4" /></svg>
-                    <h6 style={{ width: '70%' }}>get upto 3x more porfile view</h6>
+                    <h6 style={{ width: '70%' }}>Get access to contact details</h6>
                 </div>
                 <br />
                 <div style={{ display: 'flex', textAlign: "center", marginLeft: "10%" }}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search"><circle cx="11" cy="11" r="8" /><path d="m21 21-4.3-4.3" /></svg>
-                    <h6 style={{ width: '70%' }}>get upto 3x more porfile view</h6>
+                    <h6 style={{ width: '70%' }}>Perform unlimited search</h6>
                 </div>
                 <br /><br />
                 <div style={{ textAlign: "center" }}>

@@ -11,6 +11,7 @@ import Settings from "./features/settings";
 import User_Login from "./../components/login/user_login";
 import profileDetails from "./../components/registration/profileDetails";
 import CareerDetails from "./../components/registration/careerDetails";
+import Help from "./features/help";
 
 class MainComponent extends Component{
     state={ }
@@ -28,7 +29,7 @@ class MainComponent extends Component{
                     <Route path="/landing" component={LandingPage} />
                     <Route path="/profile_details" component={Details} />
                     <Route path="/settings" component={Settings}/>
-
+                    <Route path="/features/help" component={Help}/>
                     <Route path="/login" component={User_Login}/>
                     <Route path="/home" component={Index}/>
                     <Redirect from="/" to="/home"/>
