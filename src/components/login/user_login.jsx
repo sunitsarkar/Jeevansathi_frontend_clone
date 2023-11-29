@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 import SlideMenu from "./slideMenu";
 
 
-function LoginForm(){
+function UserLogin(){
     const [passwordShow,setPasswordShow]=useState(false);
     const [slideView,setSlideView]=useState(false);
 
@@ -100,5 +100,5 @@ function LoginForm(){
 
 }
 
-export default LoginForm;
+export default UserLogin;
 

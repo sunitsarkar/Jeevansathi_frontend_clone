@@ -18,8 +18,15 @@ function ProfileDetails(){
     const [mothertong, setMothertong] = useState(false);
     const [relign, setRelign] = useState(false);
     const [matStatus, setmatStatus] = useState(false);
+    const [height, setheight] = useState(false);
 
-
+    function handleCLose(){
+        // setDate(false)
+        // setMonth(false)
+        // setYrs(false)
+        setMothertong(false)
+        console.log("ff");
+    }
 
 
     let days = [];
@@ -37,12 +44,12 @@ function ProfileDetails(){
         heights.push(`4' 0" (1.22 mts)`)
     }
     
-    console.log(heights);
+    // console.log(heights);
 
 
 
     return(
-        <div className="proDetailBg">
+        <div className="proDetailBg" >
             <div className="pro-coverImg">
                 <div className="profile-container">
                     <div className="proheader">
@@ -53,7 +60,7 @@ function ProfileDetails(){
                             <span>LIVE CHAT</span>
                             <span>1-800-419-6299 (Toll Free)</span>
                         </div>
-                    </div>
+                    </div> 
 
                     <div className="proSection">
                         <div className="proSText">
@@ -65,9 +72,9 @@ function ProfileDetails(){
                     </div>
                 </div>
             </div>
-            <div className="register-wid">
+            <div className="register-wid" >
                 <div className="regi-info">Hi! You are joining the Best Matchmaking Experience.</div>
-                <div className="pt-4 d-flex mt-2">
+                <div className="pt-4 d-flex mt-2" >
                     <div className="reg-wid80">
                         <div className="mandator">Mandatory<span className="star"> *</span></div>
                         <div className="regi-detail">
@@ -77,7 +84,7 @@ function ProfileDetails(){
                                 <input type="text" />
                                 <div className="ext-opt">
                                     <span>Don't show my name</span>
-                                    <i class="fa-solid fa-gear"></i>
+                                    <i className="fa-solid fa-gear"></i>
                                     <ul>
                                         <li>Show my name to all</li>
                                         <li className="selectedOpt">Don't show my name <br/> ( You will not be able to see names of other members )</li>
@@ -133,32 +140,32 @@ function ProfileDetails(){
                         </div>
                         <div className="regi-detail">
                             <div className="arletVlid">Please provide mother tongue</div>
-                            <div className="regi-secle" onClick={() =>{setlabel3(true);}}>
-                                <label className={"reg-label " +(label3?"reg-label4":"")}>Mother tongue<span className="star">*</span></label>
-                                {label3?
+                            <div className="regi-secle">
+                                <label className={"reg-label " +(label3?"reg-label4":"")} onClick={() =>{setlabel3(true);setMothertong(true)}}>Mother tongue<span className="star">*</span></label>
+                                <input type="text" placeholder="" onClick={() =>{setMothertong(true);setlabel3(true)}}/>
+                                {label3 && mothertong?
                                 <React.Fragment>
-                                <input type="text" placeholder="Select"/>
                                 <div className="gridDropdown">
                                     <ul>
                                         {langs.map((l1,index)=><li onClick={() =>{setMothertong(false)}} key={index}>{l1}</li>)}
                                     </ul>
                                 </div>
-                                </React.Fragment>
+                                </React.Fragment> 
                                 
                                 :""}
                             </div>
                         </div>
                         <div className="regi-detail">
                             <div className="arletVlid">Please provide religion</div>
-                            <div className="regi-secle" onClick={() =>{setlabel4(true)}}>
-                                <label className={"reg-label " +(label4?"reg-label5":"")}>Religion<span className="star">*</span></label>
-                                {label4?
+                            <div className="regi-secle" >
+                                <label className={"reg-label " +(label4?"reg-label5":"")} onClick={() =>{setlabel4(true)}}>Religion<span className="star">*</span></label>
+                                <input type="text" placeholder="" onClick={() =>{setRelign(true);setlabel4(true)}}/>
+                                {label4 && relign?
                                 <React.Fragment>
-                                <input type="text" placeholder="Select"/>
                                 <div className={"religionBox"}>
                                     <i className={"imgArrow religionIcon"}></i>
                                     <ul>
-                                        {religions.map((r1,index)=><li onClick={() =>{setlabel4(false)}} key={index}>{r1}</li>)}
+                                        {religions.map((r1,index)=><li onClick={() =>{setRelign(false)}} key={index}>{r1}</li>)}
                                     </ul>
                                 </div>
                                 </React.Fragment>
@@ -167,15 +174,15 @@ function ProfileDetails(){
                         </div>
                         <div className="regi-detail">
                             <div className="arletVlid">Please provide marital status</div>
-                            <div className="regi-secle" onClick={() =>{setlabel5(true)}}>
-                                <label className={"reg-label " +(label5?"reg-label6":"")}>Marital status<span className="star">*</span></label>
-                                {label5?
+                            <div className="regi-secle">
+                                <label className={"reg-label " +(label5?"reg-label6":"")} onClick={() =>{setlabel5(true)}}>Marital status<span className="star">*</span></label>
+                                <input type="text" placeholder="" onClick={() =>{setmatStatus(true);setlabel5(true)}}/>
+                                {label5 && matStatus?
                                 <React.Fragment>
-                                <input type="text" placeholder="Select"/>
                                 <div className={"mStatusBox"}>
                                     <i className={"imgArrow religionIcon"}></i>
                                     <ul>
-                                        {mstatus.map((m1,index)=><li onClick={() =>{setlabel5(false)}} key={index}>{m1}</li>)}
+                                        {mstatus.map((m1,index)=><li onClick={() =>{setmatStatus(false)}} key={index}>{m1}</li>)}
                                     </ul>
                                 </div>
                                 </React.Fragment>
@@ -184,15 +191,15 @@ function ProfileDetails(){
                         </div>
                         <div className="regi-detail">
                             <div className="arletVlid">Please provide height</div>
-                            <div className="regi-secle" onClick={() =>{setlabel6(true)}}>
-                                <label className={"reg-label " +(label6?"reg-label7":"")}>Height<span className="star">*</span></label>
-                                {label6?
+                            <div className="regi-secle">
+                                <label className={"reg-label " +(label6?"reg-label7":"")}  onClick={() =>{setlabel6(true)}}>Height<span className="star">*</span></label>
+                                <input type="text" placeholder="" onClick={() =>{setheight(true);setlabel6(true)}}/>
+                                {label6 && height?
                                 <React.Fragment>
-                                <input type="text" placeholder="Select"/>
                                 <div className={"mStatusBox"}>
                                     <i className={"imgArrow religionIcon"}></i>
                                     <ul>
-                                        {heights.map((h1,index)=><li onClick={() =>{setlabel6(false)}} key={index}>{h1}</li>)}
+                                        {heights.map((h1,index)=><li onClick={() =>{setheight(false)}} key={index}>{h1}</li>)}
                                     </ul>
                                 </div>
                                 </React.Fragment>
