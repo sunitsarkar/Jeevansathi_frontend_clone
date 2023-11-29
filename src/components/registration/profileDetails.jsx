@@ -20,13 +20,6 @@ function ProfileDetails(){
     const [matStatus, setmatStatus] = useState(false);
     const [height, setheight] = useState(false);
 
-    function handleCLose(){
-        // setDate(false)
-        // setMonth(false)
-        // setYrs(false)
-        setMothertong(false)
-        console.log("ff");
-    }
 
 
     let days = [];
@@ -44,7 +37,6 @@ function ProfileDetails(){
         heights.push(`4' 0" (1.22 mts)`)
     }
     
-    // console.log(heights);
 
 
 

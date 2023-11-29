@@ -6,46 +6,6 @@ import Footer from "../../footer/regi_footer"
 
 function Verification(){
 
-    const [label1, setlabel1] = useState(false);
-    const [label2, setlabel2] = useState(false);
-    const [label3, setlabel3] = useState(false);
-    const [label4, setlabel4] = useState(false);
-    const [label5, setlabel5] = useState(false);
-    const [label6, setlabel6] = useState(false);
-    const [label7, setlabel7] = useState(false);
-    const [label8, setlabel8] = useState(false);
-
-    const [famlyTye, setFamlyTye] = useState(-1);
-    function handleFmlyTye(val){
-        setFamlyTye(val);
-    }
-    const [brotherNo, setBrotherNo] = useState(-1);
-    function handleBrotherList(val){    
-        setBrotherNo(val);
-    }
-    const [sisterNo, setSisterNo] = useState(-1);
-    function handleSisterList(val){
-        setSisterNo(val);
-    }
-
-    const [fatherOcp, setfatherOcp] = useState(false);
-    const [matherOcp, setMatherOcp] = useState(false);
-    const [famlyLiving, setFamlyLiving] = useState(false);
-    const [highdegree, setHighdegree] = useState(false);
-    const [emp, setEmp] = useState(false);
-    const [AnalIncome, setAnalIncome] = useState(false);
-    const [selectLang, setselectLang] = useState(false);
-
-    function handleSelectLang(){
-        selectLang?setselectLang(false):setselectLang(true);
-    }
-    let countries = ["Russia","Canada","China","US of America","Brazil","Australia","India","Argentina"," Kazakhstan","Algeria"];
-   
-    let highDegrees = ["BBA","BMS","BFA","BEM","B.Sc","BA","B.Tech","BCA","BPT","CA","CS"];
-
-    
-    
-
 
     return(
         <div className="proDetailBg">
@@ -89,9 +49,6 @@ function Verification(){
                 </div>
                 <div className="customerSport">For assistance, contact customer care at 1-800-419-6299 or <Link>help@xyz.com</Link></div>
             </div>
-
-
-           
             <div>
                 <Footer/>
             </div>
