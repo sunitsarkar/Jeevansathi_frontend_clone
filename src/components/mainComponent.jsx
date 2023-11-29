@@ -16,6 +16,8 @@ import Verification from "./../components/registration/verification";
 import RegisterMobile from "./../components/registration/user-register-mobile";
 import PersonalDetails from "./../components/registration/personalDetails";
 import Help from "./features/help";
+import PhoneBook from "./features/phone-book";
+
 
 class MainComponent extends Component{
     state={ }
@@ -41,6 +43,7 @@ class MainComponent extends Component{
                     <Route path="/profile_details" component={Details} />
                     <Route path="/settings" component={Settings}/>
                     <Route path="/features/help" component={Help}/>
+                    <Route path="/features/phone-book" component={PhoneBook}/> 
                     <Route path="/login" component={User_Login}/>
                     <Route path="/home" component={Index}/>
                     <Redirect from="/" to="/home"/>
