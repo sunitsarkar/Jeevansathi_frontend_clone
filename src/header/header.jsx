@@ -45,7 +45,7 @@ class Header extends Component{
                     <div className="menupl">
                         <ul className="menu-list list-inline">
                             <li>
-                                <div className="browse-menu pb-4" >BROWSE PROFILES BY<i className="fa-solid fa-chevron-down fa-sm pl-2"></i></div>
+                                <div className="browse-menu pb-4 pr-4" >BROWSE PROFILES BY<i className="fa-solid fa-chevron-down fa-sm pl-4"></i></div>
                                 <div className="contentHome">
                                     <div className="browse-link-list">
                                         <div className="mother_Tongue" onMouseEnter={()=>this.handleView(1)}>Mother Tongue</div>
@@ -77,16 +77,18 @@ class Header extends Component{
                 </div>
                 <div className="menu-navbar--second">
                     <div className={"signupMenu " + (scrolled>400?"srolled":"")}>
-                        <div className="loginPart">
-                            <Link to="/login">LOGIN</Link>
+                        <div className="loginPart"onClick={this.togglePopup}>
+                            {/* <Link to="/login">LOGIN</Link> */}
+                            LOGIN    
                         </div>
-                        <div className="registerPart" >
-                            <Link to="/user_registration">REGISTER FREE</Link>
-                        </div>
+                        <Link to="/user_registration">
+                            <div className="registerPart" > REGISTER FREE</div>
+                        </Link>
+                        
 
                     </div>
                 </div>
-                <div>
+                <div className="f">
                     {isOpen && <Popup
                     content={<>
                       <LoginForm/>

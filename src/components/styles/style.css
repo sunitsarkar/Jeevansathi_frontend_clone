@@ -1430,6 +1430,7 @@ li:hover .subhobver{
         float: right;
         color: #d9475c;
         padding-top: 4px;
+        font-size: 14px;
     }
     .reg-wid80{
         width: 80%;
@@ -1454,49 +1455,84 @@ li:hover .subhobver{
         border-radius: 2px;
 
     }
+    .regi-secle2{
+        position: relative;
+        height: 135px;
+        width: 500px;
+        background-color: #fff;
+        float: right;
+        border: 1px solid #d9d9d9;
+        border-radius: 2px;
+        margin-bottom: 20p;
+    }
     .reg-label{
         position: absolute;
         left: 10px;
         top: 8px;
         color:#353e4f;
+        transition: 0.2s;
     }
     .reg-label2{ 
         left: -140px;
-        transition: 0.2s;
     }
     .reg-label3{ 
         left: -120px;
-        transition: 0.2s;
     }
     .reg-label4{ 
         left: -137px;
-        transition: 0.2s;
     }
     .reg-label5{ 
         left: -90px;
-        transition: 0.2s;
     }
     .reg-label6{ 
         left: -125px;
-        transition: 0.2s;
     }
     .reg-label7{ 
         left: -80px;
-        transition: 0.2s;
     }
     .reg-country{ 
         left: -85px;
-        transition: 0.2s;
     }
-    .reg-City{ 
-        left: -115px;
-        transition: 0.2s;
+    .reg-State{ 
+        left: -68px;
     }
     .reg-HDegree{ 
+        left: -136px;
+    }
+    .reg-emp{ 
+        left: -118px;
+    }
+    .reg-Aicome{ 
+        left: -134px;
+    }
+    .reg-expres{ 
         left: -140px;
-        transition: 0.2s;
+    }
+    .reg-famly{
+        left: -108px;
+    }
+    .reg-FtherOcption{
+        left: -165px;
+    }
+    .reg-mtherOcption{
+        left: -175px;
+    }
+    .reg-brther{
+        left: -85px;
+    }
+    .reg-sister{
+        left: -70px;
+    }
+    .reg-famlyLing{
+        left: -134px;
+    }
+    .reg-Addree{
+        left: -144px;
     }
     
+
+
+
     .star{
         color: #F00;
         font-size: 18px;
@@ -1504,11 +1540,23 @@ li:hover .subhobver{
     .regi-secle input{ 
         outline: none;
         color: #353e4f;
-        padding: 14px 10px;
+        padding: 14px 31% 14px 10px;
         background-color: white;
-        width: 70%;
+        width:498px;
         border: 0;
         float: left;
+    }
+    .regi-secle2 textarea{
+        width:498px;
+        height: 120px;
+        outline: none;
+        color: #353e4f;
+        background-color: white;
+        border: 0;
+        float: left;
+        resize: none;
+        padding: 8px 10px;
+        font-size: 14px;
     }
     .ext-opt{
         position: absolute;
@@ -1751,8 +1799,33 @@ li:hover .subhobver{
         padding: 4px 0;
         cursor: pointer;
         margin-top: 2px;
+        white-space:nowrap; 
+        text-overflow: ellipsis;
+        overflow: hidden;
     }
     .mStatusBox ul li:hover{
+        background: #d9475c;
+        color: #fff;
+    }
+    .highdegBox{
+        position: absolute;
+        border: 1px solid #d9475c;
+        max-height: 200px;
+        font-size: 15px;
+        width: 500px;
+        background-color: #fff;
+        top: 45px;
+        z-index: 5;
+    }
+    .highdegBox ul li{
+        width: 118px;
+        float: left;
+        text-align: center;
+        padding: 4px 0;
+        cursor: pointer;
+        margin-top: 2px;
+    }
+    .highdegBox ul li:hover{
         background: #d9475c;
         color: #fff;
     }
@@ -1766,6 +1839,37 @@ li:hover .subhobver{
         background: #d9475c;
         font-size: 20px;
         margin: 30px 0 200px 160px;
+    }
+    .CmptRegiBtn{
+        width: 230px;
+        float: left;
+        font-weight: 400;
+        color: #fff;
+        padding: 14px 0;
+        border: none;
+        background: #d9475c;
+        font-size: 20px;
+        margin: 30px 0 200px 160px;
+    }
+    .CmptRegiBtn2{
+        width: 230px;
+        float: left;
+        font-weight: 400;
+        color: #fff;
+        padding: 14px 0;
+        border: none;
+        background: #d9475c;
+        font-size: 20px;
+        margin-right: 20px;
+    }
+    .addProfile{
+        width: 100%;
+        float: left;
+        margin: 30px 0 200px 160px;
+        
+    }
+    .addProfile a{
+        color: #000;
     }
     .reg-wid15{
         padding-top: 30px;
@@ -1816,7 +1920,193 @@ li:hover .subhobver{
         margin-top: 30px;
 
     }
+    .selectLang{
+        width: 502px;
+        float: right;
+        font-size: 15px;
+        margin-top: 30px;
+    }
+    .selLgWid{
+        width: 55%;
+        float: left;
+        position: relative;
+    }
+    .selLgWid input{
+        padding: 14px 10px;
+        background-color: white;
+        position: absolute;
+        left: -9999px;
+    }
+    .setLang{
+        position: relative;
+        /* display: block; */
+        width: 2.3em;
+        height: 1em;
+        cursor: pointer;
+        transition: 350ms;
+        color: #353e4f;
+    }
+    .selLgWid input:checked + .setLang2::before {
+        background: linear-gradient(rgba(0, 0, 0, 0.07), rgba(255, 255, 255, 0.1)), #d0d0d0;
+        box-shadow: 0 0.08em 0.15em -0.1em rgba(0, 0, 0, 0.5) inset, 0 0.05em 0.08em -0.01em rgba(255, 255, 255, 0.7), 0 0 0 0 rgba(255, 255, 255, 0.1) inset;
+    }
+    .selLgWid input:checked + .setLang2::after {
+        left: 0;
+        background: linear-gradient(#eee 10%, #eeeeee);
+        box-shadow: 0 0.1em 0.15em -0.05em rgba(255, 255, 255, 0.9) inset, 0 0.2em 0.2em -0.12em rgba(0, 0, 0, 0.5);
+    }
+    .setLang::before{
+        position: absolute;
+        content: '';
+        width: 2em;
+        height: 0.9em;
+        top: 0.2em;
+        left: 0;
+        border-radius: 0.75em;
+        transition: 250ms ease-in-out;
+        box-shadow: 0 0.08em 0.15em -0.1em rgba(0, 0, 0, 0.5) inset, 0 0.05em 0.08em -0.01em rgba(255, 255, 255, 0.7), 3em 0 0 0 rgba(217, 71, 92, 0.5) inset;
+    }
+    .setLang::after {
+        position: absolute;
+        content: '';
+        width: 1.22em;
+        height: 1.22em;
+        top: 0em;
+        left: 1em;
+        border-radius: 50%;
+        transition: 250ms ease-in-out;
+        box-shadow: 0 0.08em 0.15em -0.1em rgba(0, 0, 0, 0.5) inset, 0 0.05em 0.08em -0.01em rgba(255, 255, 255, 0.7), 3em 0 0 0 rgba(217, 71, 92, 1) inset;
+    }
+    .selLgWid2{
+        width: 25%;
+        float: right;
+        font-size: 14px;
+        text-align: right;
+        color: #d9475c;
+    }
+    .extraTxt2{
+        padding: 10px;
+        /* height: 46px; */
+        float:right;
+        width: 500px;
+        font-size: 14px;
+        color: #464545;
+        background-color: #fff;
+    }
+    .familyType li{
+        width: 124.5px;
+        float: left;
+        height: 46px;
+        text-align: center;
+        padding: 10px 0 15px 0;
+        cursor: pointer;
+        position: relative;
+        color: #353e4f;
+        border-left: 1px solid #d9d9d9;
 
+
+    }
+    .otpActive{
+        background-color: #d9475c;
+        color: #fff!important;
+    }
+    .brotherList li{
+        width: 99.6px;
+        float: left;
+        height: 46px;
+        text-align: center;
+        padding: 10px 0 15px 0;
+        cursor: pointer;
+        position: relative;
+        color: #353e4f;
+        border-left: 1px solid #d9d9d9;
+    }
+    .phoneVriy{
+        font-size: 22px;
+        padding-top: 26px;
+        padding-bottom: 27px;
+        color: #fff;
+    }
+    .phoneVryDesc{
+        color: #4c4151;
+        opacity: 0.8;
+        padding-top: 30px;
+        padding-bottom: 48px;
+        font-size: 17px;
+        text-align: center;
+    }
+    .phoneVerTxt{
+        font-size: 22px;
+    }
+    .ml117{
+        margin-left: 110px;
+        /* display: flex; */
+    }
+    .mobTitle{
+        color: #34495e;
+        opacity: 0.9;
+        padding-top: 15px;
+    }
+    .mobpostion{
+        margin-left: 20px;
+        position: relative;
+        width: 500px;
+        padding: 6px;
+        height: 62px;
+        text-align: left;
+        font-size: 12px;
+        border: 1px solid #d9d9d9;
+        margin-bottom: 20px;
+        background-color: #fff;
+    }
+    .mobpostion input{
+        font-size: 17px;
+        height: 50px;
+        border: 0;
+        outline: none;
+    }
+    .phoneISD{
+        width: 80px;
+        border-right:1px solid #d9d9d9!important;
+        text-align: center;
+        padding: 10px 12px;
+        
+    }
+    .mobileNuber{
+        width: 220px;
+        color: #34495e;
+        padding-left: 30px;
+    }
+    .verifyButton{
+        font-size: 20px;
+        margin-left: 130px;
+        margin-top: 20px;
+        background-color: #d9475c;
+        color: #fff;
+        border: 0;
+        padding: 8px 30px;
+
+    }
+    .phnTxt{
+        font-size: 13px;
+        color: #34495e;
+        padding-top: 22px;
+        padding-bottom: 100px;
+
+    }
+    .customerSport{
+        width: 834px;
+        border-top: 1px solid #dbdadd;
+        font-size: 13px;
+        margin: 0 auto;
+        text-align: center;
+        color: #34495e;
+        opacity: 0.6;
+        padding: 10px 0;
+    }
+    .customerSport a{
+        color: #5a95da;
+    }
 
 
 

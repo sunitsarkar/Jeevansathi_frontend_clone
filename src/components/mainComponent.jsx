@@ -23,6 +23,8 @@ class MainComponent extends Component{
             <div>
                 <Switch>
                 
+                    <Route path="/user_registration5" component={Verification}/>
+                    <Route path="/user_registration4" component={Family}/>
                     <Route path="/user_registration3" component={CareerDetails}/>
                     <Route path="/user_registration2" component={profileDetails}/>
                     <Route path="/user_registration" component={User_registration}/>
