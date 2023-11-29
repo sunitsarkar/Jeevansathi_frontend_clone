@@ -36,9 +36,19 @@
         font-size: 13px;
         line-height: 42px;
     }
-
+    .regi-loginBtn{
+        border: 1px solid #fff;
+        border-radius: 5px;
+        padding: 0px 4px;
+        margin-top: 8px;
+    }
     .jeevansathi-logo--Mobile {
         width: 70px;
+        height: 26px;
+        margin-top: 8px;
+    }
+    .regi-logo{
+        width: 86px;
         height: 26px;
         margin-top: 8px;
     }
@@ -745,8 +755,110 @@
         border-radius: 8px;
     }
 
-   
-
+    /* register page  */
+    .containerAction{
+        padding: 24px 20px 34px 20px;
+        position: absolute;
+        width: 100vw;
+        margin-top: -58px;
+        border-radius: 20px;
+        background: white;
+    }
+    .createPro{
+        /* letter-spacing: 1px; */
+        width: 300px;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 28px;
+        color: rgb(52, 73, 94);
+    }
+   .listContainer{
+        display: flex;
+        flex-wrap: wrap;
+        padding-top: 16px;
+   }
+   .listContainer .forBtn{
+        border: 1px solid rgb(227, 233, 238);
+        color: rgb(118, 132, 147);
+        background-color: rgb(255, 255, 255);
+        padding: 8px 12px;
+        border-radius: 36px;
+        margin: 0px 8px 8px 0px;
+   } 
+   .personal-header{
+        width: 100vw ;
+        background-color: rgb(65, 87, 101);
+        height: 55px;
+        padding: 16px 15px;
+        display: flex;
+   }
+   .allimages{
+        background: url("https://static.jeevansathi.com/images/jsms/commonImg/main-sprite_new_1.png");
+        background-repeat: no-repeat;
+        display: inline-block;
+   }
+   .personal-header .leftIcon{
+        width: 20%;
+   }
+   .leftIcon i{
+        background-position: -71px -135px;
+        width: 21px;
+        height: 26px;
+        z-index: 10;
+   }
+   .personal-header div{
+        font-size: 19px;
+        color: rgb(255, 255, 255);
+        line-height: 22px;
+        margin: 0 auto;
+        width: 50%;
+   }
+   .personalDetialsContainer{
+        /* height: 200px; */
+        overflow: auto;
+    
+   }
+   .regBlockSlider{
+        padding: 18px 15px;
+        border-bottom: 1px solid rgb(221, 219, 219);
+        display: flex;
+   }
+   .regBlockSlider .selectData{
+        width: 94%;
+        color: rgb(81, 80, 80);
+   }
+   .selectData .dateofbrth{
+        font-size: 12px;
+   }
+   .selectData .notFillForm{
+        font-size: 15px;
+        padding-top: 8px;
+   }
+   .iconContainer{
+        width: 5%;
+   }
+   .iconContainer .rightArrow{
+        background-position: -45px -14px;
+        width: 18px;
+        height: 29px;
+        margin-top: 10px;
+        margin-left: 9px;
+        text-align: end;
+   }
+   .btnForNext{
+        width: 100%;
+        background-color: rgb(113, 106, 107);
+        padding: 16px 15px;
+        position: absolute;
+        color: #fff;
+        font-size: 19px;
+        bottom: 0;
+        text-align: center;
+   }
+   .offcanvas-backdrop{
+        opacity: 0.7!important;
+   }
  
 
 

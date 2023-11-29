@@ -27,9 +27,6 @@ function CareerDetails(){
     let highDegrees = ["BBA","BMS","BFA","BEM","B.Sc","BA","B.Tech","BCA","BPT","CA","CS"];
 
     
-    
-
-
 
     return(
         <div className="proDetailBg">

@@ -158,6 +158,9 @@ a:hover{
 .browse-menu{
     cursor: pointer;
 }
+.browse-menu i{
+    padding-left:10px;
+}
 .browse-menu:hover + .contentHome{
     display: block;
     z-index: 9;
@@ -195,6 +198,10 @@ a:hover{
     width: 71%;
     float: right;
 }
+.browseContent .row{
+    margin-left: 12px;
+    margin-top: 10px;
+}
 .list-element{
     white-space: nowrap;
     overflow: hidden;
@@ -208,6 +215,9 @@ a:hover{
     cursor: pointer;
     padding-bottom: 18px;
 }
+.search-menu i{
+    padding-left: 8px;
+}
 .search-list{
     position: absolute;
     width: 246px;
@@ -218,7 +228,6 @@ a:hover{
 }
 .search-list div{
     padding: 10px 10px 10px 16px;
-
 }
 .search-list div:hover{
     background-color: #d9475c;
