@@ -12,6 +12,10 @@ import User_Login from "./../components/login/user_login";
 import profileDetails from "./../components/registration/profileDetails";
 import CareerDetails from "./../components/registration/careerDetails";
 import Help from "./features/help";
+import Verification from "./registration/verification";
+import Family from "./registration/family"
+import PhoneBook from "./features/phone-book";
+
 
 class MainComponent extends Component{
     state={ }
@@ -22,7 +26,7 @@ class MainComponent extends Component{
 
             <div>
                 <Switch>
-                
+
                     <Route path="/user_registration5" component={Verification}/>
                     <Route path="/user_registration4" component={Family}/>
                     <Route path="/user_registration3" component={CareerDetails}/>
@@ -32,6 +36,7 @@ class MainComponent extends Component{
                     <Route path="/profile_details" component={Details} />
                     <Route path="/settings" component={Settings}/>
                     <Route path="/features/help" component={Help}/>
+                    <Route path="/features/phone-book" component={PhoneBook}/> 
                     <Route path="/login" component={User_Login}/>
                     <Route path="/home" component={Index}/>
                     <Redirect from="/" to="/home"/>

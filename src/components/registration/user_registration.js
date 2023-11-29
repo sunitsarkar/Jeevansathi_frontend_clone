@@ -5,10 +5,10 @@ import payment from './.././../asset/payment.png'
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { AnimatePresence,color, motion } from "framer-motion";
+import { AnimatePresence, color, motion } from "framer-motion";
 import './reg.css'
 import axios from "axios";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function User_registration() {
 
@@ -49,13 +49,13 @@ export default function User_registration() {
     else {
         errors.phone = ''
     }
-    
 
-    const handelSubmit=()=>{
-        axios.post('',{
-            email:email,
-            mobile:mobile,
-            password:password
+
+    const handelSubmit = () => {
+        axios.post('', {
+            email: email,
+            mobile: mobile,
+            password: password
         })
     }
 
@@ -94,7 +94,7 @@ export default function User_registration() {
                 <br />
                 <div>
                     <div style={{ width: '100%' }} onClick={() => { setE(true) }}>
-                    {errors.email && <span style={{color:'red'}}>{errors.email}</span>}
+                        {errors.email && <span style={{ color: 'red' }}>{errors.email}</span>}
                         {
                             e ? <motion.p
                                 initial={{ x: 0 }}
@@ -105,12 +105,12 @@ export default function User_registration() {
                                 <p className="required" style={{ color: "black", display: 'inline' }}>Email</p>
                             </motion.p> : null
                         }
-                        <input type="email" className="Credential" placeholder={!e ? 'Email*' : null} required onChange={(e) => { setEmail(e.target.value) }}/>
+                        <input type="email" className="Credential" placeholder={!e ? 'Email*' : null} required onChange={(e) => { setEmail(e.target.value) }} />
                         <br />
                     </div>
                     <br />
-                    <div style={{ width: '100%' }}  onClick={(e) => { setShow(true); setM(true) }}>
-                    {errors.phone && <span style={{color:'red'}}>{errors.phone}</span>}
+                    <div style={{ width: '100%' }} onClick={(e) => { setShow(true); setM(true) }}>
+                        {errors.phone && <span style={{ color: 'red' }}>{errors.phone}</span>}
                         {
                             m ? <motion.p
                                 initial={{ x: 0 }}
@@ -122,7 +122,7 @@ export default function User_registration() {
                             </motion.p> : null
                         }
 
-                        <input type="text" className="Credential" placeholder={!m ? 'Mobile*' : null} onChange={(e)=>{setMobile(e.target.value)}} />
+                        <input type="text" className="Credential" placeholder={!m ? 'Mobile*' : null} onChange={(e) => { setMobile(e.target.value) }} />
                     </div>
                     {show ? <div id="message">
                         <p>Jeevansathi members who like your profile will  contact you on this phone number.</p>
@@ -150,7 +150,7 @@ export default function User_registration() {
                             <p className="required" style={{ color: "black", display: 'inline' }}>Create Password</p>
                         </motion.p> : null
                     }
-                    <input placeholder={!p ? "create new password*" : null} required className="Credential" onClick={(e)=>{setPassword(e.target.value)}} />
+                    <input placeholder={!p ? "create new password*" : null} required className="Credential" onClick={(e) => { setPassword(e.target.value) }} />
                 </div>
                 <p><small style={{ float: "left" }}>note: Use 8 or more characters with letters(A-Z) & numbers(0-9)</small></p>
                 <br />
@@ -165,7 +165,7 @@ export default function User_registration() {
                             <p className="required" style={{ color: "black", display: 'inline' }}>Create Account For</p>
                         </motion.p> : null
                     }
-                    <input placeholder={!c ? "Create Account For*" : null} className="Credential" onClick={(e)=>{setAccout(e.target.value)}} />
+                    <input placeholder={!c ? "Create Account For*" : null} className="Credential" onClick={(e) => { setAccout(e.target.value) }} />
                 </div>
                 <br />
                 <button type="button" className="btn btn-danger rounded" id="btn" onClick={handelSubmit}><Link to="/user_registration2">Register Me</Link></button>
@@ -175,29 +175,19 @@ export default function User_registration() {
             <div className="child" >
                 <h5><u>WHY REGISTER</u></h5>
                 <div>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" className="bi bi-people" viewBox="0 0 16 16">
-                        <path d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1h8Zm-7.978-1A.261.261 0 0 1 7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002a.274.274 0 0 1-.014.002H7.022ZM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM6.936 9.28a5.88 5.88 0 0 0-1.23-.247A7.35 7.35 0 0 0 5 9c-4 0-5 3-5 4 0 .667.333 1 1 1h4.216A2.238 2.238 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816ZM4.92 10A5.493 5.493 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275ZM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0Zm3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z" />
-                    </svg>
+                    <i className="reg-privacy privyIcon"></i>
                     <p>Lakhs of Genuine Profile</p>
                 </div>
                 <div>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" className="bi bi-person-check" viewBox="0 0 16 16">
-                        <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm1.679-4.493-1.335 2.226a.75.75 0 0 1-1.174.144l-.774-.773a.5.5 0 0 1 .708-.708l.547.548 1.17-1.951a.5.5 0 1 1 .858.514ZM11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z" />
-                        <path d="M8.256 14a4.474 4.474 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10c.26 0 .507.009.74.025.226-.341.496-.65.804-.918C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4s1 1 1 1h5.256Z" />
-                    </svg>
+                    <i className="reg-privacy privyIcon2"></i>
                     <p>Many verified by personal visit</p>
                 </div>
                 <div>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" className="bi bi-people" viewBox="0 0 16 16">
-                        <path d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1h8Zm-7.978-1A.261.261 0 0 1 7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002a.274.274 0 0 1-.014.002H7.022ZM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM6.936 9.28a5.88 5.88 0 0 0-1.23-.247A7.35 7.35 0 0 0 5 9c-4 0-5 3-5 4 0 .667.333 1 1 1h4.216A2.238 2.238 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816ZM4.92 10A5.493 5.493 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275ZM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0Zm3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z" />
-                    </svg>
+                    <i className="reg-privacy privyIcon3"></i>
                     <p>Secure and family </p>
                 </div>
                 <div>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" className="bi bi-key" viewBox="0 0 16 16">
-                        <path d="M0 8a4 4 0 0 1 7.465-2H14a.5.5 0 0 1 .354.146l1.5 1.5a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0L13 9.207l-.646.647a.5.5 0 0 1-.708 0L11 9.207l-.646.647a.5.5 0 0 1-.708 0L9 9.207l-.646.647A.5.5 0 0 1 8 10h-.535A4 4 0 0 1 0 8zm4-3a3 3 0 1 0 2.712 4.285A.5.5 0 0 1 7.163 9h.63l.853-.854a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.793-.793-1-1h-6.63a.5.5 0 0 1-.451-.285A3 3 0 0 0 4 5z" />
-                        <path d="M4 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
-                    </svg>
+                    <i className="reg-privacy privyIcon4"></i>
                     <p>Strict Privacy Control</p>
                 </div>
 
