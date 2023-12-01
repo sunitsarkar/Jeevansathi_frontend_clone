@@ -27,7 +27,7 @@ function ProfileDetails(){
     let years = [];
     let date = new Date();
     let pastYear = date.getFullYear() - 20;
-    for(let i=1;i<=30;i++) days.push(i);
+    for(let i=1;i<=31;i++) days.push(i);
     for(let j=pastYear-50;j<pastYear;j++) years.push(j);
     let langs = ["Assamese","Bengali","Bodo","Dogri","Gujarati","Hindi","Kannada","Kashmiri","Kashmiri","Maithili","Malayalam","Manipuri","Marathi","Nepali","Odia","Punjabi","Sanskrit","Santali","Sindhi","Tamil","Telugu","Urdu"]
     let religions=["Hindu","Muslim","Sikh","Christian","Buddhist","Jain","Parsi","Jewish","Bahai"];

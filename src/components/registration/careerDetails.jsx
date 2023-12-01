@@ -25,11 +25,9 @@ function CareerDetails(){
     let countries = ["Russia","Canada","China","US of America","Brazil","Australia","India","Argentina"," Kazakhstan","Algeria"];
    
     let highDegrees = ["BBA","BMS","BFA","BEM","B.Sc","BA","B.Tech","BCA","BPT","CA","CS"];
-
+    let emped = ["Private Sector","Government/Public Sector","Civil Services","Not Working"];
+    let incomeArr=["No Income","Rs. 1 - 2 Lakh","Rs. 2 - 3 Lakh","Rs. 3 - 4 Lakh","Rs. 4 - 5 Lakh"];
     
-    
-
-
 
     return(
         <div className="proDetailBg">
@@ -123,11 +121,10 @@ function CareerDetails(){
                                 <div className={"mStatusBox"}>
                                     <i className={"imgArrow religionIcon"}></i>
                                     <ul>
-                                        <li onClick={() =>{setEmp(false)}}>Private Sector</li>
-                                        <li onClick={() =>{setEmp(false)}}>Government/Public Sector</li>
-                                        <li onClick={() =>{setEmp(false)}}>Civil Services</li>
-                                        <li onClick={() =>{setEmp(false)}}>Not Working</li>
-                                    </ul>
+                                        {emped.map((e1,index)=><li key={index} onClick={() =>{setEmp(false)}}>{e1}</li>)}
+                                        
+                                    </ul> 
+                                    
                                 </div>
                                 </React.Fragment>
                                 :""}
@@ -143,11 +140,9 @@ function CareerDetails(){
                                 <div className={"gridDropdown"}>
                                     <i className={"imgArrow religionIcon"}></i>
                                     <ul>
-                                        <li onClick={() =>{setAnalIncome(false)}}>No Income</li>
-                                        <li onClick={() =>{setAnalIncome(false)}}>Rs. 1 - 2 Lakh</li>
-                                        <li onClick={() =>{setAnalIncome(false)}}>Rs. 2 - 3 Lakh</li>
-                                        <li onClick={() =>{setAnalIncome(false)}}>Rs. 3 - 4 Lakh</li>
+                                        {incomeArr.map((i1,index)=><li key={index} onClick={() =>{setAnalIncome(false)}}>{i1}</li>)}
                                     </ul>
+                                    
                                 </div>
                                 </React.Fragment>
                                 :""}

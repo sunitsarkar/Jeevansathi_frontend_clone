@@ -366,7 +366,6 @@ class index extends Component{
 
 
 
-
                 <div className="homePage-Mobile">
                     <div className="bgImageMb">
                         <header className="header-container">
@@ -379,7 +378,7 @@ class index extends Component{
                         <div className="looking-text">
                             <div className="nowChatForFree">Now, chat for free!</div>
                             <div className="isLooking">Finding your perfect match just became easier</div>
-                            <button><Link to="/user_registration">Register Free</Link></button>
+                            <button><Link to="/registr/page1">Register Free</Link></button>
                         </div>
 
                     </div>

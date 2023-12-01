@@ -11,9 +11,12 @@ import Settings from "./features/settings";
 import User_Login from "./../components/login/user_login";
 import profileDetails from "./../components/registration/profileDetails";
 import CareerDetails from "./../components/registration/careerDetails";
+import Family from "./../components/registration/family";
+import Verification from "./../components/registration/verification";
+import RegisterMobile from "./../components/registration/user-register-mobile";
+import PersonalDetails from "./../components/registration/personalDetails";
+import CareerDetailsMob from "./../components/registration/careerDetailsMobile";
 import Help from "./features/help";
-import Verification from "./registration/verification";
-import Family from "./registration/family"
 import PhoneBook from "./features/phone-book";
 
 
@@ -26,12 +29,18 @@ class MainComponent extends Component{
 
             <div>
                 <Switch>
+                
+                    <Route path="/registr/page3" component={CareerDetailsMob}/>
+                    <Route path="/registr/page2" component={PersonalDetails}/>
+                    <Route path="/registr/page1" component={RegisterMobile}/>
 
                     <Route path="/user_registration5" component={Verification}/>
                     <Route path="/user_registration4" component={Family}/>
                     <Route path="/user_registration3" component={CareerDetails}/>
                     <Route path="/user_registration2" component={profileDetails}/>
                     <Route path="/user_registration" component={User_registration}/>
+
+                    
                     <Route path="/landing" component={LandingPage} />
                     <Route path="/profile_details" component={Details} />
                     <Route path="/settings" component={Settings}/>
