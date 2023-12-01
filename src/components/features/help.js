@@ -7,10 +7,10 @@ import { Link } from "react-router-dom/cjs/react-router-dom.min"
 
 export default function Help() {
 
-    return <div style={{ position: 'relative' }}>
+    return <div className="help-main" style={{ position: 'relative' }}>
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }} >
-            <div style={{ zIndex: '-1', backgroundColor: 'white' }}>
-                <img src={background} />
+            <div style={{ zIndex: '-1', backgroundColor: 'white',width:'100%' }}>
+                <img src={background} width={'100%'}/>
             </div>
             <div className="help-nav">
                 <div className="help-nav-child1">
@@ -138,7 +138,8 @@ export default function Help() {
                 </div>
             </div>
         </div>
-        <Footer />
+        {/* <Footer /> */}
+
         <div style={{ width: '100%', height: '50px', backgroundColor: '#e1e4e7' }}>
             <p style={{ textAlign: 'center', paddingTop: '10px' }}>All rights reserved © 2016 Jeevansathi Internet Services.</p>
         </div>

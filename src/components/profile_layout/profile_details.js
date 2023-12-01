@@ -13,7 +13,7 @@ export default function Details() {
     const [show, setShow] = useState(false);
 
 
-    return <div id='profile-details'>
+    return <div className='profile-details'>
 
         <div id="landing-navbar">
             <div>

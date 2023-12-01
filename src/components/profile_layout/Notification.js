@@ -5,7 +5,7 @@ import './style.css'
 export default function Notification() {
 
 
-    return <div style={{ width: '45%' }}>
+    return <div className='noti-main' >
         <div id="notification">
             <div style={{ display: 'inline'}}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-caret-left" viewBox="0 0 16 16">

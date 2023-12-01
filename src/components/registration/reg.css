@@ -118,9 +118,29 @@ input{
     background-color: #afc3d6;
 }
 
+@media only screen and (max-width: 900px){
+    .main-div-registration{
+        zoom: 65%;
+        margin: 0px 0px;
+    }
+
+    .footer-List{
+        width: 100%;
+    }
+}
+
 @media only screen and (max-width: 480px) {
 
-    .main{
+    .main-div-registration{
+        zoom: 45%;
+        margin: 0px 0px;
+    }
+
+    .footer-List{
+        width: 100%;
+    }
+
+    /* .main{
         display: flex;
         flex-direction: column;
         margin-left: 28%;
@@ -144,7 +164,7 @@ input{
     .register-text{
         width: 100%;
         font-size: 15px;
-    }
+    } */
     /* .main-div-registration{
         font-size: 5px;
     } */

@@ -13,9 +13,9 @@ export default function Settings() {
 
 
 
-    return <div id='setting-main'>
+    return <div className='features-main'>
 
-        <div id="landing-navbar">
+        <div className="features-navbar">
             <div>
                 <img src={logo} />
             </div>

@@ -67,7 +67,7 @@ export default function User_registration() {
 
     //
 
-    return <div className="main-div-registration" style={{ marginRight: 0, paddingRight: 0 }}>
+    return <div className="main-div-registration" >
         <div className="cover" >
             <img src={cover} className="cover-image" />
 
