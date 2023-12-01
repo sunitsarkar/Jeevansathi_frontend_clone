@@ -15,6 +15,7 @@ import Family from "./../components/registration/family";
 import Verification from "./../components/registration/verification";
 import RegisterMobile from "./../components/registration/user-register-mobile";
 import PersonalDetails from "./../components/registration/personalDetails";
+import CareerDetailsMob from "./../components/registration/careerDetailsMobile";
 import Help from "./features/help";
 import PhoneBook from "./features/phone-book";
 
@@ -29,6 +30,7 @@ class MainComponent extends Component{
             <div>
                 <Switch>
                 
+                    <Route path="/registr/page3" component={CareerDetailsMob}/>
                     <Route path="/registr/page2" component={PersonalDetails}/>
                     <Route path="/registr/page1" component={RegisterMobile}/>
 

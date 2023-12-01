@@ -1,15 +1,41 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {Switch, Route, Redirect } from "react-router-dom";
 import {Link} from "react-router-dom";
 import OffCanvas from '../offcanvas/off-canvas'
 
 
+
 function UserRegisterMobile(){
+
+    const [takeData,setTakeData] = useState({dob:"",height:"",country:"",state:""});
+   
+    function handleHeight(hght){
+        setTakeData({...takeData,height:hght})
+
+    }
+    function handleCountry(cntry){
+        setTakeData({...takeData,country:cntry})
+
+    }
+   
+    let days = [];
+    let years = [];
+    for(let i=1;i<=31;i++) days.push(i);
+    let months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+    let date = new Date();
+    let pastYear = date.getFullYear() - 20;
+    for(let j=pastYear-50;j<pastYear;j++) years.push(j);
+
+    let heights = ["5' 0","5' 1","5' 2","5' 3","5' 4","5' 5","5' 6","5' 7","5' 8","5' 9","5' 10","5' 11"]
+    let countries = ["Russia","Canada","China","US of America","Brazil","Australia","India","Argentina"," Kazakhstan","Algeria"];
+        const {dob,height,country}=takeData;
+
+        console.log(height);
 
     return(
         <div className="">
             <header className="personal-header">
-                <span className="leftIcon"> <i className="allimages"></i> </span>
+                <span className="leftIcon"><Link to="/registr/page1"> <i className="allimages"></i></Link></span>
                 <div className="">Personal Details</div>
             </header>
             <div className="personalDetialsContainer">
@@ -22,19 +48,19 @@ function UserRegisterMobile(){
                         <i className="allimages rightArrow"></i>
                     </div>
                 </div>
-                <div className="regBlockSlider" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight2" aria-controls="offcanvsasRight">
+                <div className="regBlockSlider" data-bs-toggle="offcanvas" data-bs-target="#chooseHeight" aria-controls="offcanvsasRight">
                     <div className="selectData">
                         <div className="dateofbrth">Height</div>
-                        <div className="notFillForm">Not Filled In</div>
+                        <div className="notFillForm">{height?height:"Not Filled In"}</div>
                     </div>
                     <div className="iconContainer">
                         <i className="allimages rightArrow"></i>
                     </div>
                 </div>
-                <div className="regBlockSlider">
+                <div className="regBlockSlider" data-bs-toggle="offcanvas" data-bs-target="#chooseCountry" aria-controls="offcanvsasRight">
                     <div className="selectData">
                         <div className="dateofbrth">Country living in</div>
-                        <div className="notFillForm">Not Filled In</div>
+                        <div className="notFillForm">{country?country:"Not Filled In"}</div>
                     </div>
                     <div className="iconContainer">
                         <i className="allimages rightArrow"></i>
@@ -44,25 +70,65 @@ function UserRegisterMobile(){
                 <div class="offcanvas offcanvas-end" tabindex="-1" id="dateOfBirth" aria-labelledby="offcanvasRightLabel">
                     <header className="personal-header">
                         <span className="leftIcon" > <i className="allimages" data-bs-dismiss="offcanvas" aria-label="Close"></i> </span>
-                        <div className="">Date of birth</div>
+                        <div >Date of birth</div>
                     </header>
-                        
-                    <h1>hello</h1>
+                    <div>
+                        <div className="dobDiv">
+                            <div className="pinkFilter"></div>
+                            <ul className="showDateUl">
+                                {days.map((m1,index)=>(<li key={index}>{m1}</li>))}
+                            </ul>
+                        </div>
+                        <div className="dobDiv">
+                            <div className="pinkFilter"></div>
+                            <ul className="showDateUl">
+                                {months.map((m1,index)=>(<li key={index}>{m1}</li>))}
+                            </ul>
+                        </div>
+                        <div className="dobDiv">
+                            <div className="pinkFilter"></div>
+                            <ul className="showDateUl">
+                                {years.map((p1,index)=>(<li key={index}>{p1}</li>))}
+                            </ul>
+                        </div>
+                    </div>
+                    <buttom className="dobBtns">Done</buttom>
+                    
                 </div>
                 
-                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                    <h1>not</h1>
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="chooseHeight" aria-labelledby="offcanvasRightLabel">
+                    <header className="personal-header">
+                        <span className="leftIcon" > <i className="allimages" data-bs-dismiss="offcanvas" aria-label="Close"></i> </span>
+                        <div className="">Height</div>
+                    </header>
+                    <div className="divSlider">
+                        <ul>
+                            {heights.map((h1,index)=>
+                                <li className={height==h1?"selectedVal":""} key={index} onClick={()=>handleHeight(h1)} data-bs-dismiss="offcanvas" aria-label="Close">{`${h1}"`}</li>
+                            )}
+                            
+                        </ul>
+                    </div>
                 </div>
-                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight2" aria-labelledby="offcanvasRightLabel">
-                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                    <h1>word</h1>
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="chooseCountry" aria-labelledby="offcanvasRightLabel">
+                    <header className="personal-header">
+                        <span className="leftIcon" > <i className="allimages" data-bs-dismiss="offcanvas" aria-label="Close"></i> </span>
+                        <div className="">Height</div>
+                    </header>
+                    <div className="divSlider">
+                        <ul>
+                            {countries.map((c1,index)=>
+                                <li className={country==c1?"selectedVal":""} key={index} onClick={()=>handleCountry(c1)} data-bs-dismiss="offcanvas" aria-label="Close">{c1}</li>
+                            )}
+                            
+                        </ul>
+                    </div>
                 </div>
 
 
             </div>
             <div className="btnForNext">
-                <div>Next</div>
+                <Link to="/registr/page3"><div>Next</div></Link>
             </div>
         </div>
                  
