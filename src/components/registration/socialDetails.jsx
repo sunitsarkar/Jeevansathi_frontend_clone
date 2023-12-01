@@ -5,14 +5,14 @@ import OffCanvas from '../offcanvas/off-canvas'
 
 
 
-function CareerDatailsMob(){
+function SocialDetails(){
 
-    const [takeData,setTakeData] = useState({qualify:"",employee:"",annIncome:""});
+    const [takeData,setTakeData] = useState({maritStatus:"",motherTongue:"",religCaste:""});
    
     function handleData(title,value){
-        if(title=="qualify")setTakeData({...takeData,qualify:value});
-        if(title=="employee")setTakeData({...takeData,employee:value});
-        if(title=="annIncome")setTakeData({...takeData,annIncome:value});
+        if(title=="maritStatus")setTakeData({...takeData,maritStatus:value});
+        if(title=="motherTongue")setTakeData({...takeData,motherTongue:value});
+        if(title=="religCaste")setTakeData({...takeData,religCaste:value});
     }
 
     function defiMultiInput(label,val){
@@ -48,53 +48,51 @@ function CareerDatailsMob(){
             </div>
         )
     }
-    
-    let highDegrees = ["BBA","BMS","BFA","BEM","B.Sc","BA","B.Tech","BCA","BPT","CA","CS"];
-    let emped = ["Private Sector","Government/Public Sector","Civil Services","Not Working"];
-    let incomeArr=["No Income","Rs. 1 - 2 Lakh","Rs. 2 - 3 Lakh","Rs. 3 - 4 Lakh","Rs. 4 - 5 Lakh"];
 
-    const {qualify,employee,annIncome}=takeData;
+    let langs = ["Assamese","Bengali","Bodo","Dogri","Gujarati","Hindi","Kannada","Kashmiri","Kashmiri","Maithili","Malayalam","Manipuri","Marathi","Nepali","Odia","Punjabi","Sanskrit","Santali","Sindhi","Tamil","Telugu","Urdu"]
+    let religions=["Hindu","Muslim","Sikh","Christian","Buddhist","Jain","Parsi","Jewish","Bahai"];
+    let mstatus=["Never Married","Awaiting Divorce","Divorced","Widowed"];
+    
+    const {maritStatus,motherTongue,religCaste}=takeData;
 
     return(
         <div className="">
             <header className="personal-header">
-                <span className="leftIcon"><Link to="/registr/page2"> <i className="allimages"></i></Link></span>
-                <div className="">Career Details</div>
+                <span className="leftIcon"><Link to="/registr/page3"> <i className="allimages"></i></Link></span>
+                <div className="">Social Details</div>
             </header>
             <div className="personalDetialsContainer">
                
                 <div className="regBlockSlider" data-bs-toggle="offcanvas" data-bs-target="#highestQualify" aria-controls="offcanvsasRight">
-                    {defiMultiInput("Highest Qualification",qualify)}
+                    {defiMultiInput("Marital Status",maritStatus)}
                 </div>
                 <div className="regBlockSlider" data-bs-toggle="offcanvas" data-bs-target="#employeeIn" aria-controls="offcanvsasRight">
-                    {defiMultiInput("Employed In",employee)}
+                    {defiMultiInput("Mother Tongue",motherTongue)}
                 </div>
                 <div className="regBlockSlider" data-bs-toggle="offcanvas" data-bs-target="#annualIncome" aria-controls="offcanvsasRight">
-                    {defiMultiInput("Annual Income",annIncome)}
+                    {defiMultiInput("Religion-Caste",religCaste)}
                 </div>
 
                 <div className="offcanvas offcanvas-end" tabIndex="-1" id="highestQualify" aria-labelledby="offcanvasRightLabel">
-                    {makeMultiToggle("Highest Qualification",highDegrees,qualify,"qualify")}
+                    {makeMultiToggle("Marital Status",mstatus,maritStatus,"maritStatus")}
                 </div>
 
                 <div className="offcanvas offcanvas-end" tabIndex="-1" id="employeeIn" aria-labelledby="offcanvasRightLabel">
-                    {makeMultiToggle("Employed In",emped,employee,"employee")}
+                    {makeMultiToggle("Mother Tongue",langs,motherTongue,"motherTongue")}
                 </div>
                 <div className="offcanvas offcanvas-end" tabIndex="-1" id="annualIncome" aria-labelledby="offcanvasRightLabel">
-                    {makeMultiToggle("Annual Income",incomeArr,annIncome,"annIncome")}
+                    {makeMultiToggle("Religion-Caste",religions,religCaste,"religCaste")}
                 </div>
 
 
             </div>
-            <div className={"btnForNext "+(qualify&&employee&&annIncome?"btnActive":"")}>
-                <Link to="/registr/page4"><div>Next</div></Link>
+            <div className={"btnForNext "+(motherTongue&&motherTongue&&religCaste?"btnActive":"")}>
+                <Link to="/registr/page5"><div>Next</div></Link>
             </div>
         </div>   
     );
 
 }
 
-export default CareerDatailsMob;
-
-// jainprateek9058@gmail.com
+export default SocialDetails;
 

@@ -9,14 +9,45 @@ function UserRegisterMobile(){
 
     const [takeData,setTakeData] = useState({dob:"",height:"",country:"",state:""});
    
-    function handleHeight(hght){
-        setTakeData({...takeData,height:hght})
-
+    function handleData(title,value){
+        if(title=="height")setTakeData({...takeData,height:value});
+        if(title=="country")setTakeData({...takeData,country:value});
     }
-    function handleCountry(cntry){
-        setTakeData({...takeData,country:cntry})
 
+    function defiMultiInput(label,val){
+        return(
+            <React.Fragment>
+                <div className="selectData">
+                    <div className="dateofbrth">{label}</div>
+                    <div className="notFillForm">{val?val:"Not Filled In"}</div>
+                </div>
+                <div className="iconContainer">
+                    <i className="allimages rightArrow"></i>
+                </div>
+            </React.Fragment>
+        )
     }
+
+    function makeMultiToggle(title,arr,value,name){
+        return(
+            <div>
+                <header className="personal-header">
+                    <span className="leftIcon" > 
+                        <i className="allimages" data-bs-dismiss="offcanvas" aria-label="Close"></i> 
+                    </span>
+                    <div className="">{title}</div>
+                </header>
+                <div className="divSlider">
+                    <ul>
+                        {arr.map((h1,index)=>
+                            <li className={value==h1?"selectedVal":""} key={index} onClick={()=>{handleData(name,h1)}} data-bs-dismiss="offcanvas" aria-label="Close">{h1}</li>
+                        )}
+                    </ul>
+                </div>
+            </div>
+        )
+    }
+    
    
     let days = [];
     let years = [];
@@ -40,31 +71,13 @@ function UserRegisterMobile(){
             </header>
             <div className="personalDetialsContainer">
                 <div className="regBlockSlider" data-bs-toggle="offcanvas" data-bs-target="#dateOfBirth" aria-controls="offcanvsasRight">
-                    <div className="selectData">
-                        <div className="dateofbrth">Date of birth</div>
-                        <div className="notFillForm">Not Filled In</div>
-                    </div>
-                    <div className="iconContainer">
-                        <i className="allimages rightArrow"></i>
-                    </div>
+                    {defiMultiInput("Date of birth",dob)}
                 </div>
                 <div className="regBlockSlider" data-bs-toggle="offcanvas" data-bs-target="#chooseHeight" aria-controls="offcanvsasRight">
-                    <div className="selectData">
-                        <div className="dateofbrth">Height</div>
-                        <div className="notFillForm">{height?height:"Not Filled In"}</div>
-                    </div>
-                    <div className="iconContainer">
-                        <i className="allimages rightArrow"></i>
-                    </div>
+                    {defiMultiInput("Height",height)}
                 </div>
                 <div className="regBlockSlider" data-bs-toggle="offcanvas" data-bs-target="#chooseCountry" aria-controls="offcanvsasRight">
-                    <div className="selectData">
-                        <div className="dateofbrth">Country living in</div>
-                        <div className="notFillForm">{country?country:"Not Filled In"}</div>
-                    </div>
-                    <div className="iconContainer">
-                        <i className="allimages rightArrow"></i>
-                    </div>
+                    {defiMultiInput("Country living in",country)}
                 </div>
 
                 <div class="offcanvas offcanvas-end" tabindex="-1" id="dateOfBirth" aria-labelledby="offcanvasRightLabel">
@@ -97,37 +110,15 @@ function UserRegisterMobile(){
                 </div>
                 
                 <div class="offcanvas offcanvas-end" tabindex="-1" id="chooseHeight" aria-labelledby="offcanvasRightLabel">
-                    <header className="personal-header">
-                        <span className="leftIcon" > <i className="allimages" data-bs-dismiss="offcanvas" aria-label="Close"></i> </span>
-                        <div className="">Height</div>
-                    </header>
-                    <div className="divSlider">
-                        <ul>
-                            {heights.map((h1,index)=>
-                                <li className={height==h1?"selectedVal":""} key={index} onClick={()=>handleHeight(h1)} data-bs-dismiss="offcanvas" aria-label="Close">{`${h1}"`}</li>
-                            )}
-                            
-                        </ul>
-                    </div>
+                    {makeMultiToggle("Height",heights,height,"height")} 
                 </div>
                 <div class="offcanvas offcanvas-end" tabindex="-1" id="chooseCountry" aria-labelledby="offcanvasRightLabel">
-                    <header className="personal-header">
-                        <span className="leftIcon" > <i className="allimages" data-bs-dismiss="offcanvas" aria-label="Close"></i> </span>
-                        <div className="">Height</div>
-                    </header>
-                    <div className="divSlider">
-                        <ul>
-                            {countries.map((c1,index)=>
-                                <li className={country==c1?"selectedVal":""} key={index} onClick={()=>handleCountry(c1)} data-bs-dismiss="offcanvas" aria-label="Close">{c1}</li>
-                            )}
-                            
-                        </ul>
-                    </div>
+                    {makeMultiToggle("Country living in",countries,country,"country")} 
                 </div>
 
 
             </div>
-            <div className="btnForNext">
+            <div className={"btnForNext "+(dob&&height&&country?"btnActive":"")}>
                 <Link to="/registr/page3"><div>Next</div></Link>
             </div>
         </div>

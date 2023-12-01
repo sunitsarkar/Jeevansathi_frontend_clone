@@ -16,6 +16,8 @@ import Verification from "./../components/registration/verification";
 import RegisterMobile from "./../components/registration/user-register-mobile";
 import PersonalDetails from "./../components/registration/personalDetails";
 import CareerDetailsMob from "./../components/registration/careerDetailsMobile";
+import SocialDetails from "./../components/registration/socialDetails";
+import VerificationMob from "./../components/registration/verificationMob";
 import Help from "./features/help";
 import PhoneBook from "./features/phone-book";
 
@@ -30,6 +32,8 @@ class MainComponent extends Component{
             <div>
                 <Switch>
                 
+                    <Route path="/registr/page5" component={VerificationMob}/>
+                    <Route path="/registr/page4" component={SocialDetails}/>
                     <Route path="/registr/page3" component={CareerDetailsMob}/>
                     <Route path="/registr/page2" component={PersonalDetails}/>
                     <Route path="/registr/page1" component={RegisterMobile}/>
