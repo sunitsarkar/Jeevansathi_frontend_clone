@@ -11,6 +11,8 @@ function CareerDetails(){
     const [label4, setlabel4] = useState(false);
     const [label5, setlabel5] = useState(false);
     const [label6, setlabel6] = useState(false);
+    const [label7, setlabel7] = useState(false);
+    const [label8, setlabel8] = useState(false);
 
     const [country, setCountry] = useState(false);
     const [state, setState] = useState(false);
@@ -95,6 +97,24 @@ function CareerDetails(){
                             </div>
                         </div>
                         <div className="regi-detail">
+                            <div className="arletVlid">Please mention the City you are living in</div>
+                            <div className="regi-secle" >
+                                <label className={"reg-label " +(label7?"reg-city":"")} onClick={() =>{setlabel7(true)}}>City living in<span className="star">*</span></label>
+                                <input type="text" placeholder="" onClick={() =>{setlabel7(true)}}/>
+                                {label7 ?
+                                <React.Fragment>
+                                {/* <div className="gridDropdown">
+                                    <i className={"imgArrow religionIcon"}></i>
+                                    <ul>
+                                        
+                                    </ul>
+                                </div> */}
+                                </React.Fragment>
+                                
+                                :""}
+                            </div>
+                        </div>
+                        <div className="regi-detail">
                             <div className="arletVlid">Please provide a degree</div>
                             <div className="regi-secle" >
                                 <label className={"reg-label " +(label3?"reg-HDegree":"")} onClick={() =>{setlabel3(true)}}>Highest Degree<span className="star">*</span></label> 
@@ -126,6 +146,25 @@ function CareerDetails(){
                                     </ul> 
                                     
                                 </div>
+                                </React.Fragment>
+                                :""}
+                            </div>
+                        </div>
+                        <div className="regi-detail">
+                            <div className="arletVlid">Please provide an occupation</div>
+                            <div className="regi-secle" >
+                                <label className={"reg-label " +(label8?"reg-emp":"")} onClick={() =>{setlabel8(true)}}>Occupation<span className="star">*</span></label> 
+                                <input type="text" placeholder="" onClick={() =>{setlabel8(true)}}/>
+                                {label8?
+                                <React.Fragment>
+                                {/* <div className={"mStatusBox"}>
+                                    <i className={"imgArrow religionIcon"}></i>
+                                    <ul>
+                                        
+                                        
+                                    </ul> 
+                                    
+                                </div> */}
                                 </React.Fragment>
                                 :""}
                             </div>
