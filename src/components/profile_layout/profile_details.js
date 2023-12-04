@@ -15,7 +15,7 @@ export default function Details() {
 
     return <div className='profile-details'>
 
-        <div id="landing-navbar">
+        <div className="landing-navbar">
             <div>
                 <img src={logo} />
             </div>

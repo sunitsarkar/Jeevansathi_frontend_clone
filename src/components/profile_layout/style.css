@@ -53,6 +53,14 @@
 
 @media only screen and (max-width: 1020px) {
 
+    .landing-navbar{
+        display: none;
+    }
+
+    .profile-box{
+        width: 100%;
+        margin-top: -100px;
+    }
 
     .match-box {
         width: 100%;

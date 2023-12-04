@@ -138,7 +138,7 @@ export default function Help() {
                 </div>
             </div>
         </div>
-        {/* <Footer /> */}
+        <Footer />
 
         <div style={{ width: '100%', height: '50px', backgroundColor: '#e1e4e7' }}>
             <p style={{ textAlign: 'center', paddingTop: '10px' }}>All rights reserved © 2016 Jeevansathi Internet Services.</p>
