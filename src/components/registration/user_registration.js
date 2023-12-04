@@ -12,6 +12,13 @@ import { Link } from "react-router-dom";
 
 export default function User_registration() {
 
+    const [label, setlabel] = useState(false);
+
+
+    const [account, setAccount] = useState(-1);
+    function handleAccType(val) {
+        setAccount(val);
+    }
     const settings = {
         dots: true,
         infinite: true,
@@ -122,7 +129,7 @@ export default function User_registration() {
                             </motion.p> : null
                         }
 
-                        <input type="text" className="Credential" placeholder={!m ? 'Mobile*' : null} onChange={(e) => { setMobile(e.target.value) }} />
+                        <input type="text" className="Credential" placeholder={!m ? 'Phone*' : null} onChange={(e) => { setMobile(e.target.value) }} />
                     </div>
                     {show ? <div id="message">
                         <p>Jeevansathi members who like your profile will  contact you on this phone number.</p>
@@ -154,25 +161,29 @@ export default function User_registration() {
                 </div>
                 <p><small style={{ float: "left" }}>note: Use 8 or more characters with letters(A-Z) & numbers(0-9)</small></p>
                 <br />
-                <div onClick={() => setC(true)}>
-                    {
-                        c ? <motion.p
-                            initial={{ x: 0 }}
-                            animate={{ x: -135 }}
-                            transition={{ type: "spring", duration: 1.3 }}
-                            id='title'
-                        >
-                            <p className="required" style={{ color: "black", display: 'inline' }}>Create Account For</p>
-                        </motion.p> : null
-                    }
-                    <input placeholder={!c ? "Create Account For*" : null} className="Credential" onClick={(e) => { setAccout(e.target.value) }} />
+                <div className="reg-inputs" onClick={() => { setlabel(true); }}>
+                    <label className={"label  " + (label ? "reg-acc" : "")}>Create Account For</label>
+                    {label ?
+                        <React.Fragment>
+                            <div>
+                                <ul className="accountFor">
+                                    <li className={"border-0 " + (account == 0 ? "otpActive" : "")} onClick={() => { handleAccType(0) }}>Self</li>
+                                    <li className={account == 1 ? "otpActive" : ""} onClick={() => { handleAccType(1) }}>Son</li>
+                                    <li className={account == 2 ? "otpActive" : ""} onClick={() => { handleAccType(2) }}>Daughter</li>
+                                    <li className={account == 3 ? "otpActive" : ""} onClick={() => { handleAccType(3) }}>Sister</li>
+                                    <li className={account == 4 ? "otpActive" : ""} onClick={() => { handleAccType(4) }}>Relative/Friend</li>
+                                    <li className={account == 5 ? "otpActive" : ""} onClick={() => { handleAccType(5) }}>Other</li>
+                                </ul>
+                            </div>
+                        </React.Fragment>
+                        : ""}
                 </div>
                 <br />
                 <button type="button" className="btn btn-danger rounded" id="btn" onClick={handelSubmit}><Link to="/user_registration2">Register Me</Link></button>
                 <p className="register-text" style={{ width: '55%' }}>By clicking on <span className="fs-6 text-dark register-text">'Register Me',</span> you confirm that you accept the <a className="fs-6 text-danger" href="#">'Terms of use'</a> and <a className="fs-6 text-danger" href="#">'Privacy Policy'</a> </p>
 
             </div>
-            <div className="child" >
+            <div className="child" id="second-child">
                 <h5><u>WHY REGISTER</u></h5>
                 <div>
                     <i className="reg-privacy privyIcon"></i>
