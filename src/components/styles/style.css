@@ -852,7 +852,7 @@ a:hover{
     visibility: hidden;
     opacity: 0;
     background-color: #F0455E;
-    border-radius: 7px;
+    border-radius: 18px;
     color: #fff;
     padding: 24px;
     transition: 2s all;

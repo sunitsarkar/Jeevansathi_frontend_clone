@@ -566,7 +566,7 @@ class index extends Component{
                                                 <li key={index} onClick={()=>this.handleShowMb(index)}>
                                                 <div className={"border-secondary pt-3 "+(index>0?"border-top":"")}></div>
                                                         {m1} 
-                                                    <i class={"fa-solid float-right mt-2 pr-2 "+(showMatrialMb==index?"fa-angle-up":"fa-angle-down")}></i>
+                                                    <i class={"fa-solid float-right m-2 "+(showMatrialMb==index?"fa-angle-up":"fa-angle-down")}></i>
                                                     
                                                     <div className={showMatrialMb==index?"d-block":"d-none"}>
                                                         {showMatrialMb==0?(

@@ -2,14 +2,18 @@ import React, {useEffect, useState} from "react";
 import {Switch, Route, Redirect } from "react-router-dom";
 import {Link} from "react-router-dom";
 import OffCanvas from '../offcanvas/off-canvas'
+import { motion } from "framer-motion";
 
 
 
 function UserRegisterMobile(){
 
-    const [takeData,setTakeData] = useState({dob:"",height:"",country:"",state:""});
+    const [takeData,setTakeData] = useState({day:"",month:"",year:"",height:"",country:"",state:""});
    
     function handleData(title,value){
+        if(title=="day")setTakeData({...takeData,day:value});
+        if(title=="month")setTakeData({...takeData,month:value});
+        if(title=="year")setTakeData({...takeData,year:value});
         if(title=="height")setTakeData({...takeData,height:value});
         if(title=="country")setTakeData({...takeData,country:value});
     }
@@ -59,12 +63,12 @@ function UserRegisterMobile(){
 
     let heights = ["5' 0","5' 1","5' 2","5' 3","5' 4","5' 5","5' 6","5' 7","5' 8","5' 9","5' 10","5' 11"]
     let countries = ["Russia","Canada","China","US of America","Brazil","Australia","India","Argentina"," Kazakhstan","Algeria"];
-        const {dob,height,country}=takeData;
+    const {day,month,year,height,country}=takeData;
+    let dob = day&&month&&year?day+" "+month+" "+year:"";
 
-        console.log(height);
 
     return(
-        <div className="">
+        <motion.div className="ssssasa" initial={{ width: "100%",x:"100vw" }} animate={{ width: "100%",x:0 }} transition={{ duration: 0.4 }}>
             <header className="personal-header">
                 <span className="leftIcon"><Link to="/registr/page1"> <i className="allimages"></i></Link></span>
                 <div className="">Personal Details</div>
@@ -87,25 +91,22 @@ function UserRegisterMobile(){
                     </header>
                     <div>
                         <div className="dobDiv">
-                            <div className="pinkFilter"></div>
                             <ul className="showDateUl">
-                                {days.map((m1,index)=>(<li key={index}>{m1}</li>))}
+                                {days.map((d1,index)=>(<li className={day==d1?"selectedVal mx-1":""} key={index} onClick={()=>{handleData("day",d1)}}>{d1}</li>))}
                             </ul>
                         </div>
                         <div className="dobDiv">
-                            <div className="pinkFilter"></div>
                             <ul className="showDateUl">
-                                {months.map((m1,index)=>(<li key={index}>{m1}</li>))}
+                                {months.map((m1,index)=>(<li className={month==m1?"selectedVal mx-1":""} key={index} onClick={()=>{handleData("month",m1)}}>{m1}</li>))}
                             </ul>
                         </div>
                         <div className="dobDiv">
-                            <div className="pinkFilter"></div>
                             <ul className="showDateUl">
-                                {years.map((p1,index)=>(<li key={index}>{p1}</li>))}
+                                {years.map((y1,index)=>(<li className={year==y1?"selectedVal mx-1":""} key={index} onClick={()=>{handleData("year",y1)}}>{y1}</li>))}
                             </ul>
                         </div>
                     </div>
-                    <buttom className="dobBtns">Done</buttom>
+                    <buttom className={"dobBtns "+(day&&month&&year?"dobBtns2":"")} data-bs-dismiss="offcanvas" aria-label="Close">Done</buttom>
                     
                 </div>
                 
@@ -121,11 +122,12 @@ function UserRegisterMobile(){
             <div className={"btnForNext "+(dob&&height&&country?"btnActive":"")}>
                 <Link to="/registr/page3"><div>Next</div></Link>
             </div>
-        </div>
+        </motion.div>
                  
     );
 
 }
 
 export default UserRegisterMobile;
+
 

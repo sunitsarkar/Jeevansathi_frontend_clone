@@ -20,6 +20,7 @@ import SocialDetails from "./../components/registration/socialDetails";
 import VerificationMob from "./../components/registration/verificationMob";
 import Help from "./features/help";
 import PhoneBook from "./features/phone-book";
+import Demo from  "./../components/registration/demoAmi";
 
 
 class MainComponent extends Component{
@@ -32,6 +33,8 @@ class MainComponent extends Component{
             <div>
                 <Switch>
                 
+                    <Route path="/demo" component={Demo}/>
+
                     <Route path="/registr/page5" component={VerificationMob}/>
                     <Route path="/registr/page4" component={SocialDetails}/>
                     <Route path="/registr/page3" component={CareerDetailsMob}/>
