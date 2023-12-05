@@ -11,13 +11,31 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 
 export default function User_registration() {
-
+ 
     const [label, setlabel] = useState(false);
-
+    
 
     const [account, setAccount] = useState(-1);
     function handleAccType(val) {
         setAccount(val);
+        if(val===0){
+            setAccountFor('self')
+        }
+        if(val===1){
+            setAccountFor('son')
+        }
+        if(val===2){
+            setAccountFor('daughter')
+        }
+        if(val===3){
+            setAccountFor('sister')
+        }
+        if(val===4){
+            setAccountFor('relative/friend')
+        }
+        if(val===1){
+            setAccountFor('other')
+        }
     }
     const settings = {
         dots: true,
@@ -30,7 +48,7 @@ export default function User_registration() {
     const [email, setEmail] = useState('')
     const [mobile, setMobile] = useState('')
     const [password, setPassword] = useState('')
-    const [accout, setAccout] = useState('')
+    const [accountFor, setAccountFor] = useState('')
     const [errors, setErrors] = useState({});
 
     const [show, setShow] = useState(false)
@@ -57,6 +75,15 @@ export default function User_registration() {
         errors.phone = ''
     }
 
+    if (password.trim() === '') {
+        errors.password = '';
+    } else if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/.test(password)) {
+        errors.password = 'Password must contain Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special characte';
+    }
+    else {
+        errors.password = ''
+    }
+
 
     const handelSubmit = () => {
         axios.post('', {
@@ -67,9 +94,7 @@ export default function User_registration() {
     }
 
     //
-    console.log(errors.email)
-    console.log(errors.email)
-    console.log(mobile)
+    console.log(password)
 
 
     //
@@ -147,6 +172,7 @@ export default function User_registration() {
                 </div>
                 <br />
                 <div onClick={() => setP(true)}>
+                {errors.password && <span style={{ color: 'red' }}>{errors.password}</span>}
                     {
                         p ? <motion.p
                             initial={{ x: 0 }}
@@ -157,7 +183,7 @@ export default function User_registration() {
                             <p className="required" style={{ color: "black", display: 'inline' }}>Create Password</p>
                         </motion.p> : null
                     }
-                    <input placeholder={!p ? "create new password*" : null} required className="Credential" onClick={(e) => { setPassword(e.target.value) }} />
+                    <input placeholder={!p ? "create new password*" : null} required className="Credential" onChange={(e) => { setPassword(e.target.value) }} />
                 </div>
                 <p><small style={{ float: "left" }}>note: Use 8 or more characters with letters(A-Z) & numbers(0-9)</small></p>
                 <br />
