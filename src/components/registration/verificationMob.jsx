@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from "react";
 import {Switch, Route, Redirect } from "react-router-dom";
 import {Link} from "react-router-dom";
-import OffCanvas from '../offcanvas/off-canvas'
+import OffCanvas from '../offcanvas/off-canvas';
+import { motion } from "framer-motion";
 
 
 
@@ -19,7 +20,7 @@ function VerificationMob(){
    
 
     return(
-        <div className="">
+        <motion.div initial={{ x:1400 }} animate={{ x:0 }} transition={{ duration: 0.5 }}>
             <header className="personal-header">
                 <span className="leftIcon"><Link to="/registr/page4"> <i className="allimages"></i></Link></span>
                 <div className="">Login Details</div>
@@ -76,7 +77,7 @@ function VerificationMob(){
             <div className={"btnForNext "}>
                 <Link to="/registr/page5"><div>Accept & Continue</div></Link>
             </div>
-        </div>   
+        </motion.div>   
     );
 
 }

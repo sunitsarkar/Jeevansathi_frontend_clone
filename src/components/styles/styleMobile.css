@@ -307,6 +307,7 @@
         border-radius: 4px;
     }
 
+
     /* .microLine{
         width: 95px;
     }
@@ -556,6 +557,25 @@
 
     .footerWid div {
         font-size: 12px;
+    }
+    /* .partnerList{
+        padding: 10px 0 10px 60px;
+
+    } */
+    .footer-List{
+        width: 500px!important;
+    }
+    .partnerList{
+        padding: 10px 0;
+    }
+    .partnerSite{
+        width: 100px;
+        margin-right: 20px;
+    }
+    .footerContainer .slick-slider{
+        margin-left: 10px;
+        width: 380px;
+        height: 80px;
     }
 
     .footerIcon2 {
@@ -838,6 +858,20 @@
         font-size: 15px;
         padding-top: 8px;
    }
+   .radio-wid{
+        margin: 8px 0px;
+        width: 40%;
+        float: left;
+   }
+   .radio-wid label{
+        font-size: 16px;
+        padding: 0 10px;
+
+   }
+   .form-check-input{
+    width: 24px;
+    height: 24px;
+   }
    .iconContainer{
         width: 5%;
    }
@@ -999,16 +1033,7 @@
         background: rgb(255, 244, 246);
     }
  
-    .ssssasa{
-        width: 100%;
-        /* overflow:hidden!important;
-        overflow-x: hidden;
-        overflow-y: hidden;
-        height: auto; */
-        /* transform: translateX(0vw) translateZ(0px); */
 
-        /* transform:  translateZ(0)!important; */
-    }
 
 
 

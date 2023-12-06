@@ -68,12 +68,26 @@ function UserRegisterMobile(){
 
 
     return(
-        <motion.div className="ssssasa" initial={{ x:1400 }} animate={{ x:0 }} transition={{ duration: 0.5 }}>
+        <motion.div initial={{ x:1400 }} animate={{ x:0 }} transition={{ duration: 0.5 }}>
             <header className="personal-header">
                 <span className="leftIcon"><Link to="/registr/page1"> <i className="allimages"></i></Link></span>
                 <div className="">Personal Details</div>
             </header>
             <div className="personalDetialsContainer">
+                <div className="regBlockSlider">
+                    <div className="selectData">
+                        <div className="dateofbrth">Gender</div>
+                        <div className="radio-wid">
+                            <input type="radio" className="form-check-input" name="gender"/>
+                            <label>Female</label>
+                        </div>
+                        <div className="radio-wid">
+                            <input type="radio" className="form-check-input" name="gender"/>
+                            <label>Male</label>
+                        </div>
+                    </div>
+
+                </div>
                 <div className="regBlockSlider" data-bs-toggle="offcanvas" data-bs-target="#dateOfBirth" aria-controls="offcanvsasRight">
                     {defiMultiInput("Date of birth",dob)}
                 </div>

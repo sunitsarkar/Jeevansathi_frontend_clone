@@ -30,6 +30,10 @@ function CareerDetails(){
     let emped = ["Private Sector","Government/Public Sector","Civil Services","Not Working"];
     let incomeArr=["No Income","Rs. 1 - 2 Lakh","Rs. 2 - 3 Lakh","Rs. 3 - 4 Lakh","Rs. 4 - 5 Lakh"];
     
+ 
+
+
+
 
     return(
         <div className="proDetailBg">
@@ -248,4 +252,5 @@ function CareerDetails(){
 }
 
 export default CareerDetails;
+
 

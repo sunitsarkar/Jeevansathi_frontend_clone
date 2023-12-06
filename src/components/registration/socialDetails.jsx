@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from "react";
 import {Switch, Route, Redirect } from "react-router-dom";
 import {Link} from "react-router-dom";
-import OffCanvas from '../offcanvas/off-canvas'
+import OffCanvas from '../offcanvas/off-canvas';
+import { motion } from "framer-motion";
 
 
 
@@ -56,7 +57,7 @@ function SocialDetails(){
     const {maritStatus,motherTongue,religCaste}=takeData;
 
     return(
-        <div className="">
+        <motion.div initial={{ x:1400 }} animate={{ x:0 }} transition={{ duration: 0.5 }}>
             <header className="personal-header">
                 <span className="leftIcon"><Link to="/registr/page3"> <i className="allimages"></i></Link></span>
                 <div className="">Social Details</div>
@@ -89,7 +90,7 @@ function SocialDetails(){
             <div className={"btnForNext "+(motherTongue&&motherTongue&&religCaste?"btnActive":"")}>
                 <Link to="/registr/page5"><div>Next</div></Link>
             </div>
-        </div>   
+        </motion.div>   
     );
 
 }
