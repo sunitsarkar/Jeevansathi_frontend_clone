@@ -1,8 +1,8 @@
 #notification {
     width: 100%;
-    border: 1px solid #fff1f1;
-    border-radius: 10px;
-    box-shadow: 3px 3px 5px #fff1f1;
+    border-radius: 5px;
+    border: 1px solid rgb(220, 225, 230);
+    box-shadow: 1px 1px 3px rgb(220, 225, 230);
     min-height: 900px;
 }
 
@@ -19,18 +19,34 @@
     z-index: 0;
 }
 
+.profile-navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 50px;
+    height: 70px;
+    width: 100%;
+    border-bottom: 2px solid;
+    border-color: rgb(220, 225, 230);
+    box-shadow: 1px 1px 3px rgb(220, 225, 230);
+    position: fixed;
+    z-index: 5;
+    background-color: white;
+}
+
 .match-main {
     width: 45%;
 }
 .noti-main{
     width: 45%;
+    border-radius: 5px;
     background-color: #ffffff;
 }
 .match-box {
     height: 400px;
     background-color: #ffffff;
-    border: 1px solid #fff1f1;
-    box-shadow: 3px 3px 5px #fff1f1;
+    border: 1px solid rgb(220, 225, 230);
+    box-shadow:  1px 1px 3px rgb(220, 225, 230);
     border-radius: 5px;
     margin-bottom: 10px;
 
@@ -38,8 +54,8 @@
 
 .profile-box {
     min-height: 900px;
-    border: 2px solid #fff1f1;
-    box-shadow: 3px 3px 5px #fff1f1;
+    border: 1px solid rgb(220, 225, 230);
+    box-shadow: 1px 1px 3px rgb(220, 225, 230);
     background-color: #ffffff;
     border-radius: 5px;
     width: 45%;

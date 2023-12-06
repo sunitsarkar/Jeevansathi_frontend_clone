@@ -11,8 +11,8 @@
     height: 70px;
     width: 100%;
     border-bottom: 2px solid;
-    border-color: bisque;
-    box-shadow: 3px 3px 5px #fff1f1;
+    border-color: rgb(220, 225, 230);
+    box-shadow: 1px 1px 3px rgb(220, 225, 230);
     position: fixed;
     z-index: 5;
     background-color: white;
@@ -20,8 +20,8 @@
 .setting-box{
     width: 45%;
     height: 550px;
-    border: 2px solid #fff1f1;
-    box-shadow: 3px 3px 5px #fff1f1;
+    border: 2px solid rgb(220, 225, 230);
+    box-shadow: 3px 3px 5px rgb(220, 225, 230);
     background-color: #ffffff;
     border-radius: 5px;
     margin: 5px;
@@ -147,8 +147,8 @@
 .phone-box{
     width: 45%;
     height: 450px;
-    border: 2px solid #fff1f1;
-    box-shadow: 3px 3px 5px #fff1f1;
+    border: 2px solid rgb(220, 225, 230);
+    box-shadow: 3px 3px 5px rgb(220, 225, 230);
     background-color: #ffffff;
     border-radius: 5px;
     margin: 5px;

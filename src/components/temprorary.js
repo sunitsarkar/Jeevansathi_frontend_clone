@@ -1,9 +1,8 @@
-import img from './../asset/payment.png'
 
 
-export default function Temp() {
+export default function Support(){
 
     return <div>
-        <img src={img} />
+        <i class="bi bi-5-circle-fill"></i>
     </div>
 }

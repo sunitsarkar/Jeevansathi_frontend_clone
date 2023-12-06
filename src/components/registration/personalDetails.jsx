@@ -68,7 +68,7 @@ function UserRegisterMobile(){
 
 
     return(
-        <motion.div className="ssssasa" initial={{ width: "100%",x:"100vw" }} animate={{ width: "100%",x:0 }} transition={{ duration: 0.4 }}>
+        <motion.div className="ssssasa" initial={{ x:1400 }} animate={{ x:0 }} transition={{ duration: 0.5 }}>
             <header className="personal-header">
                 <span className="leftIcon"><Link to="/registr/page1"> <i className="allimages"></i></Link></span>
                 <div className="">Personal Details</div>

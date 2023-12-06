@@ -137,7 +137,7 @@ export default function LandingPage() {
             </div>
 
             {
-                show ? <Notification /> : <Match />
+                show ? <Notification  /> : <Match />
             }
             <div className="landing-child" id='two'>
                 <br />
