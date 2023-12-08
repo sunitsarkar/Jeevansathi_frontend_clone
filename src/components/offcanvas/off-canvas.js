@@ -42,6 +42,6 @@ export default function OffCanvas() {
             </div>
         </div>
         <br />
-        <p onClick={() => { }}>Logout</p>
+        <p onClick={() => {  }}>Logout</p>
     </div>
 }

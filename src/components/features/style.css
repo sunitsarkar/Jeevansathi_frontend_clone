@@ -69,8 +69,8 @@
     background-color: white;
 }
 
-#nav-logo{
-    width: 8%;
+.nav-logo{
+    width: 10%;
     display: flex;
     justify-content: space-between;
 }
