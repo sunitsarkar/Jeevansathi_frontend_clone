@@ -8,11 +8,14 @@ import { motion } from "framer-motion";
 
 function CareerDatailsMob(){
 
-    const [takeData,setTakeData] = useState({qualify:"",employee:"",annIncome:""});
+    const [takeData,setTakeData] = useState({qualify:"",employee:"",occupation:"",annIncome:""});
+    const [errorPop,setErrorPop]= useState(false);
+    const [errorMsg,setErrorMsg]= useState(false);
    
     function handleData(title,value){
         if(title=="qualify")setTakeData({...takeData,qualify:value});
         if(title=="employee")setTakeData({...takeData,employee:value});
+        if(title=="occupation")setTakeData({...takeData,occupation:value});
         if(title=="annIncome")setTakeData({...takeData,annIncome:value});
     }
 
@@ -50,14 +53,30 @@ function CareerDatailsMob(){
         )
     }
     
+    function handleError(){
+        qualify&&employee&&occupation&&annIncome?setErrorPop(false):setErrorPop(true);
+        setTimeout(errorHides, 3000);
+        setErrorMsg(true);
+    }
+    function errorHides(){
+        setErrorPop(false);
+    }
+
     let highDegrees = ["BBA","BMS","BFA","BEM","B.Sc","BA","B.Tech","BCA","BPT","CA","CS"];
     let emped = ["Private Sector","Government/Public Sector","Civil Services","Not Working"];
     let incomeArr=["No Income","Rs. 1 - 2 Lakh","Rs. 2 - 3 Lakh","Rs. 3 - 4 Lakh","Rs. 4 - 5 Lakh"];
+    let occupations=["Advertising","Farming","Farming"]
 
-    const {qualify,employee,annIncome}=takeData;
+    const {qualify,employee,occupation,annIncome}=takeData;
 
     return(
         <motion.div initial={{ x:1400 }} animate={{ x:0 }} transition={{ duration: 0.5 }}>
+            <div className={"errorMsg "+(errorPop?"":"errorhide")}>
+                {!gender&&<div># Gender is missing</div>}
+                {!dob&&<div># Date of birth is missing</div>}
+                {!height&&<div># Height is missing</div>}
+                {!country&&<div># Country is missing</div>}
+            </div>
             <header className="personal-header">
                 <span className="leftIcon"><Link to="/registr/page2"> <i className="allimages"></i></Link></span>
                 <div className="">Career Details</div>
@@ -70,6 +89,11 @@ function CareerDatailsMob(){
                 <div className="regBlockSlider" data-bs-toggle="offcanvas" data-bs-target="#employeeIn" aria-controls="offcanvsasRight">
                     {defiMultiInput("Employed In",employee)}
                 </div>
+                {employee&&
+                <div className="regBlockSlider" data-bs-toggle="offcanvas" data-bs-target="#occupation" aria-controls="offcanvsasRight">
+                    {defiMultiInput("Occupation",occupation)}
+                </div>
+                }
                 <div className="regBlockSlider" data-bs-toggle="offcanvas" data-bs-target="#annualIncome" aria-controls="offcanvsasRight">
                     {defiMultiInput("Annual Income",annIncome)}
                 </div>
@@ -80,6 +104,9 @@ function CareerDatailsMob(){
 
                 <div className="offcanvas offcanvas-end" tabIndex="-1" id="employeeIn" aria-labelledby="offcanvasRightLabel">
                     {makeMultiToggle("Employed In",emped,employee,"employee")}
+                </div>
+                <div className="offcanvas offcanvas-end" tabIndex="-1" id="occupation" aria-labelledby="offcanvasRightLabel">
+                    {makeMultiToggle("Occupations",occupations,occupation,"occupation")}
                 </div>
                 <div className="offcanvas offcanvas-end" tabIndex="-1" id="annualIncome" aria-labelledby="offcanvasRightLabel">
                     {makeMultiToggle("Annual Income",incomeArr,annIncome,"annIncome")}

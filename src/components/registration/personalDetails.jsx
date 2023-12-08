@@ -5,24 +5,27 @@ import OffCanvas from '../offcanvas/off-canvas'
 import { motion } from "framer-motion";
 
 
-
 function UserRegisterMobile(){
 
-    const [takeData,setTakeData] = useState({day:"",month:"",year:"",height:"",country:"",state:""});
+    const [takeData,setTakeData] = useState({gender:"",day:"",month:"",year:"",height:"",country:"",state:""});
+    const [errorPop,setErrorPop]= useState(false);
+    const [errorMsg,setErrorMsg]= useState(false);
    
     function handleData(title,value){
+        if(title=="gender")setTakeData({...takeData,gender:value});
         if(title=="day")setTakeData({...takeData,day:value});
         if(title=="month")setTakeData({...takeData,month:value});
         if(title=="year")setTakeData({...takeData,year:value});
         if(title=="height")setTakeData({...takeData,height:value});
         if(title=="country")setTakeData({...takeData,country:value});
+        setErrorMsg(false);
     }
 
     function defiMultiInput(label,val){
         return(
             <React.Fragment>
                 <div className="selectData">
-                    <div className="dateofbrth">{label}</div>
+                    <div className={"dateofbrth "+(errorMsg&&!val?"colorred":"")}>{label}</div>
                     <div className="notFillForm">{val?val:"Not Filled In"}</div>
                 </div>
                 <div className="iconContainer">
@@ -36,10 +39,10 @@ function UserRegisterMobile(){
         return(
             <div>
                 <header className="personal-header">
-                    <span className="leftIcon" > 
+                    <span className="leftIcon"> 
                         <i className="allimages" data-bs-dismiss="offcanvas" aria-label="Close"></i> 
                     </span>
-                    <div className="">{title}</div>
+                    <div className="wid-title">{title}</div>
                 </header>
                 <div className="divSlider">
                     <ul>
@@ -51,8 +54,8 @@ function UserRegisterMobile(){
             </div>
         )
     }
-    
-   
+
+
     let days = [];
     let years = [];
     for(let i=1;i<=31;i++) days.push(i);
@@ -61,14 +64,31 @@ function UserRegisterMobile(){
     let pastYear = date.getFullYear() - 20;
     for(let j=pastYear-50;j<pastYear;j++) years.push(j);
 
-    let heights = ["5' 0","5' 1","5' 2","5' 3","5' 4","5' 5","5' 6","5' 7","5' 8","5' 9","5' 10","5' 11"]
+    let heights = ["5' 0","5' 1","5' 2","5' 3","5' 4","5' 5","5' 6","5' 7","5' 8","5' 9","5' 10","5' 11"];
     let countries = ["Russia","Canada","China","US of America","Brazil","Australia","India","Argentina"," Kazakhstan","Algeria"];
-    const {day,month,year,height,country}=takeData;
+    const {gender,day,month,year,height,country}=takeData;
     let dob = day&&month&&year?day+" "+month+" "+year:"";
+
+    function handleError(){
+        gender&&dob&&height&&country?setErrorPop(false):setErrorPop(true);
+        setTimeout(errorHides, 3000);
+        setErrorMsg(true);
+    }
+    function errorHides(){
+        setErrorPop(false);
+    }
+
+    // console.log(gender);
 
 
     return(
-        <motion.div initial={{ x:1400 }} animate={{ x:0 }} transition={{ duration: 0.5 }}>
+        <motion.div initial={{ x:500 }} animate={{ x:0 }} transition={{ duration: 0.5 }}>
+            <div className={"errorMsg "+(errorPop?"":"errorhide")}>
+                {!gender&&<div># Gender is missing</div>}
+                {!dob&&<div># Date of birth is missing</div>}
+                {!height&&<div># Height is missing</div>}
+                {!country&&<div># Country is missing</div>}
+            </div>
             <header className="personal-header">
                 <span className="leftIcon"><Link to="/registr/page1"> <i className="allimages"></i></Link></span>
                 <div className="">Personal Details</div>
@@ -76,13 +96,13 @@ function UserRegisterMobile(){
             <div className="personalDetialsContainer">
                 <div className="regBlockSlider">
                     <div className="selectData">
-                        <div className="dateofbrth">Gender</div>
+                        <div className={"dateofbrth "+(errorMsg&&!gender?"colorred":"")}>Gender</div>
                         <div className="radio-wid">
-                            <input type="radio" className="form-check-input" name="gender"/>
+                            <input type="radio" className="form-check-input" name="gender" onClick={()=>{handleData("gender","female")}}/>
                             <label>Female</label>
                         </div>
                         <div className="radio-wid">
-                            <input type="radio" className="form-check-input" name="gender"/>
+                            <input type="radio" className="form-check-input" name="gender" onClick={()=>{handleData("gender","male")}}/>
                             <label>Male</label>
                         </div>
                     </div>
@@ -97,11 +117,12 @@ function UserRegisterMobile(){
                 <div className="regBlockSlider" data-bs-toggle="offcanvas" data-bs-target="#chooseCountry" aria-controls="offcanvsasRight">
                     {defiMultiInput("Country living in",country)}
                 </div>
+                
 
                 <div class="offcanvas offcanvas-end" tabindex="-1" id="dateOfBirth" aria-labelledby="offcanvasRightLabel">
                     <header className="personal-header">
                         <span className="leftIcon" > <i className="allimages" data-bs-dismiss="offcanvas" aria-label="Close"></i> </span>
-                        <div >Date of birth</div>
+                        <div className="wid-title">Date of birth</div>
                     </header>
                     <div>
                         <div className="dobDiv">
@@ -133,9 +154,10 @@ function UserRegisterMobile(){
 
 
             </div>
-            <div className={"btnForNext "+(dob&&height&&country?"btnActive":"")}>
-                <Link to="/registr/page3"><div>Next</div></Link>
-            </div>
+            <Link to={gender&&dob&&height&&country?"/registr/page3":"#"} onClick={handleError}>
+                <div className={"btnForNext "+(gender&&dob&&height&&country?"btnActive":"")}> Next </div>
+            </Link>
+            
         </motion.div>
                  
     );
