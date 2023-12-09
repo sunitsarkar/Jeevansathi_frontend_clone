@@ -17,6 +17,19 @@
     display: none;
 }
 
+.user-icon{
+    height: 55px;
+    width: 55px;
+    border: 1px solid #c1c9d3;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #c1c9d3;
+}
+
+.mobile-aside{
+    display: none;
+}
+
 .nav-logo {
     width: 10%;
     display: flex;
@@ -25,6 +38,8 @@
 
 .landing-main {
     background-color: rgb(238, 243, 248);
+    min-height: 625px;
+    width: 100%;
 }
 
 .left-side {
@@ -51,7 +66,7 @@
 
 #one {
     margin-right: 70%;
-    height: 350px;
+    height: 400px;
     padding-top: 30px;
 }
 
@@ -61,7 +76,7 @@
 
 }
 
-@media only screen and (max-width: 1020px) {
+@media only screen and (max-width: 1200px) {
 
     .landing-child {
         display: none;
@@ -69,6 +84,14 @@
 
     .landing-mobile-nav {
         display: block;
+    }
+    .mobile-aside{
+        display: block;
+    }
+
+    .landing-main{
+        min-height: 1000px;
+        width: 100%;
     }
 
     .landing-mobile{
