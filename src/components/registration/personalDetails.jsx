@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 
 function UserRegisterMobile(){
 
-    const [takeData,setTakeData] = useState({gender:"",day:"",month:"",year:"",height:"",country:"",state:""});
+    const [takeData,setTakeData] = useState({gender:"",day:"",month:"",year:"",height:"",country:"",city:""});
     const [errorPop,setErrorPop]= useState(false);
     const [errorMsg,setErrorMsg]= useState(false);
    
@@ -18,6 +18,7 @@ function UserRegisterMobile(){
         if(title=="year")setTakeData({...takeData,year:value});
         if(title=="height")setTakeData({...takeData,height:value});
         if(title=="country")setTakeData({...takeData,country:value});
+        if(title=="city")setTakeData({...takeData,city:value});
         setErrorMsg(false);
     }
 
@@ -66,11 +67,11 @@ function UserRegisterMobile(){
 
     let heights = ["5' 0","5' 1","5' 2","5' 3","5' 4","5' 5","5' 6","5' 7","5' 8","5' 9","5' 10","5' 11"];
     let countries = ["Russia","Canada","China","US of America","Brazil","Australia","India","Argentina"," Kazakhstan","Algeria"];
-    const {gender,day,month,year,height,country}=takeData;
+    const {gender,day,month,year,height,country,city}=takeData;
     let dob = day&&month&&year?day+" "+month+" "+year:"";
 
     function handleError(){
-        gender&&dob&&height&&country?setErrorPop(false):setErrorPop(true);
+        gender&&dob&&height&&country&city?setErrorPop(false):setErrorPop(true);
         setTimeout(errorHides, 3000);
         setErrorMsg(true);
     }
@@ -88,6 +89,7 @@ function UserRegisterMobile(){
                 {!dob&&<div># Date of birth is missing</div>}
                 {!height&&<div># Height is missing</div>}
                 {!country&&<div># Country is missing</div>}
+                {!city&&<div># City is missing</div>}
             </div>
             <header className="personal-header">
                 <span className="leftIcon"><Link to="/registr/page1"> <i className="allimages"></i></Link></span>
@@ -117,6 +119,10 @@ function UserRegisterMobile(){
                 <div className="regBlockSlider" data-bs-toggle="offcanvas" data-bs-target="#chooseCountry" aria-controls="offcanvsasRight">
                     {defiMultiInput("Country living in",country)}
                 </div>
+                {country&&
+                <div className="regBlockSlider" data-bs-toggle="offcanvas" data-bs-target="#chooseCity" aria-controls="offcanvsasRight">
+                    {defiMultiInput("City",city)}
+                </div>}
                 
 
                 <div class="offcanvas offcanvas-end" tabindex="-1" id="dateOfBirth" aria-labelledby="offcanvasRightLabel">
@@ -151,11 +157,14 @@ function UserRegisterMobile(){
                 <div class="offcanvas offcanvas-end" tabindex="-1" id="chooseCountry" aria-labelledby="offcanvasRightLabel">
                     {makeMultiToggle("Country living in",countries,country,"country")} 
                 </div>
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="chooseCity" aria-labelledby="offcanvasRightLabel">
+                    {makeMultiToggle("City",countries,city,"city")} 
+                </div>
 
 
             </div>
-            <Link to={gender&&dob&&height&&country?"/registr/page3":"#"} onClick={handleError}>
-                <div className={"btnForNext "+(gender&&dob&&height&&country?"btnActive":"")}> Next </div>
+            <Link to={gender&&dob&&height&&country&&city?"/registr/page3":"#"} onClick={handleError}>
+                <div className={"btnForNext "+(gender&&dob&&height&&country&&city?"btnActive":"")}> Next </div>
             </Link>
             
         </motion.div>

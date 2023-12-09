@@ -5,6 +5,7 @@ import Footer from "../../footer/regi_footer"
 
 
 function ProfileDetails(){
+    const [takeData,setTakeData] = useState({groomName:"",dob:"",mothertongue:"",rligion:"",maritalStatus:"",height:""})
     const [label1, setlabel1] = useState(false);
     const [label2, setlabel2] = useState(false);
     const [label3, setlabel3] = useState(false);
@@ -18,9 +19,15 @@ function ProfileDetails(){
     const [mothertong, setMothertong] = useState(false);
     const [relign, setRelign] = useState(false);
     const [matStatus, setmatStatus] = useState(false);
-    const [height, setheight] = useState(false);
+    const [heigt, setheigt] = useState(false);
 
 
+    function handleChange(e){
+        const {currentTarget: input} = e;
+        (takeData[input.name] = input.value) ;
+        setTakeData(takeData);
+        // setErrorMsg(false);
+    }
 
     let days = [];
     let months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
@@ -37,7 +44,7 @@ function ProfileDetails(){
         heights.push(`4' 0" (1.22 mts)`)
     }
     
-
+    const {groomName,dob,mothertongue,rligion,maritalStatus,height} = takeData;
 
 
     return(
@@ -73,17 +80,15 @@ function ProfileDetails(){
                             <div className="arletVlid">Please provide a valid Full Name</div>
                             <div className="regi-secle" onClick={() =>{setlabel1(true)}}>
                                 <label className={"reg-label " +(label1?"reg-label2":"")}>Groom's Name <span className="star">*</span></label>
-                                <input type="text" />
+                                <input type="text" name="groomName" onChange={handleChange}/>
                                 <div className="ext-opt">
                                     <span>Don't show my name</span>
                                     <i className="fa-solid fa-gear"></i>
                                     <ul>
                                         <li>Show my name to all</li>
-                                        <li className="selectedOpt">Don't show my name <br/> ( You will not be able to see names of other members )</li>
-                                            
+                                        <li className="selectedOpt">Don't show my name <br/> ( You will not be able to see names of other members )</li> 
                                     </ul>
                                 </div>
-
                             </div>
                             <div className="extraTxt"> If you wish to hide your name from others, click on settings icon and choose the setting </div>
                         </div>
@@ -142,8 +147,7 @@ function ProfileDetails(){
                                         {langs.map((l1,index)=><li onClick={() =>{setMothertong(false)}} key={index}>{l1}</li>)}
                                     </ul>
                                 </div>
-                                </React.Fragment> 
-                                
+                                </React.Fragment>
                                 :""}
                             </div>
                         </div>
@@ -185,13 +189,13 @@ function ProfileDetails(){
                             <div className="arletVlid">Please provide height</div>
                             <div className="regi-secle">
                                 <label className={"reg-label " +(label6?"reg-label7":"")}  onClick={() =>{setlabel6(true)}}>Height<span className="star">*</span></label>
-                                <input type="text" placeholder="" onClick={() =>{setheight(true);setlabel6(true)}}/>
-                                {label6 && height?
+                                <input type="text" placeholder="" onClick={() =>{setheigt(true);setlabel6(true)}}/>
+                                {label6 && heigt?
                                 <React.Fragment>
                                 <div className={"mStatusBox"}>
                                     <i className={"imgArrow religionIcon"}></i>
                                     <ul>
-                                        {heights.map((h1,index)=><li onClick={() =>{setheight(false)}} key={index}>{h1}</li>)}
+                                        {heights.map((h1,index)=><li onClick={() =>{setheigt(false)}} key={index}>{h1}</li>)}
                                     </ul>
                                 </div>
                                 </React.Fragment>

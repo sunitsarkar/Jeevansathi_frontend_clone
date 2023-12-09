@@ -9,19 +9,22 @@ import { motion } from "framer-motion";
 function SocialDetails(){
 
     const [takeData,setTakeData] = useState({maritStatus:"",motherTongue:"",religCaste:"",horoscopeMatch:""});
+    const [errorPop,setErrorPop]= useState(false);
+    const [errorMsg,setErrorMsg]= useState(false);
    
     function handleData(title,value){
         if(title=="maritStatus")setTakeData({...takeData,maritStatus:value});
         if(title=="motherTongue")setTakeData({...takeData,motherTongue:value});
         if(title=="religCaste")setTakeData({...takeData,religCaste:value});
         if(title=="horoscopeMatch")setTakeData({...takeData,horoscopeMatch:value});
+        setErrorMsg(false);
     }
 
     function defiMultiInput(label,val){
         return(
             <React.Fragment>
                 <div className="selectData">
-                    <div className="dateofbrth">{label}</div>
+                <div className={"dateofbrth "+(errorMsg&&!val?"colorred":"")}>{label}</div>
                     <div className="notFillForm">{val?val:"Not Filled In"}</div>
                 </div>
                 <div className="iconContainer">
@@ -50,6 +53,14 @@ function SocialDetails(){
             </div>
         )
     }
+    function handleError(){
+        maritStatus&&motherTongue&&religCaste?setErrorPop(false):setErrorPop(true);
+        setTimeout(errorHides, 3000);
+        setErrorMsg(true);
+    }
+    function errorHides(){
+        setErrorPop(false);
+    }
 
     let langs = ["Assamese","Bengali","Bodo","Dogri","Gujarati","Hindi","Kannada","Kashmiri","Kashmiri","Maithili","Malayalam","Manipuri","Marathi","Nepali","Odia","Punjabi","Sanskrit","Santali","Sindhi","Tamil","Telugu","Urdu"]
     let religions=["Hindu","Muslim","Sikh","Christian","Buddhist","Jain","Parsi","Jewish","Bahai"];
@@ -60,6 +71,11 @@ function SocialDetails(){
 
     return(
         <motion.div initial={{ x:1400 }} animate={{ x:0 }} transition={{ duration: 0.5 }}>
+            <div className={"errorMsg "+(errorPop?"":"errorhide")}>
+                {!maritStatus&&<div># Marital status is missing</div>}
+                {!motherTongue&&<div># Mother tongue is missing</div>}
+                {!religCaste&&<div># Religion caste is missing</div>}
+            </div>
             <header className="personal-header">
                 <span className="leftIcon"><Link to="/registr/page3"> <i className="allimages"></i></Link></span>
                 <div className="">Social Details</div>
@@ -75,9 +91,9 @@ function SocialDetails(){
                 <div className="regBlockSlider" data-bs-toggle="offcanvas" data-bs-target="#annualIncome" aria-controls="offcanvsasRight">
                     {defiMultiInput("Religion-Caste",religCaste)}
                 </div>
-                <div className="regBlockSlider" data-bs-toggle="offcanvas" data-bs-target="#horoscopeMatchs" aria-controls="offcanvsasRight">
+                {religCaste&&<div className="regBlockSlider" data-bs-toggle="offcanvas" data-bs-target="#horoscopeMatchs" aria-controls="offcanvsasRight">
                     {defiMultiInput("Horoscope match is necessary? (optional)",horoscopeMatch)}
-                </div>
+                </div>}
 
                 <div className="offcanvas offcanvas-end" tabIndex="-1" id="highestQualify" aria-labelledby="offcanvasRightLabel">
                     {makeMultiToggle("Marital Status",mstatus,maritStatus,"maritStatus")}
@@ -95,9 +111,12 @@ function SocialDetails(){
 
 
             </div>
-            <div className={"btnForNext "+(motherTongue&&motherTongue&&religCaste?"btnActive":"")}>
-                <Link to="/registr/page5"><div>Next</div></Link>
-            </div>
+            
+            <Link to={motherTongue&&motherTongue&&religCaste?"/registr/page5":"#"} onClick={handleError}>
+                <div className={"btnForNext "+(motherTongue&&motherTongue&&religCaste?"btnActive":"")}> Next </div>
+            </Link>
+
+
         </motion.div>   
     );
 

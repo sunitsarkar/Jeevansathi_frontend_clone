@@ -17,13 +17,14 @@ function CareerDatailsMob(){
         if(title=="employee")setTakeData({...takeData,employee:value});
         if(title=="occupation")setTakeData({...takeData,occupation:value});
         if(title=="annIncome")setTakeData({...takeData,annIncome:value});
+        setErrorMsg(false);
     }
 
     function defiMultiInput(label,val){
         return(
             <React.Fragment>
                 <div className="selectData">
-                    <div className="dateofbrth">{label}</div>
+                <div className={"dateofbrth "+(errorMsg&&!val?"colorred":"")}>{label}</div>
                     <div className="notFillForm">{val?val:"Not Filled In"}</div>
                 </div>
                 <div className="iconContainer">
@@ -72,10 +73,10 @@ function CareerDatailsMob(){
     return(
         <motion.div initial={{ x:1400 }} animate={{ x:0 }} transition={{ duration: 0.5 }}>
             <div className={"errorMsg "+(errorPop?"":"errorhide")}>
-                {!gender&&<div># Gender is missing</div>}
-                {!dob&&<div># Date of birth is missing</div>}
-                {!height&&<div># Height is missing</div>}
-                {!country&&<div># Country is missing</div>}
+                {!qualify&&<div># Highest qualification is missing</div>}
+                {!employee&&<div># Employed in is missing</div>}
+                {employee&&!occupation&&<div># Occupation is missing</div>}
+                {!annIncome&&<div># Annual income is missing</div>}
             </div>
             <header className="personal-header">
                 <span className="leftIcon"><Link to="/registr/page2"> <i className="allimages"></i></Link></span>
@@ -114,9 +115,10 @@ function CareerDatailsMob(){
 
 
             </div>
-            <div className={"btnForNext "+(qualify&&employee&&annIncome?"btnActive":"")}>
-                <Link to="/registr/page4"><div>Next</div></Link>
-            </div>
+            
+            <Link to={qualify&&employee&&occupation&&annIncome?"/registr/page4":"#"} onClick={handleError}>
+                <div className={"btnForNext "+(qualify&&employee&&occupation&&annIncome?"btnActive":"")}> Next </div>
+            </Link>
         </motion.div>   
     );
 
