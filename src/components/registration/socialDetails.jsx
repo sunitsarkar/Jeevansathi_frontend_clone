@@ -8,12 +8,13 @@ import { motion } from "framer-motion";
 
 function SocialDetails(){
 
-    const [takeData,setTakeData] = useState({maritStatus:"",motherTongue:"",religCaste:""});
+    const [takeData,setTakeData] = useState({maritStatus:"",motherTongue:"",religCaste:"",horoscopeMatch:""});
    
     function handleData(title,value){
         if(title=="maritStatus")setTakeData({...takeData,maritStatus:value});
         if(title=="motherTongue")setTakeData({...takeData,motherTongue:value});
         if(title=="religCaste")setTakeData({...takeData,religCaste:value});
+        if(title=="horoscopeMatch")setTakeData({...takeData,horoscopeMatch:value});
     }
 
     function defiMultiInput(label,val){
@@ -37,7 +38,7 @@ function SocialDetails(){
                     <span className="leftIcon" > 
                         <i className="allimages" data-bs-dismiss="offcanvas" aria-label="Close"></i> 
                     </span>
-                    <div className="">{title}</div>
+                    <div className="wid-title">{title}</div>
                 </header>
                 <div className="divSlider">
                     <ul>
@@ -53,8 +54,9 @@ function SocialDetails(){
     let langs = ["Assamese","Bengali","Bodo","Dogri","Gujarati","Hindi","Kannada","Kashmiri","Kashmiri","Maithili","Malayalam","Manipuri","Marathi","Nepali","Odia","Punjabi","Sanskrit","Santali","Sindhi","Tamil","Telugu","Urdu"]
     let religions=["Hindu","Muslim","Sikh","Christian","Buddhist","Jain","Parsi","Jewish","Bahai"];
     let mstatus=["Never Married","Awaiting Divorce","Divorced","Widowed"];
+    let horoscopeMatchs=["Must","Not Necessary"]
     
-    const {maritStatus,motherTongue,religCaste}=takeData;
+    const {maritStatus,motherTongue,religCaste,horoscopeMatch}=takeData;
 
     return(
         <motion.div initial={{ x:1400 }} animate={{ x:0 }} transition={{ duration: 0.5 }}>
@@ -73,6 +75,9 @@ function SocialDetails(){
                 <div className="regBlockSlider" data-bs-toggle="offcanvas" data-bs-target="#annualIncome" aria-controls="offcanvsasRight">
                     {defiMultiInput("Religion-Caste",religCaste)}
                 </div>
+                <div className="regBlockSlider" data-bs-toggle="offcanvas" data-bs-target="#horoscopeMatchs" aria-controls="offcanvsasRight">
+                    {defiMultiInput("Horoscope match is necessary? (optional)",horoscopeMatch)}
+                </div>
 
                 <div className="offcanvas offcanvas-end" tabIndex="-1" id="highestQualify" aria-labelledby="offcanvasRightLabel">
                     {makeMultiToggle("Marital Status",mstatus,maritStatus,"maritStatus")}
@@ -83,6 +88,9 @@ function SocialDetails(){
                 </div>
                 <div className="offcanvas offcanvas-end" tabIndex="-1" id="annualIncome" aria-labelledby="offcanvasRightLabel">
                     {makeMultiToggle("Religion-Caste",religions,religCaste,"religCaste")}
+                </div>
+                <div className="offcanvas offcanvas-end" tabIndex="-1" id="horoscopeMatchs" aria-labelledby="offcanvasRightLabel">
+                    {makeMultiToggle("Horoscope match is necessary?",horoscopeMatchs,horoscopeMatch,"horoscopeMatch")}
                 </div>
 
 
