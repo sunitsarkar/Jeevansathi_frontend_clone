@@ -1435,11 +1435,15 @@ li:hover .subhobver{
         text-align: center;
     }
     .arletVlid{
+        position: relative;
         width: 500px;
         float: right;
         color: #d9475c;
         padding-top: 4px;
         font-size: 14px;
+    }
+    .mt20{
+        margin-top: 21px;
     }
     .reg-wid80{
         width: 80%;
@@ -1466,13 +1470,20 @@ li:hover .subhobver{
     }
     .regi-secle2{
         position: relative;
-        height: 135px;
+        height: 140px;
         width: 500px;
         background-color: #fff;
         float: right;
         border: 1px solid #d9d9d9;
         border-radius: 2px;
         margin-bottom: 20p;
+    }
+    .countWord{
+        position: absolute;
+        color: rgb(53, 62, 79);
+        top: 116px;
+        right: 10px;
+        font-size: 14px;
     }
     .reg-label{
         position: absolute;
@@ -1690,6 +1701,11 @@ li:hover .subhobver{
         cursor: pointer;
         border-bottom: 1px solid #d9d9d9;
     }
+    .box1{
+        background: #d9475c;
+        color: #fff;
+    }
+    
     .daysBox ul li:hover{
         background: #d9475c;
         color: #fff;

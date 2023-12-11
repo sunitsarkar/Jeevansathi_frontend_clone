@@ -11,6 +11,7 @@ function CareerDatailsMob(){
     const [takeData,setTakeData] = useState({qualify:"",employee:"",occupation:"",annIncome:""});
     const [errorPop,setErrorPop]= useState(false);
     const [errorMsg,setErrorMsg]= useState(false);
+
    
     function handleData(title,value){
         if(title=="qualify")setTakeData({...takeData,qualify:value});

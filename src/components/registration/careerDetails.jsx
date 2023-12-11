@@ -14,16 +14,39 @@ function CareerDetails(){
     const [label7, setlabel7] = useState(false);
     const [label8, setlabel8] = useState(false);
 
-    const [country, setCountry] = useState(false);
-    const [state, setState] = useState(false);
-    const [highdegree, setHighdegree] = useState(false);
-    const [emp, setEmp] = useState(false);
-    const [AnalIncome, setAnalIncome] = useState(false);
+    const [showPop,setShowPop] = useState(-1);
+    const [error,setError] = useState(false);
     const [selectLang, setselectLang] = useState(false);
+
+    const [country, setCountry] = useState("");
+    const [state, setState] = useState("");
+    const [city, setCity] = useState("");
+    const [hightdegree, setHighdegree] = useState("");
+    const [employee, setEmployee] = useState("");
+    const [occupation, setoccupation] = useState("");
+    const [AnalIncome, setAnalIncome] = useState("");
+    const [yourselfDec, setyourselfDec] = useState("");
 
     function handleSelectLang(){
         selectLang?setselectLang(false):setselectLang(true);
     }
+
+    function handlePop(val){
+        setShowPop(val);
+    }
+    function handleSubmit(){
+        setError(true);
+        setlabel1(true);
+        setlabel2(true);
+        setlabel3(true);
+        setlabel4(true);
+        setlabel5(true);
+        setlabel6(true);
+        setlabel7(true);
+        // history.push("/user_registration3");
+    }
+
+
     let countries = ["Russia","Canada","China","US of America","Brazil","Australia","India","Argentina"," Kazakhstan","Algeria"];
    
     let highDegrees = ["BBA","BMS","BFA","BEM","B.Sc","BA","B.Tech","BCA","BPT","CA","CS"];
@@ -31,7 +54,6 @@ function CareerDetails(){
     let incomeArr=["No Income","Rs. 1 - 2 Lakh","Rs. 2 - 3 Lakh","Rs. 3 - 4 Lakh","Rs. 4 - 5 Lakh"];
     
  
-
 
 
 
@@ -65,16 +87,16 @@ function CareerDetails(){
                     <div className="reg-wid80">
                         <div className="mandator">Mandatory<span className="star"> *</span></div>
                         <div className="regi-detail">
-                            <div className="arletVlid">Please provide country</div>
-                            <div className="regi-secle" onClick={() =>{setlabel1(true);}}>
-                                <label className={"reg-label " +(label1?"reg-country":"")}>Country<span className="star">*</span></label>  
-                                <input type="text" placeholder="" onClick={() =>{setCountry(true);setlabel1(true)}}/>
-                                {label1 && country?
+                            <div className="arletVlid">{error&&!country?"Please provide country":""}</div>
+                            <div className={"regi-secle "+(!error||country?"mt20":"")} >
+                                <label className={"reg-label " +(label1?"reg-country":"")} onClick={() =>{setlabel1(true);handlePop(1)}}>Country<span className="star">*</span></label>  
+                                <input type="text" placeholder="" value={country} onClick={() =>{setlabel1(true);handlePop(1)}}/>
+                                {label1 && showPop==1?
                                 <React.Fragment>
                                 <div className="gridDropdown">
                                     <i className={"imgArrow religionIcon"}></i>
                                     <ul>
-                                        {countries.map((c1,index)=><li onClick={() =>{setCountry(false)}} key={index}>{c1}</li>)}
+                                        {countries.map((c1,index)=><li onClick={() =>{setCountry(c1);setShowPop(-1)}} key={index}>{c1}</li>)}
                                     </ul>
                                 </div>
                                 </React.Fragment>
@@ -83,16 +105,33 @@ function CareerDetails(){
                             </div>
                         </div>
                         <div className="regi-detail">
-                            <div className="arletVlid">Please mention the state</div>
-                            <div className="regi-secle" >
-                                <label className={"reg-label " +(label2?"reg-State":"")} onClick={() =>{setlabel2(true)}}>State<span className="star">*</span></label>
-                                <input type="text" placeholder="" onClick={() =>{setState(true);setlabel2(true)}}/>
-                                {label2 && state?
+                            <div className="arletVlid">{error&&!state?"Please mention the state":""}</div>
+                            <div className={"regi-secle "+(!error||state?"mt20":"")} >
+                                <label className={"reg-label " +(label2?"reg-State":"")} onClick={() =>{setlabel2(true);handlePop(2)}}>State<span className="star">*</span></label>
+                                <input type="text" placeholder="" value={state} onClick={() =>{setlabel2(true);handlePop(2)}}/>
+                                {label2 && showPop==2?
                                 <React.Fragment>
                                 <div className="gridDropdown">
                                     <i className={"imgArrow religionIcon"}></i>
                                     <ul>
-                                        {countries.map((c1,index)=><li onClick={() =>{setState(false)}} key={index}>{c1}</li>)}
+                                        {countries.map((c1,index)=><li onClick={() =>{setState(c1);setShowPop(-1)}} key={index}>{c1}</li>)}
+                                    </ul>
+                                </div>
+                                </React.Fragment>
+                                :""}
+                            </div>
+                        </div>
+                        <div className="regi-detail">
+                            <div className="arletVlid">{error&&!city?"Please mention the City you are living in":""}</div>
+                            <div className={"regi-secle "+(!error||city?"mt20":"")} >
+                                <label className={"reg-label " +(label7?"reg-city":"")} onClick={() =>{setlabel7(true);handlePop(3)}}>City living in<span className="star">*</span></label>
+                                <input type="text" placeholder="" value={city} onClick={() =>{setlabel7(true);handlePop(3)}}/>
+                                {label7 && showPop==3 ?
+                                <React.Fragment>
+                                <div className="gridDropdown">
+                                    <i className={"imgArrow religionIcon"}></i>
+                                    <ul>
+                                        {countries.map((c1,index)=><li onClick={() =>{setCity(c1);setShowPop(-1)}} key={index}>{c1}</li>)}
                                     </ul>
                                 </div>
                                 </React.Fragment>
@@ -101,34 +140,16 @@ function CareerDetails(){
                             </div>
                         </div>
                         <div className="regi-detail">
-                            <div className="arletVlid">Please mention the City you are living in</div>
-                            <div className="regi-secle" >
-                                <label className={"reg-label " +(label7?"reg-city":"")} onClick={() =>{setlabel7(true)}}>City living in<span className="star">*</span></label>
-                                <input type="text" placeholder="" onClick={() =>{setlabel7(true)}}/>
-                                {label7 ?
-                                <React.Fragment>
-                                {/* <div className="gridDropdown">
-                                    <i className={"imgArrow religionIcon"}></i>
-                                    <ul>
-                                        
-                                    </ul>
-                                </div> */}
-                                </React.Fragment>
-                                
-                                :""}
-                            </div>
-                        </div>
-                        <div className="regi-detail">
-                            <div className="arletVlid">Please provide a degree</div>
-                            <div className="regi-secle" >
-                                <label className={"reg-label " +(label3?"reg-HDegree":"")} onClick={() =>{setlabel3(true)}}>Highest Degree<span className="star">*</span></label> 
-                                <input type="text" placeholder="" onClick={() =>{setHighdegree(true);setlabel3(true)}}/>
-                                {label3 && highdegree?
+                            <div className="arletVlid">{error&&!hightdegree?"Please provide a degree":""}</div>
+                            <div className={"regi-secle "+(!error||hightdegree?"mt20":"")} >
+                                <label className={"reg-label " +(label3?"reg-HDegree":"")} onClick={() =>{setlabel3(true);handlePop(4)}}>Highest Degree<span className="star">*</span></label> 
+                                <input type="text" placeholder="" value={hightdegree} onClick={() =>{setlabel3(true);handlePop(4)}}/>
+                                {label3 && showPop==4?
                                 <React.Fragment>
                                 <div className={"highdegBox"}>
                                     <i className={"imgArrow religionIcon"}></i>
                                     <ul>
-                                        {highDegrees.map((h1,index)=><li onClick={() =>{setHighdegree(false)}} key={index}>{h1}</li>)}
+                                        {highDegrees.map((h1,index)=><li onClick={() =>{setHighdegree(h1);setShowPop(-1)}} key={index}>{h1}</li>)}
                                     </ul>
                                 </div>
                                 </React.Fragment>
@@ -136,17 +157,16 @@ function CareerDetails(){
                             </div>
                         </div>
                         <div className="regi-detail">
-                            <div className="arletVlid">Please provide a Employe</div>
-                            <div className="regi-secle" >
-                                <label className={"reg-label " +(label4?"reg-emp":"")} onClick={() =>{setlabel4(true)}}>Employed In<span className="star">*</span></label> 
-                                <input type="text" placeholder="" onClick={() =>{setEmp(true);setlabel4(true)}}/>
-                                {label4 && emp?
+                            <div className="arletVlid">{error&&!employee?"Please provide a Employee":""}</div>
+                            <div className={"regi-secle "+(!error||employee?"mt20":"")} >
+                                <label className={"reg-label " +(label4?"reg-emp":"")} onClick={() =>{setlabel4(true);handlePop(5)}}>Employed In<span className="star">*</span></label> 
+                                <input type="text" placeholder="" value={employee} onClick={() =>{setlabel4(true);handlePop(5)}}/>
+                                {label4 && showPop==5?
                                 <React.Fragment>
                                 <div className={"mStatusBox"}>
                                     <i className={"imgArrow religionIcon"}></i>
                                     <ul>
-                                        {emped.map((e1,index)=><li key={index} onClick={() =>{setEmp(false)}}>{e1}</li>)}
-                                        
+                                        {emped.map((e1,index)=><li key={index} onClick={() =>{setEmployee(e1);setShowPop(-1)}}>{e1}</li>)}
                                     </ul> 
                                     
                                 </div>
@@ -155,35 +175,33 @@ function CareerDetails(){
                             </div>
                         </div>
                         <div className="regi-detail">
-                            <div className="arletVlid">Please provide an occupation</div>
-                            <div className="regi-secle" >
-                                <label className={"reg-label " +(label8?"reg-emp":"")} onClick={() =>{setlabel8(true)}}>Occupation<span className="star">*</span></label> 
-                                <input type="text" placeholder="" onClick={() =>{setlabel8(true)}}/>
-                                {label8?
+                            <div className="arletVlid">{error&&!occupation?"Please provide an occupation":""}</div>
+                            <div className={"regi-secle "+(!error||occupation?"mt20":"")} >
+                                <label className={"reg-label " +(label8?"reg-emp":"")} onClick={() =>{setlabel8(true);handlePop(6)}}>Occupation<span className="star">*</span></label> 
+                                <input type="text" placeholder="" value={occupation} onClick={() =>{setlabel8(true);handlePop(6)}}/>
+                                {label8 && showPop==6?
                                 <React.Fragment>
-                                {/* <div className={"mStatusBox"}>
+                                <div className={"mStatusBox"}>
                                     <i className={"imgArrow religionIcon"}></i>
                                     <ul>
-                                        
-                                        
+                                        {emped.map((e1,index)=><li key={index} onClick={() =>{setoccupation(e1);setShowPop(-1)}}>{e1}</li>)}
                                     </ul> 
-                                    
-                                </div> */}
+                                </div>
                                 </React.Fragment>
                                 :""}
                             </div>
                         </div>
                         <div className="regi-detail">
-                            <div className="arletVlid">Please provide an Income range</div>
-                            <div className="regi-secle" >
-                                <label className={"reg-label " +(label5?"reg-Aicome":"")} onClick={() =>{setlabel5(true)}}>Annual Income<span className="star">*</span></label> 
-                                <input type="text" placeholder="" onClick={() =>{setAnalIncome(true);setlabel5(true)}}/>
-                                {label5 && AnalIncome?
+                            <div className="arletVlid">{error&&!AnalIncome?"Please provide an Income range":""}</div>
+                            <div className={"regi-secle "+(!error||AnalIncome?"mt20":"")} >
+                                <label className={"reg-label " +(label5?"reg-Aicome":"")} onClick={() =>{setlabel5(true);handlePop(7)}}>Annual Income<span className="star">*</span></label> 
+                                <input type="text" placeholder="" value={AnalIncome} onClick={() =>{setlabel5(true);handlePop(7)}}/>
+                                {label5 && showPop==7?
                                 <React.Fragment>
                                 <div className={"gridDropdown"}>
                                     <i className={"imgArrow religionIcon"}></i>
                                     <ul>
-                                        {incomeArr.map((i1,index)=><li key={index} onClick={() =>{setAnalIncome(false)}}>{i1}</li>)}
+                                        {incomeArr.map((i1,index)=><li key={index} onClick={() =>{setAnalIncome(i1);setShowPop(-1)}}>{i1}</li>)}
                                     </ul>
                                     
                                 </div>
@@ -191,7 +209,7 @@ function CareerDetails(){
                                 :""}
                             </div>
                         </div>
-                            
+                        
                     </div>
                 </div>
                 <div className="regi-info border-top mt-4">Here is your chance to make your profile stand out!</div>
@@ -208,9 +226,10 @@ function CareerDetails(){
                             </div>
                         </div>
                         <div className="regi-detail">
-                            <div className="arletVlid">Please write about yourself (Don't mention your name, number or social handles)</div>
+                            <div className="arletVlid">{error&&!yourselfDec?"Please write about yourself (Don't mention your name, number or social handles)":""}</div>
                             <div className="regi-secle2" onClick={() =>{setlabel6(true)}}>
                                 <label className={"reg-label " +(label6?"reg-expres":"")} onClick={() =>{setlabel6(true)}}>{selectLang?"अपने बारे  मैं लिखे":"Express Yourself!"}<span className="star">*</span></label>
+                                
                                 {label6?
                                 <React.Fragment>
                                     {selectLang?
@@ -219,13 +238,14 @@ function CareerDetails(){
                                         2. आप इन दिनों क्या काम कर रहे हैं?
                                         3. आप अपने खाली समय में क्या करना पसंद करते हैं?
                                         4. आपके परिवार में कौन-कौन हैं?
-                                        5. आप किस प्रकार के साथी की तलाश में हैं?"></textarea>:
+                                        5. आप किस प्रकार के साथी की तलाश में हैं?" onChange={(e)=>setyourselfDec(e.currentTarget.value)}></textarea>:
                                         <textarea placeholder="You may consider answering these questions:
                                         1. How would you describe yourself?
                                         2. What kind of food/movies/books/music you like?
                                         3. Do you enjoy activities like traveling, music, sports etc?
                                         4. Where have you lived most of your life till now?
-                                        5. Where do you wish to settle down in future?"></textarea>}
+                                        5. Where do you wish to settle down in future?" onChange={(e)=>setyourselfDec(e.currentTarget.value)}></textarea>}
+                                        <div className="countWord">Minimum Words:50</div>
                                 </React.Fragment>
                                 
                                     
@@ -236,7 +256,7 @@ function CareerDetails(){
                                 <div>This text will be screened by our team.</div>
                             </div>
                         </div>
-                        <Link to="/user_registration4"><button className="CmptRegiBtn">Complete Registration</button></Link>
+                        <button className="CmptRegiBtn" onClick={handleSubmit}>Complete Registration</button>
                     </div>
                 </div>
                 
