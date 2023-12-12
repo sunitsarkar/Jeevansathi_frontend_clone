@@ -2,10 +2,11 @@ import Footer from "./.././../footer/footer"
 import background from './.././../asset/header-inner1.jpg'
 import './style.css'
 import logo from "./.././../asset/logo1.png"
-import { Link } from "react-router-dom/cjs/react-router-dom.min"
+import { Link } from "react-router-dom"
 
 
 export default function Help() {
+
 
     return <div className="help-main" style={{ position: 'relative' }}>
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }} >
@@ -17,7 +18,7 @@ export default function Help() {
                     <img src={logo} />
                 </div>
                 <div className="help-nav-child2">
-                    <Link to="/landing"><p>MATCHES</p></Link>
+                    <Link to={"/landing"}><p>MATCHES</p></Link>
                     <p>ACTIVITY</p>
                     <p>SEARCH</p>
                     <p>UPGREAD</p>
