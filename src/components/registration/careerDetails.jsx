@@ -53,7 +53,7 @@ function CareerDetails(){
     let emped = ["Private Sector","Government/Public Sector","Civil Services","Not Working"];
     let incomeArr=["No Income","Rs. 1 - 2 Lakh","Rs. 2 - 3 Lakh","Rs. 3 - 4 Lakh","Rs. 4 - 5 Lakh"];
     
- 
+    console.log(yourselfDec.split(' ').length);
 
 
 
@@ -227,7 +227,7 @@ function CareerDetails(){
                         </div>
                         <div className="regi-detail">
                             <div className="arletVlid">{error&&!yourselfDec?"Please write about yourself (Don't mention your name, number or social handles)":""}</div>
-                            <div className="regi-secle2" onClick={() =>{setlabel6(true)}}>
+                            <div className={"regi-secle2 "+(!error||yourselfDec?"mt20":"")} onClick={() =>{setlabel6(true)}}>
                                 <label className={"reg-label " +(label6?"reg-expres":"")} onClick={() =>{setlabel6(true)}}>{selectLang?"अपने बारे  मैं लिखे":"Express Yourself!"}<span className="star">*</span></label>
                                 
                                 {label6?
@@ -245,7 +245,7 @@ function CareerDetails(){
                                         3. Do you enjoy activities like traveling, music, sports etc?
                                         4. Where have you lived most of your life till now?
                                         5. Where do you wish to settle down in future?" onChange={(e)=>setyourselfDec(e.currentTarget.value)}></textarea>}
-                                        <div className="countWord">Minimum Words:50</div>
+                                        <span className="countWord">Minimum Words:50</span>
                                 </React.Fragment>
                                 
                                     
