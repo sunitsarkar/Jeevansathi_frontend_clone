@@ -21,6 +21,7 @@ import VerificationMob from "./../components/registration/verificationMob";
 import Help from "./features/help";
 import PhoneBook from "./features/phone-book";
 import Demo from  "./../components/registration/demoAmi";
+import Notification from "./profile_layout/Notification";
 
 
 class MainComponent extends Component{
@@ -33,7 +34,7 @@ class MainComponent extends Component{
             <div>
                 <Switch>
                 
-                    <Route path="/demo" component={Demo}/>
+                    
 
                     <Route path="/registr/page5" component={VerificationMob}/>
                     <Route path="/registr/page4" component={SocialDetails}/>
@@ -47,7 +48,7 @@ class MainComponent extends Component{
                     <Route path="/user_registration2" component={profileDetails}/>
                     <Route path="/user_registration" component={User_registration}/>
 
-                    
+                    <Route path="/notification" component={Notification} />
                     <Route path="/landing" component={LandingPage} />
                     <Route path="/profile_details" component={Details} />
                     <Route path="/settings" component={Settings}/>
