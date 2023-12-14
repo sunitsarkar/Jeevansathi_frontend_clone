@@ -1485,6 +1485,12 @@ li:hover .subhobver{
         right: 10px;
         font-size: 14px;
     }
+    .colr3{
+        color: #d9475c;
+    }
+    .colr4{
+        color: #00FF00;
+    }
     .reg-label{
         position: absolute;
         left: 10px;
