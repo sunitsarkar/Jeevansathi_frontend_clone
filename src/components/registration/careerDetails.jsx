@@ -1,10 +1,12 @@
 import React, {useState} from "react";
-import {Switch, Route, Redirect } from "react-router-dom";
+import {Switch, Route, Redirect,useHistory } from "react-router-dom";
 import {Link} from "react-router-dom";
 import Footer from "../../footer/regi_footer"
 
 
 function CareerDetails(){
+    const history =  useHistory();
+
     const [label1, setlabel1] = useState(false);
     const [label2, setlabel2] = useState(false);
     const [label3, setlabel3] = useState(false);
@@ -43,6 +45,11 @@ function CareerDetails(){
         setlabel5(true);
         setlabel6(true);
         setlabel7(true);
+        let data = {country,state,city,hightdegree,employee,occupation,AnalIncome,yourselfDec};
+        let keys = Object.keys(data);
+        let count = keys.reduce((acc,curr)=>(data[curr]?acc+1:acc),0);
+        if(keys.length==count)
+            history.push("/user_registration4");
         // history.push("/user_registration3");
     }
 
@@ -53,7 +60,7 @@ function CareerDetails(){
     let emped = ["Private Sector","Government/Public Sector","Civil Services","Not Working"];
     let incomeArr=["No Income","Rs. 1 - 2 Lakh","Rs. 2 - 3 Lakh","Rs. 3 - 4 Lakh","Rs. 4 - 5 Lakh"];
     
- 
+    console.log(yourselfDec.split(' ').length);
 
 
 
@@ -90,7 +97,7 @@ function CareerDetails(){
                             <div className="arletVlid">{error&&!country?"Please provide country":""}</div>
                             <div className={"regi-secle "+(!error||country?"mt20":"")} >
                                 <label className={"reg-label " +(label1?"reg-country":"")} onClick={() =>{setlabel1(true);handlePop(1)}}>Country<span className="star">*</span></label>  
-                                <input type="text" placeholder="" value={country} onClick={() =>{setlabel1(true);handlePop(1)}}/>
+                                <input type="text" placeholder="" readOnly value={country} onClick={() =>{setlabel1(true);handlePop(1)}}/>
                                 {label1 && showPop==1?
                                 <React.Fragment>
                                 <div className="gridDropdown">
@@ -108,7 +115,7 @@ function CareerDetails(){
                             <div className="arletVlid">{error&&!state?"Please mention the state":""}</div>
                             <div className={"regi-secle "+(!error||state?"mt20":"")} >
                                 <label className={"reg-label " +(label2?"reg-State":"")} onClick={() =>{setlabel2(true);handlePop(2)}}>State<span className="star">*</span></label>
-                                <input type="text" placeholder="" value={state} onClick={() =>{setlabel2(true);handlePop(2)}}/>
+                                <input type="text" placeholder="" readOnly value={state} onClick={() =>{setlabel2(true);handlePop(2)}}/>
                                 {label2 && showPop==2?
                                 <React.Fragment>
                                 <div className="gridDropdown">
@@ -125,7 +132,7 @@ function CareerDetails(){
                             <div className="arletVlid">{error&&!city?"Please mention the City you are living in":""}</div>
                             <div className={"regi-secle "+(!error||city?"mt20":"")} >
                                 <label className={"reg-label " +(label7?"reg-city":"")} onClick={() =>{setlabel7(true);handlePop(3)}}>City living in<span className="star">*</span></label>
-                                <input type="text" placeholder="" value={city} onClick={() =>{setlabel7(true);handlePop(3)}}/>
+                                <input type="text" placeholder="" readOnly value={city} onClick={() =>{setlabel7(true);handlePop(3)}}/>
                                 {label7 && showPop==3 ?
                                 <React.Fragment>
                                 <div className="gridDropdown">
@@ -143,7 +150,7 @@ function CareerDetails(){
                             <div className="arletVlid">{error&&!hightdegree?"Please provide a degree":""}</div>
                             <div className={"regi-secle "+(!error||hightdegree?"mt20":"")} >
                                 <label className={"reg-label " +(label3?"reg-HDegree":"")} onClick={() =>{setlabel3(true);handlePop(4)}}>Highest Degree<span className="star">*</span></label> 
-                                <input type="text" placeholder="" value={hightdegree} onClick={() =>{setlabel3(true);handlePop(4)}}/>
+                                <input type="text" placeholder="" readOnly value={hightdegree} onClick={() =>{setlabel3(true);handlePop(4)}}/>
                                 {label3 && showPop==4?
                                 <React.Fragment>
                                 <div className={"highdegBox"}>
@@ -160,7 +167,7 @@ function CareerDetails(){
                             <div className="arletVlid">{error&&!employee?"Please provide a Employee":""}</div>
                             <div className={"regi-secle "+(!error||employee?"mt20":"")} >
                                 <label className={"reg-label " +(label4?"reg-emp":"")} onClick={() =>{setlabel4(true);handlePop(5)}}>Employed In<span className="star">*</span></label> 
-                                <input type="text" placeholder="" value={employee} onClick={() =>{setlabel4(true);handlePop(5)}}/>
+                                <input type="text" placeholder="" readOnly value={employee} onClick={() =>{setlabel4(true);handlePop(5)}}/>
                                 {label4 && showPop==5?
                                 <React.Fragment>
                                 <div className={"mStatusBox"}>
@@ -178,7 +185,7 @@ function CareerDetails(){
                             <div className="arletVlid">{error&&!occupation?"Please provide an occupation":""}</div>
                             <div className={"regi-secle "+(!error||occupation?"mt20":"")} >
                                 <label className={"reg-label " +(label8?"reg-emp":"")} onClick={() =>{setlabel8(true);handlePop(6)}}>Occupation<span className="star">*</span></label> 
-                                <input type="text" placeholder="" value={occupation} onClick={() =>{setlabel8(true);handlePop(6)}}/>
+                                <input type="text" placeholder="" readOnly value={occupation} onClick={() =>{setlabel8(true);handlePop(6)}}/>
                                 {label8 && showPop==6?
                                 <React.Fragment>
                                 <div className={"mStatusBox"}>
@@ -195,7 +202,7 @@ function CareerDetails(){
                             <div className="arletVlid">{error&&!AnalIncome?"Please provide an Income range":""}</div>
                             <div className={"regi-secle "+(!error||AnalIncome?"mt20":"")} >
                                 <label className={"reg-label " +(label5?"reg-Aicome":"")} onClick={() =>{setlabel5(true);handlePop(7)}}>Annual Income<span className="star">*</span></label> 
-                                <input type="text" placeholder="" value={AnalIncome} onClick={() =>{setlabel5(true);handlePop(7)}}/>
+                                <input type="text" placeholder="" readOnly value={AnalIncome} onClick={() =>{setlabel5(true);handlePop(7)}}/>
                                 {label5 && showPop==7?
                                 <React.Fragment>
                                 <div className={"gridDropdown"}>
@@ -217,7 +224,7 @@ function CareerDetails(){
                     <div className="reg-wid80 mb-5">
                         <div className="selectLang mb-2">
                             <div className="selLgWid">
-                                <input type="checkbox" checked className="form-check-input" id="exampleCheck1"/>
+                                <input type="checkbox" checked readOnly className="form-check-input" id="exampleCheck1"/>
                                 <label className={"setLang "+(selectLang?"":"setLang2")} onClick={handleSelectLang}></label>
                                 {selectLang?<span>Write in English</span>:<span>हिंदी में लिखें</span>}
                             </div>
@@ -226,8 +233,8 @@ function CareerDetails(){
                             </div>
                         </div>
                         <div className="regi-detail">
-                            <div className="arletVlid">{error&&!yourselfDec?"Please write about yourself (Don't mention your name, number or social handles)":""}</div>
-                            <div className="regi-secle2" onClick={() =>{setlabel6(true)}}>
+                            <div className="arletVlid">{error&&!yourselfDec?"Please write about yourself (Don't mention your name, number or social handles)":error&&yourselfDec.split(' ').length<50?"Please write a minimum of 50 words":""}</div>
+                            <div className={"regi-secle2 "+(!error||yourselfDec?"mt20":"")} onClick={() =>{setlabel6(true)}}>
                                 <label className={"reg-label " +(label6?"reg-expres":"")} onClick={() =>{setlabel6(true)}}>{selectLang?"अपने बारे  मैं लिखे":"Express Yourself!"}<span className="star">*</span></label>
                                 
                                 {label6?
@@ -245,21 +252,23 @@ function CareerDetails(){
                                         3. Do you enjoy activities like traveling, music, sports etc?
                                         4. Where have you lived most of your life till now?
                                         5. Where do you wish to settle down in future?" onChange={(e)=>setyourselfDec(e.currentTarget.value)}></textarea>}
-                                        <div className="countWord">Minimum Words:50</div>
+                                        <span className="countWord">{yourselfDec?
+                                            <span>Word Count: <span className={yourselfDec.split(' ').length<50?"colr3":"colr4"}>{yourselfDec.split(' ').length}</span></span>
+                                            :"Minimum Words:50"}
+                                        </span>
                                 </React.Fragment>
                                 
                                     
                                 :null}
                             </div>
                             <div className="extraTxt2">
-                                <div>Introduce yourself (Don't mention your name, number or social handles). Write about your values, beliefs/goals and aspirations.                    How do you describe yourself? Your interests and hobbies. </div><br/>
+                                <div>Introduce yourself (Don't mention your name, number or social handles). Write about your values, beliefs/goals and aspirations. How do you describe yourself? Your interests and hobbies. </div><br/>
                                 <div>This text will be screened by our team.</div>
                             </div>
                         </div>
                         <button className="CmptRegiBtn" onClick={handleSubmit}>Complete Registration</button>
                     </div>
                 </div>
-                
                 
             </div>
             <div>

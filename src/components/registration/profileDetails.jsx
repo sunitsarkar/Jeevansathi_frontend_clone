@@ -1,17 +1,20 @@
 import React, {useState} from "react";
-import {Switch, Route, Redirect } from "react-router-dom";
+import {Switch, Route, Redirect,useHistory } from "react-router-dom";
 import {Link} from "react-router-dom";
-import Footer from "../../footer/regi_footer"
-
+import Footer from "../../footer/regi_footer";
+ 
+    
 
 function ProfileDetails(){
+    const history =  useHistory();
+
     const [label1, setlabel1] = useState(false);
     const [label2, setlabel2] = useState(false);
     const [label3, setlabel3] = useState(false);
     const [label4, setlabel4] = useState(false);
     const [label5, setlabel5] = useState(false);
     const [label6, setlabel6] = useState(false);
-
+   
     const [showPop,setShowPop] = useState(-1);
     const [error,setError] = useState(false);
 
@@ -23,8 +26,6 @@ function ProfileDetails(){
     const [religion, setRligion] = useState("");
     const [maritalStatus, setMaritalStatus] = useState("");
     const [height, setHeight] = useState("");
-
-    console.log(day,month,year);
   
     function handlePop(val){
         setShowPop(val);
@@ -38,7 +39,12 @@ function ProfileDetails(){
         setlabel4(true);
         setlabel5(true);
         setlabel6(true);
-        // history.push("/user_registration3");
+        let data = {groomName,day,month,year,mothertongue,religion,maritalStatus,height};
+        let keys = Object.keys(data);
+        let count = keys.reduce((acc,curr)=>(data[curr]?acc+1:acc),0);
+        if(keys.length==count)
+            history.push("/user_registration3");
+        
     }
 
     let days = [];
@@ -52,8 +58,9 @@ function ProfileDetails(){
     let religions=["Hindu","Muslim","Sikh","Christian","Buddhist","Jain","Parsi","Jewish","Bahai"];
     let mstatus=["Never Married","Awaiting Divorce","Divorced","Widowed"];
     let heights = [];
+
     for(let i=0;i<10;i++){
-        heights.push(`4' 0" (1.22 mts)`)
+        heights.push(`4' 0" (1.22 mts)`);
     }
     
     // const {groomName,dob,mothertongue,rligion,maritalStatus,height} = takeData;
@@ -238,9 +245,7 @@ function ProfileDetails(){
                             <i className="reg-privacy privyIcon4"></i>
                             <div className="pt-1">Strict <br/> Privacy Control</div>
                         </div>
-                    </div>
-                   
-                    
+                    </div>                    
                 </div>
             </div>
             <div>
