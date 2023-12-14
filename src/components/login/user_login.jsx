@@ -33,7 +33,7 @@ function UserLogin(){
                         </div>
                     </div>
                     <div className="text-center mt-4">Forgot Password</div>
-                    <div className="">
+                    <div  className="">
                         <button className="loginBtns">LOGIN</button>
                     </div>
                 </div>

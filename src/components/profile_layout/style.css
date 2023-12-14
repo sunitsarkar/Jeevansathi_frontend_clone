@@ -96,15 +96,28 @@
     }
 
     .mobile-aside{
-        display: block;
-        float: inline-start;
+        display: flex;
+        height: 70px;
+        width: 100%;
+        justify-content: space-around;
+        align-items: center;
+        position: fixed;
+        bottom: 0;
+        background-color: #ffffff;
+        border: 1px solid rgb(250, 240, 240);
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+        box-shadow: 5px 5px 5px rgb(250, 240, 240) inset;
+    }
+
+    .mobile-aside-child{
+        text-align: center;
     }
 
     .profile-detail-body {
         width: 100%;
         display: flex;
         justify-content: space-around;
-        flex-direction: row;
         padding-top: 0px;
         position: relative;
         z-index: 0;

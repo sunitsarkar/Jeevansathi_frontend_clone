@@ -127,5 +127,5 @@ function CareerDatailsMob(){
 
 export default CareerDatailsMob;
 
-// jainprateek9058@gmail.com
+
 
