@@ -40,7 +40,7 @@ function UserLogin(){
                 <div className="loginFrm2">
                     <p>New on Jeevansathi?</p>
                     <div className="mt-3">
-                        <button className="registerBtn">REGISTER FREE</button>
+                        <Link to="/user_registration"><button className="registerBtn">REGISTER FREE</button></Link>
                     </div>
                 </div>
             </div>

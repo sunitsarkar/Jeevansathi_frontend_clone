@@ -59,7 +59,8 @@ a:hover{
 
 .menu-navbar{
     width:508px;
-    background: rgba(52, 73, 94, 0.95);
+    background: rgba(27, 53, 82, 0.95);
+    /* background: rgba(52, 73, 94, 0.95); */
     font-size: 14px;
     font-family: 'Cabin', sans-serif;
     font-weight: 500;
@@ -83,7 +84,7 @@ a:hover{
 .menu-navbar--second{
     position: relative;
     width:319px;
-    background: rgba(52, 73, 94, 0.95);
+    background: rgba(27, 53, 82, 0.95);
     font-size: 14px;
     font-family: 'Cabin',sans-serif;
     font-weight: 500;
@@ -310,7 +311,7 @@ a:hover{
 }
 .register_Button{
     width: 338px;
-    margin-top: 13px;
+    /* margin-top: 13px; */
     padding: 6px;
     font-size: 14px;
     color: #FFF;
@@ -319,6 +320,7 @@ a:hover{
     text-align: center;
     cursor: pointer;
     background: #D9475C;
+    margin: 13px auto 0 auto;
 }
 .register_Button:hover{
     background: #EA556B;
@@ -2176,6 +2178,72 @@ li:hover .subhobver{
 .loginViewMob{
     display: none;
 }
+.popForm{
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    transition: all 1s ease 0s;
+    animation: 0.4s ease 0s 1 normal none running;
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+    margin: 0 auto;    
+    background-color: #000000a1;
+}
+.popBox{
+    position: relative;
+    width: 30%;
+    margin: 0 auto;
+    height: auto;
+    max-height: 150vh;
+    margin-top: 120px!important;
+    /* margin-top: calc(90vh - 8/0vh - 10px); */
+    background: #fff;
+    border-radius: 4px;
+    overflow: none;
+    background-color: #fff;
+    padding: 25px 20px; 
+    color: #000;
+}
+.popInput{
+    font-size: 15px;
+    background: none;
+    color: #535151;
+    border: none;
+    width: 100%;
+    font-size: 18px;
+    height: 20px;
+    outline: none;
+    border: 1px solid #c0c0c0;
+    padding: 20px 10px;
+    /* float: left; */
+  }
+  .popSubmit{
+    border: none;
+    color: #fff;
+    width: 95%;
+    border-radius: 5px;
+    margin: 35px 0 20px 0;
+    padding: 5px;
+    background-color: #34495e;
+  }
+  .closeIcon{
+    position: fixed;
+    right: calc(40% - 82px);
+    top: calc(100vh - 78vh - 25px);
+    line-height: 20px;
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+  }
+  .erorrSign{
+    color: #d9475c;
+    position: absolute;
+    display: block;
+    font-size: 14px;
+  }
 
 
 
