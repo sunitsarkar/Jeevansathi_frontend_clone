@@ -50,8 +50,10 @@ class MainComponent extends Component{
         !s1.isPopSign?s1.isPopSign=true:s1.isPopSign=false;
         this.setState(s1);
     }
-    handleError =()=>{
+    handlePopup=()=>{
         let s1={...this.state}; 
+        s1.isPopSign=false;
+        this.setState(s1);
     }
     handleSubmit=()=>{
         let s1={...this.state}; 
@@ -107,7 +109,7 @@ class MainComponent extends Component{
                                 <input className="popInput" type="text" name="mobileNo"  placeholder="Mobile Number" onChange={this.handleChange} onBlur={this.handleError}/> 
                                 {erorr&&<span className="erorrSign">{erorr}</span> }
                                 <button className="popSubmit" onClick={this.handleSubmit}>Submit</button>
-                                <Link to="/user_registration"><div className="register_Button">Register Free</div></Link>
+                                <Link to="/user_registration" onClick={this.handlePopup}><div className="register_Button">Register Free</div></Link>
                             </div>
                         </div>
                     </div>
