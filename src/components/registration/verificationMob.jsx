@@ -96,7 +96,6 @@ import { motion } from "framer-motion";
                     </div>
                 </div>
                 <div className="termPrivy">Terms of Use Privacy Policy</div>
-                
             </div>
             
             <Link to={fullName&&email&&MobileNo&&password?"/registr/page5":"#"} onClick={handleError}>

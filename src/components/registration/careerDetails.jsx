@@ -77,14 +77,12 @@ function CareerDetails(){
                             <span>1-800-419-6299 (Toll Free)</span>
                         </div>
                     </div>
-
                     <div className="proSection">
                         <div className="proSText">
                             <div>Profile Details</div>
                             <div className="reg-active">Career Details</div>
                             <div>Lifestyle & Family</div>
                         </div>
-                        
                     </div>
                 </div>
             </div>
@@ -219,7 +217,7 @@ function CareerDetails(){
                         
                     </div>
                 </div>
-                <div className="regi-info border-top mt-4">Here is your chance to make your profile stand out!</div>
+                <div className="regi-info border-0top mt-4">Here is your chance to make your profile stand out!</div>
                 <div className="d-flex">   
                     <div className="reg-wid80 mb-5">
                         <div className="selectLang mb-2">
@@ -262,8 +260,17 @@ function CareerDetails(){
                                 :null}
                             </div>
                             <div className="extraTxt2">
-                                <div>Introduce yourself (Don't mention your name, number or social handles). Write about your values, beliefs/goals and aspirations. How do you describe yourself? Your interests and hobbies. </div><br/>
-                                <div>This text will be screened by our team.</div>
+                            {selectLang?
+                                <div>
+                                <p>हमें और अपने जीवन साथी को अपने और अपने व्यक्तित्व के बारे में बताएं। अपने व्यवसाय/रुचियों के बारे में लिखें।</p>
+                                <p>हिंदी में लिखने के लिए अपना कीबोर्ड बदलें। इस पाठ का परीक्षण हमारी टीम द्वारा किया जाएगा।</p>
+                                </div>
+                            :<div>
+                            <p>Introduce yourself (Don't mention your name, number or social handles). Write about your values, beliefs/goals and aspirations. How do you describe yourself? Your interests and hobbies. </p><br/>
+                                <p>This text will be screened by our team.</p>
+                            </div>}
+                                
+                                
                             </div>
                         </div>
                         <button className="CmptRegiBtn" onClick={handleSubmit}>Complete Registration</button>
@@ -283,3 +290,4 @@ function CareerDetails(){
 export default CareerDetails;
 
 
+// prtmkumari55@gmail.com

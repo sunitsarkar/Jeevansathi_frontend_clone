@@ -87,6 +87,14 @@ class index extends Component{
                                         <label>Create Profile For</label>
                                         <select  className="mr-2">
                                             <option>Select</option>
+                                            <option>Myself</option>
+                                            <option>Son</option>
+                                            <option>Daughter</option>
+                                            <option>Brother</option>
+                                            <option>Sister</option>
+                                            <option>Relative</option>
+                                            <option>Friend</option>
+                                            <option>Marriage Bureau</option>
                                         </select>
                                     </div>
                                     <div >
@@ -108,9 +116,7 @@ class index extends Component{
                                         <label>Create Password</label>
                                         <input type="password" placeholder=""/>
                                     </div>
-                                    <div className="register_Button">
-                                        <bottom className="">Register Free</bottom>
-                                    </div>
+                                    <Link to="/user_registration"><div className="register_Button"> Register Free</div></Link>
                                     <div className="register_Tmc"> 
                                         By clicking on 'Register Free', you confirm that you accept the <span>Terms of Use </span>and <span>Privacy Policy</span>   
                                     </div>

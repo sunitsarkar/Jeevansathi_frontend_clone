@@ -4,7 +4,6 @@ import {Link} from "react-router-dom";
 import Footer from "../../footer/regi_footer";
  
     
-
 function ProfileDetails(){
     const history =  useHistory();
 
@@ -222,13 +221,11 @@ function ProfileDetails(){
                                 </React.Fragment>
                                 :""}
                             </div>
-
                         </div>
                             <button className="proBtns" onClick={handleSubmit}>Continue</button>
                     </div>
-
                     <div className="reg-wid15">
-                        <div className="wyregi"> why register </div>
+                        <div className="wyregi">why register</div>
                         <div>
                             <i className="reg-privacy privyIcon"></i>
                             <div className="pt-1">Lakhs of Genuine Profiles</div>
@@ -258,4 +255,3 @@ function ProfileDetails(){
 }
 
 export default ProfileDetails;
-

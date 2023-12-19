@@ -105,7 +105,7 @@ export default function User_registration() {
 
             <div className="logo-container">
                 <div style={{ height: '100%', backgroundColor: 'white' }}>
-                    <img src={logo} style={{ background: 'white', marginTop: '20px' }} />
+                    <Link to="/"><img src={logo} style={{ background: 'white', marginTop: '20px' }} /></Link>
                 </div>
                 <div className="contact-detail" >
                     <p className="text-light">LIVE CHAT</p>
