@@ -1,0 +1,115 @@
+.landing-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 50px;
+    height: 70px;
+    width: 100%;
+    border-bottom: 2px solid;
+    border-color: rgb(220, 225, 230);
+    box-shadow: 1px 1px 3px rgb(220, 225, 230);
+    position: fixed;
+    z-index: 5;
+    background-color: white;
+}
+
+.landing-mobile-nav {
+    display: none;
+}
+
+.user-icon{
+    height: 55px;
+    width: 55px;
+    border: 1px solid #c1c9d3;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #c1c9d3;
+}
+
+.mobile-aside{
+    display: none;
+}
+
+.nav-logo {
+    width: 10%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.landing-main {
+    background-color: rgb(238, 243, 248);
+    min-height: 625px;
+    width: 100%;
+}
+
+.left-side {
+    color: rgb(143, 142, 142);
+}
+
+#landing-body {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    padding-top: 85px;
+    position: relative;
+    z-index: 0;
+}
+
+.landing-child {
+    width: 20%;
+    border: 1px solid rgb(220, 225, 230);
+    border-radius: 5px;
+    position: fixed;
+    padding: 10px 10px;
+    background-color: white;
+}
+
+#one {
+    margin-right: 70%;
+    height: 400px;
+    padding-top: 30px;
+}
+
+#two {
+    margin-left: 70%;
+    height: 500px;
+
+}
+
+@media only screen and (max-width: 1200px) {
+
+    .landing-child {
+        display: none;
+    }
+
+    .landing-mobile-nav {
+        display: block;
+    }
+    .mobile-aside{
+        display: block;
+    }
+
+    .landing-main{
+        min-height: 800px;
+        width: 100%;
+    }
+
+    .landing-mobile{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px 50px;
+        height: 70px;
+        width: 100%;
+        border-bottom: 2px solid;
+        border-color: rgb(220, 225, 230);
+        box-shadow: 3px 3px 5px rgb(220, 225, 230);
+        position: fixed;
+        z-index: 5;
+        background-color: white;
+    }
+
+    .landing-navbar {
+        display: none;
+    }
+}
