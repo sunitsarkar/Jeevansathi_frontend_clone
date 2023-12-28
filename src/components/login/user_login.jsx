@@ -38,9 +38,9 @@ function UserLogin(){
                         </div>
                     </div>
                     <div className="text-center mt-4">Forgot Password</div>
-                    <div  className="">
+                    <Link to="/landing">
                         <button className="loginBtns">LOGIN</button>
-                    </div>
+                    </Link>
                 </div>
                 <div className="loginFrm2">
                     <p>New on Jeevansathi?</p>
