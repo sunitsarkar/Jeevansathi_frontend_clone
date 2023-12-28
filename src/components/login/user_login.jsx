@@ -95,9 +95,9 @@ function UserLogin(){
                         <div className="forgoPass text-end mt-3"><Link to="">Forgot Password?</Link></div>
                     </div>
                     
-                    <div className="text-center">
+                    <Link to="/landing" className="text-center">
                         <button className="loginMbBtn">Login</button>
-                    </div>
+                    </Link>
 
                     <div className="text-center mt-4">
                         <button className="logingogle">
