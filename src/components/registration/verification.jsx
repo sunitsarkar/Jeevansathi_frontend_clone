@@ -39,7 +39,7 @@ function Verification(){
                                 <input type="text" className="mobileNuber"/>
                         </div>
                     </div>
-                    <button className="verifyButton">Verify this number</button>
+                    <Link to='/'><button className="verifyButton">Verify this number</button></Link>
                     <div>
                         <p className="phnTxt">We would like to inform you that by by verifying the above number you are agreeing to receive calls from the Jeevansathi customer 
                         support team and SMS from Jeevansathi, even though your number is registered with the NCPR.<br/><br/>                        
